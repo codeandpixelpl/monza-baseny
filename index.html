@@ -1,0 +1,1707 @@
+<!doctype html>
+<html lang="pl">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>MONZA baseny&amp;SPA — Projektujemy · Budujemy · Serwisujemy</title>
+<meta name="description" content="MONZA baseny&SPA — nowoczesny projektant i producent basenów. Baseny wewnętrzne i zewnętrzne, wanny SPA, sauny, zadaszenia. Brzesko · Kraków · Nowy Sącz · Rzeszów." />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="MONZA baseny&SPA — Projektujemy · Budujemy · Serwisujemy" />
+<meta property="og:description" content="Baseny, wanny SPA, sauny i zadaszenia — projekt, budowa, serwis. Małopolska, Podkarpacie, Śląsk." />
+<meta property="og:image" content="assets/img/og.jpg" />
+<meta property="og:locale" content="pl_PL" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="MONZA baseny&SPA" />
+<meta name="twitter:description" content="Projektujemy, budujemy i serwisujemy baseny oraz strefy SPA." />
+<meta name="twitter:image" content="assets/img/og.jpg" />
+<meta name="theme-color" content="#113258" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+<style>
+:root{
+  --navy:#113258;
+  --navy-deep:#0A1D33;
+  --cream:#ECEAE5;
+  --cream-2:#E2DFD7;
+  --paper:#F4F2ED;
+  --ink:#0C0B09;
+  --ink-2:#3A3830;
+  --muted:#6B685F;
+  --line:rgba(12,11,9,.14);
+  --line-n:rgba(236,234,229,.18);
+
+  --f-mono:"JetBrains Mono", ui-monospace, monospace;
+  --f-serif:"Fraunces", Georgia, serif;
+
+  --edge:clamp(20px, 4vw, 64px);
+}
+
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+.skip-link{position:absolute;top:-40px;left:12px;background:var(--navy);color:#fff;padding:10px 16px;font-family:var(--f-mono);font-size:12px;letter-spacing:.18em;text-transform:uppercase;z-index:9999;transition:top .2s ease;text-decoration:none}
+.skip-link:focus{top:12px;outline:2px solid #fff;outline-offset:2px}
+:focus-visible{outline:2px solid var(--navy);outline-offset:3px}
+.hero :focus-visible,.reels :focus-visible,.pin-cta :focus-visible{outline-color:var(--cream)}
+@media (prefers-reduced-motion: reduce){
+  *,*::before,*::after{animation-duration:.01ms !important;animation-iteration-count:1 !important;transition-duration:.01ms !important;scroll-behavior:auto !important}
+  .hero-headline .line span{transform:none !important;animation:none !important}
+}
+html{scroll-behavior:smooth}
+html,body{background:var(--cream);color:var(--ink);font-family:var(--f-mono);-webkit-font-smoothing:antialiased;font-size:13.5px;line-height:1.55}
+body{overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+img,svg{display:block;max-width:100%}
+button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
+::selection{background:var(--navy);color:var(--cream)}
+
+/* ===== typography ===== */
+.mono{font-family:var(--f-mono)}
+.serif{font-family:var(--f-serif);font-weight:300}
+.micro{font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--muted)}
+.eyebrow{font-family:var(--f-mono);font-size:10.5px;letter-spacing:.24em;text-transform:uppercase;color:var(--navy);display:inline-flex;align-items:center;gap:12px}
+.eyebrow::before{content:"";width:22px;height:1px;background:var(--navy)}
+
+/* ===== grain ===== */
+body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:999;opacity:.04;mix-blend-mode:multiply;
+  background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='240' height='240'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2'/><feColorMatrix values='0 0 0 0 .07  0 0 0 0 .2  0 0 0 0 .35  0 0 0 .6 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>")}
+
+/* ===== meta bar ===== */
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(255,255,255,.45)}70%{box-shadow:0 0 0 9px rgba(255,255,255,0)}100%{box-shadow:0 0 0 0 rgba(255,255,255,0)}}
+
+/* ===== hero (full-bleed) ===== */
+.hero{position:relative;width:100%;height:100vh;min-height:560px;background:var(--navy-deep);color:#fff;overflow:hidden;isolation:isolate}
+.hero-sticky{position:absolute;inset:0;width:100%;height:100%;overflow:hidden;isolation:isolate;background:#0A0A0A}
+.hero-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;z-index:0}
+.hero-tint{position:absolute;inset:0;z-index:1;pointer-events:none;background:rgba(0,0,0,.22)}
+.hero-vignette{position:absolute;inset:0;z-index:1;pointer-events:none;
+  background:
+    radial-gradient(120% 70% at 70% 10%, rgba(255,255,255,.04) 0%, transparent 55%),
+    linear-gradient(180deg, rgba(0,0,0,.18) 0%, transparent 30%, rgba(0,0,0,.35) 100%)}
+
+/* overlay nav on top of hero */
+.hero-nav{position:absolute;top:0;left:0;right:0;z-index:10;color:#fff;opacity:0;will-change:opacity}
+.hero-strip{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:24px;padding:11px var(--edge);font-family:var(--f-mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.6)}
+.hero-strip .l{display:inline-flex;gap:10px;align-items:center;color:#fff;letter-spacing:.12em}
+.hero-strip .l .dot{width:6px;height:6px;border-radius:50%;background:#fff;opacity:.88;animation:pulse 2.4s infinite}
+.hero-strip .c{display:inline-flex;align-items:center;gap:10px;color:#fff;letter-spacing:.12em}
+.hero-strip .r{display:flex;align-items:center;justify-content:flex-end;gap:18px;color:rgba(255,255,255,.6)}
+.hero-strip .r a{color:#fff;letter-spacing:.2em;padding:10px 0;display:inline-flex;align-items:center;gap:10px;transition:opacity .3s}
+.hero-strip .r a:hover{opacity:.7}
+.hero-strip .arr{display:inline-block;width:14px;height:1px;background:currentColor;position:relative}
+.hero-strip .arr::after{content:"";position:absolute;right:0;top:-3px;width:6px;height:6px;border-top:1px solid currentColor;border-right:1px solid currentColor;transform:rotate(45deg)}
+
+.hero-header{display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:40px;padding:20px var(--edge);border-top:1px solid rgba(255,255,255,.14);border-bottom:1px solid rgba(255,255,255,.14)}
+.brand{display:inline-flex;align-items:center;color:#fff;line-height:1}
+.brand-mark{height:44px;width:auto;color:#fff}
+.hero-links{display:flex;gap:36px;justify-content:flex-start;list-style:none;margin-left:8px}
+.hero-links a{font-family:var(--f-mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:#fff;position:relative;padding:4px 0;transition:opacity .3s}
+.hero-links a:hover{opacity:.7}
+.hero-links a::after{content:"";position:absolute;left:50%;bottom:-3px;width:0;height:1px;background:#fff;transition:width .3s,left .3s}
+.hero-links a:hover::after{width:100%;left:0}
+.hero-right{display:flex;align-items:center;gap:20px;justify-content:flex-end}
+.hero-right .tel{font-family:var(--f-mono);font-size:16px;color:#fff;letter-spacing:.04em}
+
+.btn-outline{display:inline-flex;align-items:center;justify-content:center;padding:11px 18px;border:1px solid rgba(255,255,255,.3);color:#fff;font-family:var(--f-mono);font-size:11px;letter-spacing:.18em;text-transform:uppercase;background:transparent;transition:all .3s}
+.btn-outline:hover{background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.6)}
+
+/* ===== sticky nav (scroll-triggered, cream variant) ===== */
+.sticky-nav{position:fixed;top:0;left:0;right:0;z-index:60;background:var(--cream);color:var(--ink);transform:translateY(-100%);transition:transform .55s cubic-bezier(.22,.61,.36,1);pointer-events:none;will-change:transform}
+.sticky-nav.visible{transform:translateY(0);pointer-events:auto;box-shadow:0 10px 30px -18px rgba(12,11,9,.25)}
+.sticky-nav .sn-strip{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:24px;padding:11px var(--edge);font-family:var(--f-mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);border-bottom:1px solid var(--line)}
+.sticky-nav .sn-strip .l{display:flex;gap:18px;align-items:center}
+.sticky-nav .sn-strip .c{display:inline-flex;align-items:center;gap:10px;color:var(--ink);letter-spacing:.12em}
+.sticky-nav .sn-strip .c .dot{width:6px;height:6px;border-radius:50%;background:var(--navy);opacity:.88;animation:pulse-navy 2.4s infinite}
+.sticky-nav .sn-strip .r{display:flex;align-items:center;justify-content:flex-end;gap:18px;color:var(--muted)}
+.sticky-nav .sn-strip .r a{color:var(--ink);letter-spacing:.2em;padding:10px 0;display:inline-flex;align-items:center;gap:10px;transition:opacity .3s}
+.sticky-nav .sn-strip .r a:hover{opacity:.6}
+.sticky-nav .sn-strip .arr{display:inline-block;width:14px;height:1px;background:currentColor;position:relative}
+.sticky-nav .sn-strip .arr::after{content:"";position:absolute;right:0;top:-3px;width:6px;height:6px;border-top:1px solid currentColor;border-right:1px solid currentColor;transform:rotate(45deg)}
+.sticky-nav .sn-header{display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:40px;padding:18px var(--edge);position:relative}
+.sticky-nav .sn-logo{height:36px;width:auto;color:var(--navy);display:block}
+.sticky-nav .sn-links{display:flex;gap:36px;justify-content:flex-start;list-style:none;margin-left:8px}
+.sticky-nav .sn-links a{font-family:var(--f-mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink);position:relative;padding:4px 0;transition:opacity .3s}
+.sticky-nav .sn-links a:hover{opacity:.55}
+.sticky-nav .sn-links a::after{content:"";position:absolute;left:50%;bottom:-3px;width:0;height:1px;background:var(--navy);transition:width .3s,left .3s}
+.sticky-nav .sn-links a:hover::after{width:100%;left:0}
+.sticky-nav .sn-right{display:flex;align-items:center;gap:20px;justify-content:flex-end}
+.sticky-nav .sn-right .tel{font-family:var(--f-mono);font-size:13px;color:var(--ink);letter-spacing:.04em;transition:color .3s}
+.sticky-nav .sn-right .tel:hover{color:var(--navy)}
+.sticky-nav .sn-cta{display:inline-flex;align-items:center;justify-content:center;padding:12px 22px;background:var(--navy);color:var(--cream);font-family:var(--f-mono);font-size:11px;letter-spacing:.18em;text-transform:uppercase;transition:background .3s}
+.sticky-nav .sn-cta:hover{background:var(--ink)}
+.sticky-nav .sn-progress{position:absolute;left:0;bottom:0;height:2px;background:var(--navy);width:100%;transform:scaleX(0);transform-origin:left center;will-change:transform;transition:transform .08s linear}
+@keyframes pulse-navy{0%{box-shadow:0 0 0 0 rgba(17,50,88,.45)}70%{box-shadow:0 0 0 8px rgba(17,50,88,0)}100%{box-shadow:0 0 0 0 rgba(17,50,88,0)}}
+
+.btn{display:inline-flex;align-items:center;gap:10px;padding:14px 24px;border:1px solid var(--navy);color:var(--navy);font-family:var(--f-mono);font-size:11px;letter-spacing:.18em;text-transform:uppercase;background:transparent;transition:all .3s}
+.btn:hover{background:var(--navy);color:var(--cream)}
+.btn .arr{display:inline-block;width:16px;height:1px;background:currentColor;position:relative}
+.btn .arr::after{content:"";position:absolute;right:0;top:-3px;width:6px;height:6px;border-top:1px solid currentColor;border-right:1px solid currentColor;transform:rotate(45deg)}
+.btn-solid{background:var(--navy);color:var(--cream);border-color:var(--navy)}
+.btn-solid:hover{background:var(--ink);border-color:var(--ink);color:var(--cream)}
+
+.hero-stack{position:absolute;left:60px;bottom:60px;z-index:3;display:flex;flex-direction:column;gap:clamp(36px, 5vw, 67px);align-items:flex-start;max-width:min(640px, 80vw);opacity:0;will-change:opacity}
+.hero-lead{display:flex;flex-direction:column;gap:38px;align-items:flex-start}
+.hero-headline{font-family:var(--f-serif);font-weight:300;font-size:clamp(48px, 7.4vw, 101px);line-height:1;letter-spacing:-.035em;font-variation-settings:"opsz" 144, "SOFT" 0, "WONK" 1;margin:0;color:#fff}
+.hero-headline .line{display:block;overflow:hidden}
+.hero-headline .line span{display:inline-block;transform:translateY(101%);animation:rise 1s cubic-bezier(.2,.7,.1,1) forwards;background:linear-gradient(to bottom,#ffffff 0%,#F2EFE8 30%,#B9A687 72%,#7A6A4F 100%);background-size:var(--bg-w,100%) var(--bg-h,100%);background-position:0 var(--bg-y,0);background-repeat:no-repeat;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent}
+.hero-headline .line:nth-child(1) span{animation-delay:.18s}
+.hero-headline .line:nth-child(2) span{animation-delay:.32s}
+.hero-headline .line:nth-child(3) span{animation-delay:.46s}
+@keyframes rise{to{transform:translateY(0)}}
+@keyframes fade{to{opacity:1}}
+
+.hero-loc{font-family:var(--f-mono);text-transform:uppercase;opacity:0;animation:fade .8s ease .9s forwards}
+.hero-loc .city{font-size:clamp(13px, 1.1vw, 17px);line-height:1.55;letter-spacing:.02em;color:rgba(236,234,229,.7)}
+.hero-loc .year{font-size:clamp(11px, .95vw, 15px);line-height:1.55;letter-spacing:.16em;color:rgba(236,234,229,.4);margin-left:8px}
+
+.hero-btn{display:inline-flex;align-items:center;padding:16px 34px;border:1.4px solid rgba(255,255,255,.17);color:#fff;font-family:var(--f-mono);font-size:clamp(12px, .9vw, 15.8px);line-height:1.55;letter-spacing:.18em;text-transform:uppercase;background:transparent;transition:all .35s ease;opacity:0;animation:fade .7s ease 1s forwards}
+.hero-btn:hover{background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.5)}
+
+/* ===== marquee ===== */
+.marquee{background:var(--navy);color:var(--cream);padding:24px 0;overflow:hidden;border-top:1px solid var(--navy);border-bottom:1px solid var(--navy);position:relative}
+.marquee-track{display:flex;gap:56px;white-space:nowrap;animation:scroll 42s linear infinite;font-family:var(--f-serif);font-size:44px;font-weight:300;font-variation-settings:"opsz" 144}
+.marquee-track span{display:inline-flex;align-items:center;gap:56px}
+.marquee-track span::after{content:"◆";color:var(--cream);opacity:.45;font-size:11px;margin-left:56px;vertical-align:middle}
+.marquee-track i{font-style:italic;color:var(--cream);opacity:.75}
+@keyframes scroll{to{transform:translateX(-50%)}}
+@keyframes swipe-nudge{0%,100%{transform:translateX(0);opacity:.55}50%{transform:translateX(6px);opacity:1}}
+
+/* ===== intro / philosophy ===== */
+.intro{background:var(--cream);padding:clamp(100px,11vw,160px) var(--edge) clamp(80px,9vw,130px);position:relative;overflow:hidden}
+.intro::before{content:"02";position:absolute;top:clamp(40px,4vw,60px);right:clamp(40px,5vw,80px);font-family:var(--f-serif);font-style:italic;font-weight:300;font-size:clamp(220px,22vw,340px);line-height:.8;letter-spacing:-.05em;color:var(--navy);opacity:.05;pointer-events:none;font-variation-settings:"opsz" 144,"WONK" 1;z-index:0}
+.intro-inner{max-width:1280px;margin:0 auto;display:grid;grid-template-columns:minmax(0,.35fr) minmax(0,1fr);gap:72px;align-items:start;position:relative;z-index:1}
+.intro-label{writing-mode:vertical-rl;transform:rotate(180deg);font-family:var(--f-mono);font-size:10.5px;letter-spacing:.3em;text-transform:uppercase;color:var(--muted);padding-left:20px;border-left:1px solid var(--line);align-self:start}
+.intro-copy .eyebrow{margin-bottom:28px}
+.intro-copy h2{font-family:var(--f-serif);font-weight:300;font-size:clamp(38px, 5.4vw, 82px);line-height:1.02;letter-spacing:-.02em;color:var(--ink);font-variation-settings:"opsz" 144}
+.intro-copy h2 i{color:var(--navy);font-weight:300;font-variation-settings:"opsz" 144,"SOFT" 80,"WONK" 1}
+.intro-copy .body{margin-top:48px;display:grid;grid-template-columns:1fr 1fr;gap:48px;max-width:960px;padding-top:40px;border-top:1px solid var(--line);position:relative}
+.intro-copy .body::before{content:"";position:absolute;top:-1px;left:0;width:64px;height:1px;background:var(--navy)}
+.intro-copy .body p{font-family:var(--f-serif);font-size:17px;line-height:1.65;color:var(--ink-2);font-variation-settings:"opsz" 14;margin:0}
+.intro-copy .body p em{font-style:italic;color:var(--ink);font-variation-settings:"opsz" 14,"SOFT" 60,"WONK" 1}
+.intro-copy .body p:first-child::first-letter{font-family:var(--f-serif);font-style:italic;font-size:74px;font-weight:300;float:left;line-height:.85;padding:8px 12px 0 0;color:var(--navy);font-variation-settings:"opsz" 144,"SOFT" 80,"WONK" 1}
+.intro-meta{margin-top:56px;display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);max-width:960px}
+.intro-meta .m{background:var(--cream);padding:20px 24px;display:flex;flex-direction:column;gap:6px;transition:background .3s}
+.intro-meta .m:hover{background:var(--paper)}
+.intro-meta .mk{font-family:var(--f-mono);font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted)}
+.intro-meta .mv{font-family:var(--f-serif);font-weight:300;font-size:28px;line-height:1;letter-spacing:-.01em;color:var(--ink);font-variation-settings:"opsz" 144}
+.intro-meta .mv i{font-style:italic;color:var(--navy);font-variation-settings:"opsz" 144,"SOFT" 80,"WONK" 1}
+.intro-meta .mv sup{font-family:var(--f-mono);font-size:10px;font-weight:500;letter-spacing:.14em;color:var(--navy);top:-1.2em;margin-left:4px}
+.intro-copy .sign{margin-top:56px;display:grid;grid-template-columns:auto auto 1fr auto;gap:24px;align-items:center;max-width:960px}
+.intro-copy .sign svg{width:72px;height:36px;color:var(--navy);display:block}
+.intro-copy .sign .who{font-family:var(--f-serif);font-style:italic;font-size:18px;color:var(--ink);font-variation-settings:"opsz" 72,"SOFT" 80,"WONK" 1}
+.intro-copy .sign .role{font-family:var(--f-mono);font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);margin-top:4px}
+.intro-copy .sign .l{height:1px;background:var(--line)}
+.intro-copy .sign .d{font-family:var(--f-mono);font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);text-align:right}
+.intro-copy .sign .d em{font-style:normal;color:var(--ink);display:block;margin-bottom:3px;font-family:var(--f-serif);font-size:14px;letter-spacing:0;text-transform:none}
+
+/* ===== services ===== */
+.services{background:var(--paper);color:var(--ink);padding:clamp(100px,12vw,160px) var(--edge) clamp(80px,9vw,120px);border-top:1px solid var(--line);border-bottom:1px solid var(--line);position:relative;overflow:hidden}
+.services::before{content:"";position:absolute;inset:0;pointer-events:none;opacity:.4;
+  background:radial-gradient(900px 500px at 85% 0%, rgba(17,50,88,.05), transparent 60%),
+             radial-gradient(700px 500px at 5% 100%, rgba(17,50,88,.04), transparent 60%)}
+.services-head{display:grid;grid-template-columns:auto 1fr auto;gap:48px;align-items:end;max-width:1440px;margin:0 auto clamp(48px,6vw,88px);position:relative;z-index:1}
+.services-head .label{font-family:var(--f-mono);font-size:10.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--muted)}
+.services-head .label em{font-style:normal;color:var(--navy)}
+.services-head h3{font-family:var(--f-serif);font-weight:300;font-size:clamp(40px, 5.2vw, 76px);line-height:.98;letter-spacing:-.02em;color:var(--ink);font-variation-settings:"opsz" 144}
+.services-head h3 i{color:var(--navy)}
+.services-head .sub{max-width:320px;text-align:right;font-family:var(--f-mono);font-size:11.5px;line-height:1.65;color:var(--ink-2);letter-spacing:.02em}
+
+.services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0;max-width:1440px;margin:0 auto;border:1px solid var(--line);background:var(--paper);position:relative;z-index:1}
+.svc{background:var(--paper);padding:clamp(36px,4vw,56px) clamp(28px,3vw,44px);position:relative;overflow:hidden;transition:background .45s cubic-bezier(.2,.7,.1,1),color .45s;min-height:clamp(360px,30vw,440px);display:flex;flex-direction:column;justify-content:space-between;border-right:1px solid var(--line);isolation:isolate}
+.svc:last-child{border-right:0}
+.svc::before{content:attr(data-num);position:absolute;top:-24px;right:-14px;font-family:var(--f-serif);font-weight:300;font-size:clamp(180px,18vw,260px);line-height:.8;letter-spacing:-.05em;color:rgba(17,50,88,.06);pointer-events:none;z-index:0;transition:color .45s;font-variation-settings:"opsz" 144,"WONK" 1;font-style:italic}
+.svc>*{position:relative;z-index:1}
+.svc:hover{background:var(--navy);color:var(--cream)}
+.svc:hover::before{color:rgba(236,234,229,.08)}
+.svc:hover .svc-num{color:rgba(236,234,229,.7)}
+.svc:hover .svc-num .d{background:var(--cream)}
+.svc:hover .svc-name i{color:rgba(236,234,229,.55)}
+.svc:hover .svc-desc{color:rgba(236,234,229,.72)}
+.svc:hover .svc-meta{border-top-color:rgba(236,234,229,.2)}
+.svc:hover .svc-meta .mk{color:rgba(236,234,229,.5)}
+.svc:hover .svc-meta .mv{color:var(--cream)}
+.svc:hover .svc-arr{border-color:var(--cream);color:var(--cream)}
+.svc:hover .svc-arr .ln{background:var(--cream)}
+.svc-top{display:flex;flex-direction:column}
+.svc-num{font-family:var(--f-mono);font-size:10.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--navy);transition:color .45s;display:inline-flex;align-items:center;gap:10px}
+.svc-num .d{width:6px;height:6px;background:var(--navy);display:inline-block;transition:background .45s}
+.svc-name{margin-top:clamp(36px,4.4vw,72px);font-family:var(--f-serif);font-weight:300;font-size:clamp(36px,3.6vw,54px);line-height:.96;letter-spacing:-.02em;font-variation-settings:"opsz" 144}
+.svc-name i{color:var(--navy);transition:color .45s;font-style:italic;font-variation-settings:"opsz" 144,"SOFT" 40,"WONK" 1}
+.svc-desc{margin-top:18px;font-family:var(--f-serif);font-size:15px;line-height:1.55;color:var(--ink-2);max-width:32ch;font-variation-settings:"opsz" 14}
+.svc-meta{margin-top:24px;padding-top:20px;border-top:1px solid var(--line);display:grid;grid-template-columns:1fr 1fr;gap:16px 24px;transition:border-color .45s}
+.svc-meta .mr{display:flex;flex-direction:column;gap:5px}
+.svc-meta .mk{font-family:var(--f-mono);font-size:9.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--muted);transition:color .45s}
+.svc-meta .mv{font-family:var(--f-mono);font-size:12px;color:var(--ink);letter-spacing:.04em;transition:color .45s}
+.svc-arr{margin-top:28px;display:inline-flex;align-items:center;gap:10px;padding-bottom:6px;border-bottom:1px solid var(--navy);font-family:var(--f-mono);font-size:10.5px;letter-spacing:.22em;text-transform:uppercase;transition:all .45s;color:var(--navy);align-self:flex-start}
+.svc-arr .ln{width:20px;height:1px;background:var(--navy);position:relative;transition:background .45s,width .3s}
+.svc-arr .ln::after{content:"";position:absolute;right:0;top:-3px;width:6px;height:6px;border-top:1px solid currentColor;border-right:1px solid currentColor;transform:rotate(45deg)}
+.svc:hover .svc-arr .ln{width:30px}
+
+/* ===== offer carousel: horizontal scroll-snap slider ===== */
+.offer{padding:clamp(80px,9vw,140px) 0 clamp(100px,10vw,160px);background:var(--paper);position:relative;overflow:hidden}
+.offer-head{max-width:1440px;margin:0 auto clamp(40px,4.4vw,72px);padding:0 var(--edge);display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:40px}
+.offer-head .l{font-family:var(--f-mono);font-size:10.5px;letter-spacing:.24em;text-transform:uppercase;color:var(--muted);white-space:nowrap}
+.offer-head .l em{font-style:normal;color:var(--navy);margin-right:10px}
+.offer-head .h{font-family:var(--f-serif);font-weight:300;font-size:clamp(20px,1.8vw,28px);line-height:1;letter-spacing:-.015em;color:var(--ink);font-variation-settings:"opsz" 144;text-align:center}
+.offer-head .h i{font-style:italic;color:var(--muted);font-variation-settings:"opsz" 144,"SOFT" 80,"WONK" 1}
+.offer-head .r{font-family:var(--f-mono);font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);text-align:right;white-space:nowrap}
+
+.offer-hint{display:none}
+.offer-stage{position:relative;width:100%;overflow-x:auto;overflow-y:visible;scroll-snap-type:x mandatory;scrollbar-width:none;-ms-overflow-style:none;-webkit-overflow-scrolling:touch}
+.offer-stage::-webkit-scrollbar{display:none}
+.offer-track{display:flex;gap:clamp(44px,4.4vw,76px);padding:0 max(var(--edge), calc((100vw - min(1160px, 78vw)) / 2))}
+.offer-slide{flex:0 0 min(1160px, 78vw);scroll-snap-align:center;display:grid;grid-template-columns:1.55fr 1fr;gap:clamp(40px,4vw,68px);align-items:center;opacity:.22;transition:opacity .6s ease}
+.offer-slide.active{opacity:1}
+.offer-slide .offer-img{position:relative;aspect-ratio:910/595;overflow:visible;background:transparent;filter:drop-shadow(0 44px 60px rgba(12,11,9,.28))}
+.offer-slide .offer-img img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;object-position:center;display:block;transition:transform 1.2s ease}
+.offer-slide.active .offer-img img{transform:scale(1.015)}
+.offer-copy{display:flex;flex-direction:column;gap:clamp(24px,2.6vw,34px);align-items:flex-start;max-width:420px;padding:clamp(20px,2vw,32px) 0}
+.offer-copy .eyebrow{display:flex;flex-direction:column;gap:5px;font-family:var(--f-mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);line-height:1.55}
+.offer-copy .eyebrow .k{color:var(--navy);letter-spacing:.2em}
+.offer-copy h3{font-family:var(--f-serif);font-weight:300;font-size:clamp(32px,3.6vw,48px);line-height:.99;letter-spacing:-.025em;color:var(--ink);font-variation-settings:"opsz" 144;margin:0}
+.offer-copy h3 i{font-style:italic;color:var(--muted);font-variation-settings:"opsz" 144,"SOFT" 80,"WONK" 1}
+.offer-copy .btn-ghost{display:inline-flex;align-items:center;justify-content:center;padding:18px 30px;border:1px solid rgba(12,11,9,.85);color:var(--ink);font-family:var(--f-mono);font-size:11px;letter-spacing:.18em;text-transform:uppercase;transition:background .3s,color .3s;gap:14px;background:transparent;text-decoration:none}
+.offer-copy .btn-ghost:hover{background:var(--ink);color:var(--cream)}
+
+.offer-foot{max-width:1440px;margin:clamp(40px,4vw,60px) auto 0;padding:0 var(--edge);display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:24px}
+.offer-counter{font-family:var(--f-mono);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted)}
+.offer-counter em{font-style:normal;color:var(--ink)}
+.offer-dots{display:flex;gap:12px;align-items:center;justify-content:center}
+.offer-dots .dot{width:8px;height:8px;border-radius:50%;background:rgba(12,11,9,.18);border:0;cursor:pointer;padding:0;transition:background .3s,transform .3s}
+.offer-dots .dot.active{background:var(--ink);transform:scale(1.25)}
+.offer-arrows{display:flex;gap:14px;justify-content:flex-end;align-items:center}
+.offer-arrows button{background:transparent;border:0;cursor:pointer;padding:10px 12px;color:var(--ink);font-family:var(--f-mono);font-size:22px;letter-spacing:.14em;transition:opacity .3s;line-height:1}
+.offer-arrows button:hover{opacity:.55}
+.offer-arrows button:disabled{opacity:.22;cursor:not-allowed}
+@media (max-width:900px){
+  .services-head{grid-template-columns:1fr;gap:24px;align-items:flex-start}
+  .services-head .sub{text-align:left;max-width:none}
+  .services-grid{grid-template-columns:1fr}
+  .svc{border-right:0;border-bottom:1px solid var(--line)}
+  .svc:last-child{border-bottom:0}
+  .offer-slide{grid-template-columns:1fr;gap:clamp(24px,3vw,40px)}
+  .offer-copy{max-width:none}
+  .offer-slide .offer-img{aspect-ratio:4/3}
+}
+
+/* ===== realizacje (sticky-stack) ===== */
+.works{background:var(--cream);padding:0;position:relative}
+.works-head{display:grid;grid-template-columns:auto 1fr auto;gap:48px;align-items:end;padding:140px var(--edge) 56px;border-bottom:1px solid var(--line)}
+.works-head .label{font-family:var(--f-mono);font-size:10.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--muted)}
+.works-head h3{font-family:var(--f-serif);font-weight:300;font-size:clamp(40px, 5.2vw, 76px);line-height:.98;letter-spacing:-.02em;font-variation-settings:"opsz" 144}
+.works-head h3 i{color:var(--navy)}
+.works-head .meta{text-align:right;font-family:var(--f-mono);font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted)}
+.works-head .meta em{font-style:normal;color:var(--navy);display:block;margin-top:4px;font-size:13px;letter-spacing:.1em}
+
+.works-stack{position:relative;background:var(--cream)}
+.wc{position:sticky;top:0;height:100vh;display:grid;grid-template-columns:minmax(0,68%) minmax(0,32%);background:var(--cream);border-bottom:1px solid var(--line);--dim:0;isolation:isolate}
+.wc::after{content:"";position:absolute;inset:0;background:rgba(10,14,22,.78);opacity:var(--dim);pointer-events:none;transition:opacity .2s linear;z-index:5}
+.wc-photo{position:relative;overflow:hidden;background:#0A0A0A}
+.wc-photo img{width:100%;height:100%;object-fit:cover;display:block;transform:scale(1.02);transition:transform 1.2s cubic-bezier(.2,.7,.1,1)}
+.wc:hover .wc-photo img{transform:scale(1.06)}
+.wc-photo .num{position:absolute;top:28px;left:28px;padding:6px 12px;background:rgba(12,11,9,.55);font-family:var(--f-mono);font-size:10.5px;letter-spacing:.22em;text-transform:uppercase;backdrop-filter:blur(4px);color:var(--cream);border:1px solid rgba(236,234,229,.18);z-index:2}
+.wc-photo .year{position:absolute;top:28px;right:28px;font-family:var(--f-serif);font-style:italic;font-size:22px;color:var(--cream);z-index:2;font-variation-settings:"opsz" 72}
+.wc-photo::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(12,11,9,.18) 0%,transparent 30%,rgba(12,11,9,.35) 100%);pointer-events:none}
+
+.wc-info{padding:clamp(48px,5vw,88px) clamp(32px,3.4vw,64px);display:flex;flex-direction:column;justify-content:center;background:var(--cream);border-left:1px solid var(--line);position:relative}
+.wc-info .tag{font-family:var(--f-mono);font-size:10.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--navy)}
+.wc-info h4{margin:24px 0 20px;font-family:var(--f-serif);font-weight:300;font-size:clamp(38px,3.6vw,64px);line-height:.95;letter-spacing:-.02em;color:var(--ink);font-variation-settings:"opsz" 144}
+.wc-info h4 i{color:var(--navy);font-style:italic}
+.wc-info p{font-family:var(--f-serif);font-size:16px;line-height:1.55;color:var(--ink-2);max-width:40ch;font-variation-settings:"opsz" 14}
+.wc-info .sol-label{margin-top:40px;font-family:var(--f-mono);font-size:9.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--muted)}
+.wc-info .sol{list-style:none;margin-top:16px;display:flex;flex-direction:column;gap:10px}
+.wc-info .sol li{display:grid;grid-template-columns:14px 1fr;gap:14px;align-items:center;font-family:var(--f-mono);font-size:12px;color:var(--ink);letter-spacing:.04em}
+.wc-info .sol li::before{content:"";width:10px;height:10px;background:var(--navy);display:block;align-self:center}
+.wc-info .sol li.ghost::before{background:transparent;border:1px solid var(--muted);opacity:.5}
+.wc-info .sol li.ghost{color:var(--muted)}
+.wc-info .more{margin-top:44px;font-family:var(--f-mono);font-size:10.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--navy);display:inline-flex;align-items:center;gap:12px;align-self:flex-start;padding-bottom:4px;border-bottom:1px solid rgba(17,50,88,.3);transition:border-color .3s}
+.wc-info .more:hover{border-bottom-color:var(--navy)}
+.wc-info .idx{position:absolute;top:clamp(32px,3vw,56px);right:clamp(24px,2.4vw,48px);font-family:var(--f-mono);font-size:10px;letter-spacing:.22em;color:var(--muted)}
+
+.works-foot{padding:72px var(--edge);display:flex;justify-content:center;background:var(--cream);border-top:1px solid var(--line);font-family:var(--f-mono);font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted)}
+.works-foot .cta{color:var(--navy);padding-bottom:2px;border-bottom:1px solid rgba(17,50,88,.3);transition:border-color .35s}
+.works-foot .cta:hover{border-bottom-color:var(--navy)}
+
+/* ===== showroom ===== */
+.showroom{background:var(--navy);color:var(--cream);position:relative;overflow:hidden}
+.showroom-inner{display:grid;grid-template-columns:1fr 1fr;min-height:620px}
+.showroom-vis{position:relative;background:#0A1D33;overflow:hidden;border-right:1px solid var(--line-n)}
+.showroom-vis::before{content:"";position:absolute;inset:0;z-index:2;
+  background:
+    radial-gradient(600px 400px at 25% 20%, rgba(236,234,229,.1), transparent 60%),
+    radial-gradient(700px 500px at 85% 90%, rgba(236,234,229,.06), transparent 60%)}
+.showroom-photo{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:1;filter:saturate(.95) contrast(1.02);z-index:1}
+.showroom-vis::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,29,51,.12) 0%,rgba(10,29,51,.25) 55%,rgba(10,29,51,.82) 100%);pointer-events:none;z-index:2}
+.showroom-placeholder-tag{position:absolute;top:32px;right:32px;font-family:var(--f-mono);font-size:9.5px;letter-spacing:.22em;text-transform:uppercase;color:rgba(236,234,229,.55);border:1px solid rgba(236,234,229,.25);padding:5px 10px;z-index:4;background:rgba(10,29,51,.4);backdrop-filter:blur(6px)}
+.showroom-vis .showroom-frame{position:absolute;inset:0;width:100%;height:100%;opacity:.8;z-index:2}
+.showroom-vis .chip,.showroom-vis h3{z-index:3}
+.showroom-vis .chip{position:absolute;top:32px;left:32px;display:inline-flex;align-items:center;gap:10px;padding:8px 14px;background:rgba(10,29,51,.6);border:1px solid rgba(236,234,229,.25);font-family:var(--f-mono);font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;backdrop-filter:blur(6px);z-index:4}
+.showroom-vis .chip .d{width:6px;height:6px;border-radius:50%;background:var(--cream);animation:pulse-l 2.4s infinite}
+@keyframes pulse-l{0%{box-shadow:0 0 0 0 rgba(236,234,229,.5)}70%{box-shadow:0 0 0 9px rgba(236,234,229,0)}100%{box-shadow:0 0 0 0 rgba(236,234,229,0)}}
+.showroom-vis h3{position:absolute;left:32px;right:32px;bottom:32px;font-family:var(--f-serif);font-weight:300;font-size:clamp(72px, 10vw, 164px);line-height:.85;letter-spacing:-.03em;color:var(--cream);z-index:4;font-variation-settings:"opsz" 144;text-shadow:0 6px 40px rgba(10,29,51,.45)}
+.showroom-vis h3 i{color:var(--cream);opacity:.6;font-style:italic}
+
+.showroom-copy{padding:64px var(--edge) 56px 64px;display:flex;flex-direction:column;justify-content:center}
+.showroom-copy .eyebrow{color:var(--cream);margin-bottom:28px}
+.showroom-copy .eyebrow::before{background:var(--cream)}
+.showroom-copy h4{font-family:var(--f-serif);font-weight:300;font-size:clamp(34px, 3.6vw, 52px);line-height:1;letter-spacing:-.015em;color:var(--cream);font-variation-settings:"opsz" 72}
+.showroom-copy h4 i{color:var(--cream);opacity:.65;font-style:italic}
+.showroom-copy ul{list-style:none;margin-top:40px}
+.showroom-copy li{display:grid;grid-template-columns:40px 1fr auto;gap:24px;padding:16px 0;border-bottom:1px solid var(--line-n);align-items:baseline}
+.showroom-copy li .n{font-family:var(--f-mono);font-size:11px;letter-spacing:.2em;color:var(--cream);opacity:.65}
+.showroom-copy li .t{font-family:var(--f-serif);font-size:19px;font-weight:400;line-height:1.2;font-variation-settings:"opsz" 14}
+.showroom-copy li .v{font-family:var(--f-mono);font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:rgba(236,234,229,.55)}
+.showroom-copy .btn{margin-top:40px;align-self:flex-start;border-color:var(--cream);color:var(--cream)}
+.showroom-copy .btn:hover{background:var(--cream);color:var(--navy)}
+
+/* ===== process ===== */
+.process{padding:140px var(--edge);background:var(--cream);position:relative;border-bottom:1px solid var(--line)}
+.process-head{max-width:1200px;margin:0 auto 120px;text-align:center}
+.process-head h2{font-family:var(--f-serif);font-weight:300;font-size:clamp(40px, 5.2vw, 76px);line-height:.98;letter-spacing:-.02em;font-variation-settings:"opsz" 144}
+.process-head h2 i{color:var(--navy);font-style:italic;font-variation-settings:"opsz" 144,"SOFT" 80,"WONK" 1}
+
+.process-meta{max-width:1200px;margin:0 auto 96px;text-align:center;font-family:var(--f-mono);font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--muted)}
+.process-meta em{font-style:normal;color:var(--ink);margin:0 8px}
+
+.timeline{position:relative;max-width:1440px;margin:0 auto;padding:0 clamp(20px,3vw,40px)}
+.timeline-line{position:absolute;left:clamp(20px,3vw,40px);right:clamp(20px,3vw,40px);top:50%;height:1px;background:linear-gradient(to right,transparent 0%,rgba(17,50,88,.35) 5%,rgba(17,50,88,.35) 95%,transparent 100%);transform:translateY(-.5px);z-index:0}
+.timeline-grid{display:grid;grid-template-columns:repeat(6,1fr);position:relative;z-index:1;min-height:680px;align-items:center}
+.tl-step{position:relative;display:flex;flex-direction:column;align-items:center;padding:0 14px;height:100%}
+.tl-step .tl-node{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:11px;height:11px;border-radius:50%;background:var(--navy);box-shadow:0 0 0 5px var(--cream),0 0 0 6px rgba(17,50,88,.4);z-index:2;transition:transform .3s ease,box-shadow .3s ease}
+.tl-step:hover .tl-node{transform:translate(-50%,-50%) scale(1.15);box-shadow:0 0 0 6px var(--cream),0 0 0 7px var(--navy)}
+.tl-step .tl-stem{position:absolute;left:50%;width:1px;background:rgba(17,50,88,.28);transform:translateX(-.5px);z-index:1}
+.tl-step.up .tl-stem{bottom:50%;height:clamp(56px,6vw,84px)}
+.tl-step.down .tl-stem{top:50%;height:clamp(56px,6vw,84px)}
+.tl-step .tl-card{position:absolute;left:50%;transform:translateX(-50%);width:min(250px,100%);text-align:center;display:flex;flex-direction:column;align-items:center;gap:12px}
+.tl-step.up .tl-card{bottom:calc(50% + clamp(70px,7vw,100px))}
+.tl-step.down .tl-card{top:calc(50% + clamp(70px,7vw,100px))}
+.tl-step .tl-num{font-family:var(--f-serif);font-size:clamp(54px,4.6vw,78px);font-weight:300;line-height:.9;letter-spacing:-.03em;color:var(--navy);font-variation-settings:"opsz" 144;display:flex;align-items:flex-start;gap:4px}
+.tl-step .tl-num sup{font-family:var(--f-mono);font-size:9px;font-weight:500;letter-spacing:.18em;color:var(--muted);top:6px;position:relative}
+.tl-step .tl-t{font-family:var(--f-serif);font-size:clamp(19px,1.5vw,22px);font-weight:400;line-height:1.1;letter-spacing:-.015em;color:var(--ink);font-variation-settings:"opsz" 24;margin-top:-4px}
+.tl-step .tl-dur{font-family:var(--f-mono);font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--navy);padding:5px 10px;border:1px solid var(--line);border-radius:999px;background:var(--paper)}
+.tl-step .tl-desc{font-family:var(--f-mono);font-size:11px;line-height:1.55;color:var(--ink-2);max-width:22ch}
+
+/* ===== testimonials (classic, slider) ===== */
+.testimonial{padding:clamp(100px,11vw,160px) 0 clamp(80px,8vw,120px);background:var(--paper);color:var(--ink);position:relative;border-bottom:1px solid var(--line);overflow:hidden}
+.t-rail{overflow-x:auto;overflow-y:hidden;scroll-snap-type:x mandatory;scroll-behavior:smooth;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+.t-rail::-webkit-scrollbar{display:none}
+.t-track{display:grid;grid-auto-flow:column;grid-auto-columns:100vw}
+.t-card{scroll-snap-align:start;padding:0 var(--edge);display:flex;align-items:center;justify-content:center;min-height:0}
+.t-card .inner{max-width:1100px;margin:0 auto;text-align:center;position:relative;width:100%}
+.t-card .mk{font-family:var(--f-serif);font-style:italic;font-size:160px;line-height:.8;color:var(--navy);opacity:.22;font-variation-settings:"opsz" 144}
+.t-card blockquote{margin:-48px 0 0;font-family:var(--f-serif);font-style:italic;font-weight:300;font-size:clamp(26px,3.4vw,46px);line-height:1.2;letter-spacing:-.015em;color:var(--ink);font-variation-settings:"opsz" 72;position:relative;z-index:1}
+.t-card blockquote em{font-style:normal;color:var(--navy)}
+.t-card .who{margin-top:48px;display:flex;justify-content:center;align-items:center;gap:16px}
+.t-card .av{width:48px;height:48px;border-radius:50%;background:linear-gradient(135deg,var(--navy),#1e5283);color:var(--cream);font-family:var(--f-mono);display:grid;place-items:center;font-size:14px;letter-spacing:.05em}
+.t-card .who .name{font-family:var(--f-serif);font-size:18px;font-weight:500}
+.t-card .who .role{font-family:var(--f-mono);font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);margin-top:4px}
+.t-card .stars{margin-top:28px;color:var(--navy);letter-spacing:.4em;font-size:12px}
+
+.t-nav{max-width:1100px;margin:clamp(56px,6vw,80px) auto 0;padding:0 var(--edge);display:flex;align-items:center;justify-content:center;gap:32px}
+.t-nav .dots{display:flex;gap:8px}
+.t-nav .dot{width:24px;height:1px;background:var(--line);cursor:pointer;transition:background .3s,width .3s;border:none;padding:0}
+.t-nav .dot.active{background:var(--navy);width:48px}
+.t-nav .arr{width:42px;height:42px;border:1px solid var(--line);background:transparent;color:var(--ink);cursor:pointer;display:grid;place-items:center;transition:background .3s,color .3s,border-color .3s}
+.t-nav .arr:hover{background:var(--navy);color:var(--cream);border-color:var(--navy)}
+.t-nav .arr:disabled{opacity:.3;cursor:not-allowed}
+.t-nav .arr:disabled:hover{background:transparent;color:var(--ink);border-color:var(--line)}
+.t-nav .arr svg{width:14px;height:14px;stroke:currentColor;stroke-width:1.2;fill:none}
+.t-nav .pos{font-family:var(--f-mono);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);min-width:72px;text-align:center}
+.t-nav .pos em{font-style:normal;color:var(--navy);font-family:var(--f-serif);font-size:18px;letter-spacing:0;margin-right:6px}
+
+/* ===== reels (social media, tiktok-style) ===== */
+.reels{background:var(--ink);color:var(--cream);padding:clamp(80px,9vw,140px) var(--edge) clamp(80px,8vw,120px);position:relative;overflow:hidden;isolation:isolate}
+.reels::before{content:"";position:absolute;inset:0;pointer-events:none;opacity:.35;z-index:0;
+  background:
+    radial-gradient(900px 500px at 10% 0%, rgba(17,50,88,.5), transparent 60%),
+    radial-gradient(800px 600px at 95% 110%, rgba(17,50,88,.35), transparent 55%)}
+.reels-head{display:flex;flex-direction:column;gap:28px;align-items:center;text-align:center;max-width:820px;margin:0 auto clamp(48px,5vw,80px);position:relative;z-index:1}
+.reels-head .l h2{font-family:var(--f-serif);font-weight:300;font-size:clamp(44px,5.4vw,80px);line-height:.98;letter-spacing:-.03em;color:var(--cream);font-variation-settings:"opsz" 144}
+.reels-head .l h2 i{color:rgba(236,234,229,.55);font-style:italic}
+.reels-head .r{display:flex;flex-direction:column;gap:22px;align-items:center}
+.reels-head .r p{font-family:var(--f-serif);font-size:16.5px;line-height:1.55;color:rgba(236,234,229,.72);max-width:52ch;font-variation-settings:"opsz" 14;text-align:center}
+.reels-head .r .socials{display:flex;gap:18px;flex-wrap:wrap;justify-content:center}
+.reels-head .r .socials a{display:inline-flex;align-items:center;gap:10px;padding:11px 18px;border:1px solid rgba(236,234,229,.2);font-family:var(--f-mono);font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--cream);transition:all .3s}
+.reels-head .r .socials a:hover{background:rgba(236,234,229,.08);border-color:rgba(236,234,229,.5)}
+.reels-head .r .socials a .dot{width:6px;height:6px;border-radius:50%;background:var(--cream);opacity:.7}
+.reels-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(20px,2.2vw,36px);max-width:1080px;margin:0 auto;position:relative;z-index:1}
+.reel{position:relative;aspect-ratio:9/16;overflow:hidden;background:#000;border:1px solid rgba(236,234,229,.08);cursor:pointer;transition:transform .5s cubic-bezier(.2,.7,.1,1)}
+.reel:hover{transform:translateY(-6px)}
+.reel video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
+.reel .grain{position:absolute;inset:0;pointer-events:none;background:linear-gradient(180deg,rgba(12,11,9,.0) 0%,rgba(12,11,9,.25) 55%,rgba(12,11,9,.88) 100%);z-index:2}
+.reel .top{position:absolute;top:16px;left:16px;right:16px;display:flex;align-items:center;justify-content:flex-start;z-index:3}
+.reel .top .live{display:inline-flex;align-items:center;gap:7px;font-family:var(--f-mono);font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--cream);background:rgba(196,60,60,.88);padding:6px 11px}
+.reel .top .live .d{width:5px;height:5px;border-radius:50%;background:var(--cream);animation:pulse-l 2s infinite}
+.reel .bottom{position:absolute;left:20px;right:20px;bottom:20px;z-index:3}
+.reel .bottom .cap{font-family:var(--f-serif);font-weight:400;font-size:16px;line-height:1.35;color:var(--cream);font-variation-settings:"opsz" 14;max-width:24ch;text-shadow:0 1px 12px rgba(12,11,9,.55),0 0 2px rgba(12,11,9,.7)}
+.reel .bottom .cap i{font-style:italic;color:rgba(236,234,229,.8)}
+.reel .sound{position:absolute;top:16px;right:16px;width:34px;height:34px;border-radius:50%;background:rgba(12,11,9,.55);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);border:1px solid rgba(236,234,229,.35);color:var(--cream);display:flex;align-items:center;justify-content:center;z-index:4;cursor:pointer;padding:0;transition:background .3s,border-color .3s,transform .3s}
+.reel .sound svg{width:15px;height:15px}
+.reel .sound .ico-on{display:none}
+.reel.is-unmuted .sound .ico-off{display:none}
+.reel.is-unmuted .sound .ico-on{display:block}
+.reel.is-unmuted .sound{background:rgba(236,234,229,.92);color:var(--ink);border-color:transparent}
+.reel .sound:hover{background:rgba(12,11,9,.78);border-color:rgba(236,234,229,.6)}
+.reel.is-unmuted .sound:hover{background:var(--cream)}
+.reel.no-audio .sound{display:none}
+.reels-foot{display:flex;gap:22px;justify-content:center;flex-wrap:wrap;max-width:1080px;margin:clamp(40px,4vw,64px) auto 0;padding-top:36px;border-top:1px solid rgba(236,234,229,.1);position:relative;z-index:1}
+.reels-foot .c{display:inline-flex;align-items:center;gap:12px;font-family:var(--f-mono);font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--cream);padding:13px 22px;border:1px solid rgba(236,234,229,.25);transition:all .3s}
+.reels-foot .c:hover{background:rgba(236,234,229,.06);border-color:rgba(236,234,229,.55)}
+.reels-foot .c .dot{width:6px;height:6px;border-radius:50%;background:var(--cream);opacity:.7}
+@media (max-width:900px){
+  .reels-grid{grid-template-columns:1fr;max-width:440px}
+}
+
+/* ===== stats ===== */
+.stats{display:grid;grid-template-columns:repeat(4,1fr);background:var(--cream);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.stat{padding:56px 32px;border-right:1px solid var(--line);position:relative}
+.stat:last-child{border-right:0}
+.stat .k{font-family:var(--f-mono);font-size:10.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--muted)}
+.stat .k em{font-style:normal;color:var(--navy)}
+.stat .n{margin-top:20px;font-family:var(--f-serif);font-weight:300;font-size:84px;line-height:.9;letter-spacing:-.03em;color:var(--ink);font-variation-settings:"opsz" 144}
+.stat .n sup{font-family:var(--f-mono);font-size:13px;font-weight:500;letter-spacing:.12em;color:var(--navy);top:-2.3em;margin-left:2px}
+.stat .d{margin-top:14px;font-family:var(--f-mono);font-size:12px;line-height:1.6;color:var(--ink-2);max-width:32ch;letter-spacing:.01em}
+
+/* ===== hero mask intro: MONZA logo keyhole grows into video reveal ===== */
+.hero-mask{position:absolute;inset:0;width:100%;height:100%;z-index:6;pointer-events:none;display:block;will-change:opacity}
+.hero-mask .mk-group{will-change:transform}
+.hero-hint{position:absolute;bottom:34px;left:50%;transform:translateX(-50%);z-index:7;font-family:var(--f-mono);font-size:10px;letter-spacing:.34em;text-transform:uppercase;color:rgba(236,234,229,.55);display:inline-flex;gap:12px;align-items:center;animation:hintpulse 2.2s ease-in-out infinite;pointer-events:none;white-space:nowrap}
+.hero-hint::before,.hero-hint::after{content:"";width:24px;height:1px;background:rgba(236,234,229,.32)}
+@keyframes hintpulse{0%,100%{opacity:.6;transform:translate(-50%,0)}50%{opacity:1;transform:translate(-50%,4px)}}
+
+/* ===== pin-cta: scroll-zoom photo before footer ===== */
+.pin-cta{position:relative;min-height:180vh;background:var(--navy-deep)}
+.pin-sticky{position:sticky;top:0;height:100vh;min-height:620px;overflow:hidden;background:var(--navy-deep)}
+.pin-sticky::before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at 50% 55%,rgba(27,74,125,.28) 0%,transparent 65%);pointer-events:none;z-index:0}
+.pin-eyebrow{position:absolute;top:clamp(28px,3vw,48px);left:50%;transform:translateX(-50%);font-family:var(--f-mono);font-size:10.5px;letter-spacing:.28em;text-transform:uppercase;color:rgba(236,234,229,.55);display:inline-flex;gap:14px;align-items:center;z-index:3;white-space:nowrap}
+.pin-eyebrow::before,.pin-eyebrow::after{content:"";width:40px;height:1px;background:rgba(236,234,229,.3)}
+.pin-img-box{position:absolute;inset:0;width:100%;height:100%;overflow:hidden;will-change:opacity;z-index:1}
+.pin-img-box img,.pin-img-box video{width:100%;height:100%;object-fit:cover;display:block;filter:saturate(.95) contrast(1.02);will-change:opacity}
+.pin-cta-overlay{position:absolute;inset:0;z-index:4;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:clamp(20px,2.2vw,32px);padding:clamp(60px,8vw,120px) clamp(24px,5vw,80px);text-align:center;color:var(--cream);opacity:0;will-change:opacity;pointer-events:none}
+.pin-cta-overlay>*{pointer-events:auto}
+.pin-cta-overlay .eyebrow{display:inline-flex;align-items:center;gap:14px;font-family:var(--f-mono);font-size:10.5px;letter-spacing:.28em;text-transform:uppercase;color:rgba(236,234,229,.65)}
+.pin-cta-overlay .eyebrow::before{content:"";width:32px;height:1px;background:rgba(236,234,229,.4)}
+.pin-cta-overlay h2{font-family:var(--f-serif);font-weight:300;font-size:clamp(56px,8.6vw,148px);line-height:.92;letter-spacing:-.03em;font-variation-settings:"opsz" 144;margin:0;background:linear-gradient(to bottom,#fff 0%,#F2EFE8 28%,#B9A687 70%,#7A6A4F 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent}
+.pin-cta-overlay h2 i{font-style:italic;font-variation-settings:"opsz" 144,"SOFT" 80,"WONK" 1}
+.pin-cta-overlay p{font-family:var(--f-serif);font-weight:300;font-size:clamp(17px,1.4vw,21px);line-height:1.55;color:rgba(236,234,229,.82);max-width:56ch;font-variation-settings:"opsz" 14;margin:0}
+.pin-cta-overlay .pair{display:flex;flex-wrap:wrap;gap:14px;margin-top:8px;justify-content:center}
+.pin-cta-overlay .btn{border-color:var(--cream);color:var(--cream)}
+.pin-cta-overlay .btn:hover{background:var(--cream);color:var(--navy)}
+.pin-cta-overlay .btn-solid{background:var(--cream);color:var(--navy);border-color:var(--cream)}
+.pin-cta-overlay .btn-solid:hover{background:transparent;color:var(--cream)}
+.pin-hint{position:absolute;bottom:28px;left:50%;transform:translateX(-50%);font-family:var(--f-mono);font-size:9.5px;letter-spacing:.32em;text-transform:uppercase;color:rgba(236,234,229,.4);display:inline-flex;gap:10px;align-items:center;z-index:3;pointer-events:none;animation:pinhint 2.4s ease-in-out infinite}
+.pin-hint::before,.pin-hint::after{content:"";width:22px;height:1px;background:rgba(236,234,229,.3)}
+@keyframes pinhint{0%,100%{opacity:.6;transform:translate(-50%,0)}50%{opacity:1;transform:translate(-50%,4px)}}
+
+/* ===== footer ===== */
+footer.foot{background:var(--navy-deep);color:rgba(236,234,229,.7);position:relative;overflow:hidden}
+footer.foot::before{content:"";position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(236,234,229,.2),transparent)}
+footer.foot::after{content:"";position:absolute;top:-20%;right:-10%;width:800px;height:800px;border-radius:50%;background:radial-gradient(circle,rgba(27,74,125,.28) 0%,transparent 60%);pointer-events:none}
+
+.foot-cta{position:relative;max-width:960px;margin:0 auto;padding:clamp(100px,11vw,160px) var(--edge) clamp(80px,8vw,120px);display:flex;justify-content:center;text-align:center;z-index:1}
+.foot-cta-head{display:flex;flex-direction:column;gap:clamp(24px,2.5vw,36px);align-items:center;text-align:center}
+.foot-cta-head .eyebrow{display:inline-flex;align-items:center;gap:14px;font-family:var(--f-mono);font-size:10.5px;letter-spacing:.28em;text-transform:uppercase;color:rgba(236,234,229,.55)}
+.foot-cta-head .eyebrow::before{content:"";width:32px;height:1px;background:rgba(236,234,229,.35)}
+.foot-cta-head h2{font-family:var(--f-serif);font-weight:300;font-size:clamp(56px,8vw,140px);line-height:.92;letter-spacing:-.03em;color:var(--cream);font-variation-settings:"opsz" 144;margin:0}
+.foot-cta-head h2 i{font-style:italic;color:var(--cream);opacity:.55;font-variation-settings:"opsz" 144,"SOFT" 80,"WONK" 1}
+.foot-cta-head p{font-family:var(--f-serif);font-weight:300;font-size:clamp(17px,1.4vw,20px);line-height:1.55;color:rgba(236,234,229,.72);max-width:52ch;font-variation-settings:"opsz" 14;margin:0}
+.foot-cta-head .pair{display:flex;flex-wrap:wrap;gap:14px;margin-top:12px;justify-content:center}
+.foot-cta-head .btn{border-color:var(--cream);color:var(--cream)}
+.foot-cta-head .btn:hover{background:var(--cream);color:var(--navy)}
+.foot-cta-head .btn-solid{background:var(--cream);color:var(--navy);border-color:var(--cream)}
+.foot-cta-head .btn-solid:hover{background:transparent;color:var(--cream)}
+
+.foot-cta-aside{position:relative;aspect-ratio:4/5;overflow:hidden;border:1px solid rgba(236,234,229,.12)}
+.foot-cta-aside img{width:100%;height:100%;object-fit:cover;display:block;filter:saturate(.95)}
+.foot-cta-aside::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,29,51,0) 50%,rgba(10,29,51,.35));pointer-events:none}
+.foot-cta-aside .plate{position:absolute;top:20px;left:20px;right:20px;display:flex;justify-content:space-between;align-items:flex-start;font-family:var(--f-mono);font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:rgba(236,234,229,.85)}
+.foot-cta-aside .plate .t{border:1px solid rgba(236,234,229,.3);padding:5px 10px;background:rgba(10,29,51,.4);backdrop-filter:blur(6px)}
+.foot-cta-aside .caption{position:absolute;left:20px;right:20px;bottom:20px;display:flex;justify-content:space-between;align-items:flex-end;font-family:var(--f-mono);font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:rgba(236,234,229,.7)}
+.foot-cta-aside .caption em{font-style:normal;color:var(--cream);font-family:var(--f-serif);font-size:14px;letter-spacing:-.005em;text-transform:none;font-variation-settings:"opsz" 14}
+
+.foot-grid{position:relative;z-index:1;max-width:1440px;margin:0 auto;padding:clamp(48px,5vw,72px) var(--edge) clamp(48px,5vw,72px);display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:clamp(40px,4vw,64px);border-top:1px solid rgba(236,234,229,.1)}
+.foot-brand{display:flex;flex-direction:column;gap:24px}
+.foot-brand .f-brand-mark{height:40px;width:auto;color:var(--cream)}
+.foot-brand .ad{font-family:var(--f-mono);font-size:11.5px;letter-spacing:.08em;line-height:1.8;color:rgba(236,234,229,.55)}
+.foot-brand .meta{display:flex;gap:20px;margin-top:4px;padding-top:20px;border-top:1px solid rgba(236,234,229,.1);font-family:var(--f-mono);font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:rgba(236,234,229,.5)}
+.foot-brand .meta em{font-style:normal;color:var(--cream);display:block;margin-bottom:3px;font-family:var(--f-serif);font-size:16px;letter-spacing:-.01em;text-transform:none;font-variation-settings:"opsz" 14}
+
+.foot-col h5{font-family:var(--f-mono);font-size:10px;letter-spacing:.28em;text-transform:uppercase;color:rgba(236,234,229,.45);margin:0 0 24px;padding-bottom:14px;border-bottom:1px solid rgba(236,234,229,.1)}
+.foot-col ul{list-style:none;margin:0;padding:0;display:grid;gap:12px}
+.foot-col ul a{font-family:var(--f-serif);font-weight:300;font-size:16px;color:rgba(236,234,229,.82);transition:color .3s,transform .3s;letter-spacing:-.005em;font-variation-settings:"opsz" 14;display:inline-block}
+.foot-col ul a:hover{color:var(--cream);transform:translateX(3px)}
+
+.foot-bar{position:relative;z-index:1;max-width:1440px;margin:0 auto;padding:26px var(--edge) 30px;display:grid;grid-template-columns:1fr auto 1fr;gap:24px;border-top:1px solid rgba(236,234,229,.08);font-family:var(--f-mono);font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:rgba(236,234,229,.38);align-items:center}
+.foot-bar .c{text-align:center;display:flex;gap:18px;align-items:center;justify-content:center}
+.foot-bar .c .ln{width:24px;height:1px;background:rgba(236,234,229,.2)}
+.foot-bar .r{text-align:right}
+.foot-bar a{color:rgba(236,234,229,.58);transition:color .3s}
+.foot-bar a:hover{color:var(--cream)}
+
+/* ===== responsive ===== */
+@media (max-width: 1299px) and (min-width: 1101px){
+  .timeline-grid{grid-template-columns:repeat(3,1fr);row-gap:120px;min-height:auto;padding:40px 0}
+  .timeline-line{display:none}
+  .tl-step .tl-stem{display:none}
+  .tl-step .tl-node{position:relative;left:auto;top:auto;transform:none;margin-bottom:18px}
+  .tl-step .tl-card{position:relative;left:auto;top:auto;bottom:auto;transform:none;width:100%}
+  .tl-step.up .tl-card,.tl-step.down .tl-card{top:auto;bottom:auto}
+  .tl-step{flex-direction:column}
+}
+@media (max-width: 1100px){
+  .hero{min-height:560px}
+  .hero-loc{top:32px;left:32px}
+  .hero-stack{left:32px;bottom:40px;gap:32px}
+  .showroom-inner{grid-template-columns:1fr}
+  .showroom-copy{padding:56px var(--edge)}
+  .showroom-vis{border-right:0;border-bottom:1px solid var(--line-n)}
+  .services-grid{grid-template-columns:1fr}
+  .offer-head{grid-template-columns:1fr;text-align:left;gap:16px}
+  .offer-head .h{text-align:left}
+  .offer-head .r{text-align:left}
+  .offer-foot{grid-template-columns:1fr;gap:16px}
+  .offer-arrows{justify-content:flex-start}
+  .process-grid{grid-template-columns:repeat(3,1fr)}
+  .timeline-grid{grid-template-columns:repeat(3,1fr);min-height:auto;gap:60px 0;row-gap:120px;padding:40px 0}
+  .timeline-line{display:none}
+  .tl-step .tl-stem{display:none}
+  .tl-step .tl-node{position:relative;left:auto;top:auto;transform:none;margin-bottom:18px}
+  .tl-step .tl-card{position:relative;left:auto;top:auto;bottom:auto;transform:none;width:100%}
+  .tl-step.up .tl-card,.tl-step.down .tl-card{top:auto;bottom:auto}
+  .tl-step{flex-direction:column}
+  .stats{grid-template-columns:repeat(2,1fr)}
+  .intro-copy .body{grid-template-columns:1fr}
+  .intro-inner{grid-template-columns:1fr}
+  .intro-label{writing-mode:horizontal-tb;transform:none;border-left:0;border-top:1px solid var(--line);padding:16px 0 0}
+  .foot-cta{padding-top:80px;padding-bottom:60px}
+  .foot-grid{grid-template-columns:1fr 1fr;gap:40px}
+  .foot-bar{grid-template-columns:1fr;text-align:center;gap:12px}
+  .foot-bar .r{text-align:center}
+}
+@media (max-width: 720px){
+  .foot-grid{grid-template-columns:1fr}
+  .foot-cta-head h2{font-size:clamp(48px,14vw,82px)}
+  .hero-strip{grid-template-columns:1fr;text-align:center;gap:6px;padding:10px 20px}
+  .hero-strip .l,.hero-strip .r{justify-content:center;flex-wrap:wrap}
+  .hero-header{grid-template-columns:1fr auto;gap:16px;padding:16px 20px}
+  .hero-links{display:none}
+  .hero-right .tel{display:none}
+  .brand-mark{height:34px}
+  .services-head,.process-head,.works-head,.works-foot{grid-template-columns:1fr;gap:20px;text-align:left}
+  .services-head .sub,.process-head .rev,.works-head .meta{text-align:left}
+  .hero{min-height:520px}
+  .hero-loc{top:20px;left:20px}
+  .hero-stack{left:20px;right:20px;bottom:28px;gap:24px}
+  .hero-headline{font-size:clamp(36px, 11vw, 64px)}
+  .hero-btn{padding:12px 24px}
+  .stats{grid-template-columns:1fr}
+  .process-grid{grid-template-columns:1fr}
+  .timeline-grid{grid-template-columns:1fr;row-gap:60px}
+  .offer-track{padding:0 20px}
+  .offer-slide{flex:0 0 calc(100vw - 40px)}
+  .offer-hint{display:flex;align-items:center;gap:10px;justify-content:center;padding:0 20px 18px;font-family:var(--f-mono);font-size:10.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--muted)}
+  .offer-hint .arr{animation:swipe-nudge 1.8s ease-in-out infinite}
+  .f-top{grid-template-columns:1fr}
+  .f-bottom{grid-template-columns:1fr;text-align:left}
+  .f-bottom .c,.f-bottom .r{text-align:left}
+  .wc{grid-template-columns:1fr;height:auto;min-height:auto;position:relative}
+  .wc-photo{aspect-ratio:4/3}
+  .wc-info{border-left:0;border-top:1px solid var(--line);padding:40px 24px}
+  .marquee-track{font-size:32px;gap:36px}
+  .marquee-track span{gap:36px}
+  .marquee-track span::after{margin-left:36px}
+}
+</style>
+</head>
+<body>
+
+<a class="skip-link" href="#main">Przejdź do treści</a>
+
+<!-- ===== sticky nav (appears on scroll) ===== -->
+<div class="sticky-nav" id="sticky-nav" aria-hidden="true">
+  <header class="sn-header">
+    <a href="index.html" class="brand" aria-label="MONZA baseny & SPA — strona główna">
+      <svg class="sn-logo" viewBox="0 0 336 71" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <path d="M311.102 0.225543L310.989 0H298.343L298.23 0.228676L279.3 36.018L285.349 39.7301C282.953 38.9814 280.575 38.4363 278.22 38.0698C275.917 37.7127 273.64 37.5154 271.372 37.4621C270.924 37.4496 270.47 37.4402 270.022 37.4402C259.547 37.412 249.447 40.2062 239.527 42.9378C224.29 47.148 209.83 51.1388 193.66 45.6882C193.66 45.6882 193.654 45.6882 193.65 45.6882H201.814V16.2047C201.814 7.33956 194.6 0.125302 185.734 0.125302H146.255V45.6819H158.641V12.5114H185.734C187.771 12.5114 189.428 14.1685 189.428 16.2047V45.6819H189.453V56.414C196.554 58.8292 203.386 59.7533 209.943 59.7533C221.812 59.7533 232.82 56.7148 243.001 53.9049C255.628 50.4121 266.921 47.3014 278.342 49.7668C280.231 50.1677 282.117 50.7253 284.009 51.4615L287.063 45.6851L288.422 43.107L304.668 12.3955L322.273 45.6819H335.144L311.102 0.228676V0.225543Z" fill="currentColor"/>
+        <path d="M272.248 12.3516V0H214.722V11.5184H251.704L214.086 33.3366V45.685H214.828L272.248 12.3516Z" fill="currentColor"/>
+        <path d="M55.0701 0.125488H0V45.6821H12.3861V12.5116H27.0213C28.5876 12.5116 29.8563 13.7803 29.8563 15.3465V45.6852H42.2424V12.5116H55.0701C57.1094 12.5116 58.7634 14.1656 58.7634 16.2048V45.6821H71.1495V16.2048C71.1495 7.32408 63.9509 0.125488 55.0701 0.125488Z" fill="currentColor"/>
+        <path d="M121.69 0H95.7119C86.8218 0 79.6138 7.20486 79.6138 16.095V29.5869C79.6138 38.4771 86.8218 45.685 95.7119 45.685H121.69C130.58 45.685 137.785 38.4771 137.785 29.5869V16.095C137.785 7.20799 130.58 0 121.69 0ZM125.321 33.2238H95.4081C93.5693 33.2238 92.0782 31.7327 92.0782 29.8939V12.4644H121.69C123.695 12.4644 125.321 14.0902 125.321 16.095V33.2238Z" fill="currentColor"/>
+        <path d="M0.0675049 56.6083H7.94272C10.6649 56.6083 12.3189 57.9115 12.3189 60.1293C12.3189 61.5296 11.5796 62.6385 10.2577 63.1835C11.7926 63.7098 12.7073 64.8563 12.7073 66.5072C12.7073 68.8002 11.0157 70.2224 8.21525 70.2224H0.0675049V56.6115V56.6083ZM2.03161 58.1245V62.5007H7.82682C9.42128 62.5007 10.3924 61.6831 10.3924 60.2828C10.3924 58.8826 9.44008 58.1245 7.82682 58.1245H2.03161ZM2.03161 63.9949V68.7H8.07742C9.769 68.7 10.7401 67.8448 10.7401 66.385C10.7401 64.9252 9.74707 63.9949 8.07742 63.9949H2.03161Z" fill="currentColor"/>
+        <path d="M20.8934 56.6083H23.1488L29.5079 70.2192H27.3308L25.7551 66.6983H18.212L16.6363 70.2192H14.5563L20.8965 56.6083H20.8934ZM18.851 65.2604H25.0942L24.6462 64.2486L21.9835 58.278L19.2989 64.2486L18.851 65.2604Z" fill="currentColor"/>
+        <path d="M30.9053 65.436H32.907C33.3738 67.8074 34.987 68.9758 37.7687 68.9758C40.375 68.9758 41.8128 68.0423 41.8128 66.6828C41.8128 64.8565 39.3632 64.5057 36.8164 64.0765C34.0347 63.591 31.1183 62.9864 31.1183 60.2642C31.1183 58.0276 33.2767 56.3767 36.8728 56.3767C40.7039 56.3767 43.1912 58.1466 43.755 61.2948H41.8504C41.3837 59.077 39.6138 57.8521 36.9104 57.8521C34.442 57.8521 33.0793 58.7856 33.0793 60.07C33.0793 61.8211 35.4506 62.1688 37.9598 62.6167C40.7791 63.1211 43.7738 63.7069 43.7738 66.4666C43.7738 68.838 41.5967 70.4544 37.8032 70.4544C34.0097 70.4544 31.4848 68.7033 30.899 65.436H30.9053Z" fill="currentColor"/>
+        <path d="M46.8904 56.6086H58.0328V58.1435H48.8545V62.479H55.4642V63.9951H48.8545V68.7002H58.0328V70.2164H46.8904V56.6055V56.6086Z" fill="currentColor"/>
+        <path d="M61.1622 56.6083H63.4553L67.6372 62.2281L71.8192 67.9262L71.7816 62.2093L71.7628 56.6083H73.5327V70.2192H71.2177L67.0577 64.6183L62.8757 58.9421L62.9133 64.6183L62.9321 70.2192H61.1622V56.6083Z" fill="currentColor"/>
+        <path d="M82.4919 65.2012L76.0764 56.6055H78.429L83.5444 63.5096L88.6379 56.6055H90.8934L84.456 65.2388V70.2164H82.4919V65.2012Z" fill="currentColor"/>
+        <path d="M100.475 66.9709C100.475 65.2794 101.525 64.1892 103.974 62.9456C102.634 61.7396 102.167 60.7497 102.167 59.6784C102.167 57.8114 103.683 56.3547 106.289 56.3547C108.623 56.3547 110.315 57.542 110.315 59.2899C110.315 60.8468 109.303 61.915 106.737 63.1398L110.333 66.31C111.129 65.201 111.849 63.7444 112.492 61.9745H114.437C113.522 64.2675 112.611 66.0374 111.558 67.3813L114.807 70.2194H112.084L110.355 68.6625C108.955 69.9249 107.323 70.4888 105.34 70.4888C102.558 70.4888 100.478 69.1073 100.478 66.9678L100.475 66.9709ZM105.531 69.0917C106.894 69.0917 108.119 68.6061 109.187 67.6131L105.064 63.9386C103.063 64.9317 102.38 65.7273 102.38 66.855C102.38 68.1958 103.664 69.0917 105.531 69.0917ZM105.591 62.1499C107.827 61.1193 108.526 60.4208 108.526 59.3902C108.526 58.3596 107.611 57.6986 106.252 57.6986C104.892 57.6986 103.996 58.4567 103.996 59.5844C103.996 60.2642 104.269 60.9658 105.221 61.821L105.591 62.1531V62.1499Z" fill="currentColor"/>
+        <path d="M123.614 65.436H125.615C126.082 67.8074 127.695 68.9758 130.477 68.9758C133.083 68.9758 134.521 68.0423 134.521 66.6828C134.521 64.8565 132.072 64.5057 129.525 64.0765C126.743 63.591 123.827 62.9864 123.827 60.2642C123.827 58.0276 125.985 56.3767 129.581 56.3767C133.412 56.3767 135.9 58.1466 136.463 61.2948H134.559C134.092 59.077 132.322 57.8521 129.619 57.8521C127.15 57.8521 125.788 58.7856 125.788 60.07C125.788 61.8211 128.159 62.1688 130.668 62.6167C133.487 63.1211 136.482 63.7069 136.482 66.4666C136.482 68.838 134.305 70.4544 130.512 70.4544C126.718 70.4544 124.193 68.7033 123.607 65.436H123.614Z" fill="currentColor"/>
+        <path d="M139.598 56.6083H147.163C150.12 56.6083 151.965 58.1057 151.965 60.6932C151.965 63.2807 150.117 64.778 147.182 64.778H141.562V70.2224H139.598V56.6115V56.6083ZM141.562 58.1433V63.2775H147.025C148.911 63.2775 150.001 62.4035 150.001 60.712C150.001 59.0204 148.911 58.1464 147.025 58.1464H141.562V58.1433Z" fill="currentColor"/>
+        <path d="M157.934 56.6083H160.189L166.548 70.2192H164.371L162.795 66.6983H155.252L153.677 70.2192H151.597L157.937 56.6083H157.934ZM155.891 65.2604H162.134L161.686 64.2486L159.024 58.278L156.339 64.2486L155.891 65.2604Z" fill="currentColor"/>
+      </svg>
+    </a>
+    <nav>
+      <ul class="sn-links">
+        <li><a href="realizacje.html">Realizacje</a></li>
+        <li><a href="showroom.html">Showroom</a></li>
+        <li><a href="o-nas.html">O&nbsp;nas</a></li>
+        <li><a href="#process">Proces</a></li>
+        <li><a href="kontakt.html">Kontakt</a></li>
+      </ul>
+    </nav>
+    <div class="sn-right">
+      <a href="tel:+48663959514" class="tel">+48&nbsp;663&nbsp;959&nbsp;514</a>
+      <a href="kontakt.html" class="sn-cta">Umów spotkanie</a>
+    </div>
+    <div class="sn-progress" id="sn-progress" aria-hidden="true"></div>
+  </header>
+</div>
+
+<main id="main">
+
+<!-- ===== hero: MONZA logo mask grows into video + nav/headline fade in ===== -->
+<section class="hero">
+  <div class="hero-sticky">
+  <video class="hero-img" src="assets/img/hero.mp4" poster="assets/img/hero.jpg" autoplay muted loop playsinline preload="metadata" aria-label="Prywatne spa — realizacja Monza Baseny"></video>
+  <div class="hero-tint" aria-hidden="true"></div>
+  <div class="hero-vignette" aria-hidden="true"></div>
+
+  <!-- overlaid nav -->
+  <div class="hero-nav">
+    <div class="hero-strip">
+      <div class="l"><span class="dot"></span>Showroom otwarty — Pn–Pt 09:00–18:00</div>
+      <div class="c"></div>
+      <div class="r">
+        <span>Brzesko · ul. Solskiego 20a</span>
+        <a href="https://maps.google.com/?q=Solskiego+20a+Brzesko" target="_blank" rel="noopener">Wyznacz trasę <span class="arr"></span></a>
+      </div>
+    </div>
+    <header class="hero-header">
+      <a href="index.html" class="brand" aria-label="MONZA baseny & SPA — strona główna">
+        <svg class="brand-mark" width="336" height="71" viewBox="0 0 336 71" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path d="M311.102 0.225543L310.989 0H298.343L298.23 0.228676L279.3 36.018L285.349 39.7301C282.953 38.9814 280.575 38.4363 278.22 38.0698C275.917 37.7127 273.64 37.5154 271.372 37.4621C270.924 37.4496 270.47 37.4402 270.022 37.4402C259.547 37.412 249.447 40.2062 239.527 42.9378C224.29 47.148 209.83 51.1388 193.66 45.6882C193.66 45.6882 193.654 45.6882 193.65 45.6882H201.814V16.2047C201.814 7.33956 194.6 0.125302 185.734 0.125302H146.255V45.6819H158.641V12.5114H185.734C187.771 12.5114 189.428 14.1685 189.428 16.2047V45.6819H189.453V56.414C196.554 58.8292 203.386 59.7533 209.943 59.7533C221.812 59.7533 232.82 56.7148 243.001 53.9049C255.628 50.4121 266.921 47.3014 278.342 49.7668C280.231 50.1677 282.117 50.7253 284.009 51.4615L287.063 45.6851L288.422 43.107L304.668 12.3955L322.273 45.6819H335.144L311.102 0.228676V0.225543Z" fill="currentColor"/>
+      <path d="M272.248 12.3516V0H214.722V11.5184H251.704L214.086 33.3366V45.685H214.828L272.248 12.3516Z" fill="currentColor"/>
+      <path d="M55.0701 0.125488H0V45.6821H12.3861V12.5116H27.0213C28.5876 12.5116 29.8563 13.7803 29.8563 15.3465V45.6852H42.2424V12.5116H55.0701C57.1094 12.5116 58.7634 14.1656 58.7634 16.2048V45.6821H71.1495V16.2048C71.1495 7.32408 63.9509 0.125488 55.0701 0.125488Z" fill="currentColor"/>
+      <path d="M121.69 0H95.7119C86.8218 0 79.6138 7.20486 79.6138 16.095V29.5869C79.6138 38.4771 86.8218 45.685 95.7119 45.685H121.69C130.58 45.685 137.785 38.4771 137.785 29.5869V16.095C137.785 7.20799 130.58 0 121.69 0ZM125.321 33.2238H95.4081C93.5693 33.2238 92.0782 31.7327 92.0782 29.8939V12.4644H121.69C123.695 12.4644 125.321 14.0902 125.321 16.095V33.2238Z" fill="currentColor"/>
+      <path d="M0.0675049 56.6083H7.94272C10.6649 56.6083 12.3189 57.9115 12.3189 60.1293C12.3189 61.5296 11.5796 62.6385 10.2577 63.1835C11.7926 63.7098 12.7073 64.8563 12.7073 66.5072C12.7073 68.8002 11.0157 70.2224 8.21525 70.2224H0.0675049V56.6115V56.6083ZM2.03161 58.1245V62.5007H7.82682C9.42128 62.5007 10.3924 61.6831 10.3924 60.2828C10.3924 58.8826 9.44008 58.1245 7.82682 58.1245H2.03161ZM2.03161 63.9949V68.7H8.07742C9.769 68.7 10.7401 67.8448 10.7401 66.385C10.7401 64.9252 9.74707 63.9949 8.07742 63.9949H2.03161Z" fill="currentColor"/>
+      <path d="M20.8934 56.6083H23.1488L29.5079 70.2192H27.3308L25.7551 66.6983H18.212L16.6363 70.2192H14.5563L20.8965 56.6083H20.8934ZM18.851 65.2604H25.0942L24.6462 64.2486L21.9835 58.278L19.2989 64.2486L18.851 65.2604Z" fill="currentColor"/>
+      <path d="M30.9053 65.436H32.907C33.3738 67.8074 34.987 68.9758 37.7687 68.9758C40.375 68.9758 41.8128 68.0423 41.8128 66.6828C41.8128 64.8565 39.3632 64.5057 36.8164 64.0765C34.0347 63.591 31.1183 62.9864 31.1183 60.2642C31.1183 58.0276 33.2767 56.3767 36.8728 56.3767C40.7039 56.3767 43.1912 58.1466 43.755 61.2948H41.8504C41.3837 59.077 39.6138 57.8521 36.9104 57.8521C34.442 57.8521 33.0793 58.7856 33.0793 60.07C33.0793 61.8211 35.4506 62.1688 37.9598 62.6167C40.7791 63.1211 43.7738 63.7069 43.7738 66.4666C43.7738 68.838 41.5967 70.4544 37.8032 70.4544C34.0097 70.4544 31.4848 68.7033 30.899 65.436H30.9053Z" fill="currentColor"/>
+      <path d="M46.8904 56.6086H58.0328V58.1435H48.8545V62.479H55.4642V63.9951H48.8545V68.7002H58.0328V70.2164H46.8904V56.6055V56.6086Z" fill="currentColor"/>
+      <path d="M61.1622 56.6083H63.4553L67.6372 62.2281L71.8192 67.9262L71.7816 62.2093L71.7628 56.6083H73.5327V70.2192H71.2177L67.0577 64.6183L62.8757 58.9421L62.9133 64.6183L62.9321 70.2192H61.1622V56.6083Z" fill="currentColor"/>
+      <path d="M82.4919 65.2012L76.0764 56.6055H78.429L83.5444 63.5096L88.6379 56.6055H90.8934L84.456 65.2388V70.2164H82.4919V65.2012Z" fill="currentColor"/>
+      <path d="M100.475 66.9709C100.475 65.2794 101.525 64.1892 103.974 62.9456C102.634 61.7396 102.167 60.7497 102.167 59.6784C102.167 57.8114 103.683 56.3547 106.289 56.3547C108.623 56.3547 110.315 57.542 110.315 59.2899C110.315 60.8468 109.303 61.915 106.737 63.1398L110.333 66.31C111.129 65.201 111.849 63.7444 112.492 61.9745H114.437C113.522 64.2675 112.611 66.0374 111.558 67.3813L114.807 70.2194H112.084L110.355 68.6625C108.955 69.9249 107.323 70.4888 105.34 70.4888C102.558 70.4888 100.478 69.1073 100.478 66.9678L100.475 66.9709ZM105.531 69.0917C106.894 69.0917 108.119 68.6061 109.187 67.6131L105.064 63.9386C103.063 64.9317 102.38 65.7273 102.38 66.855C102.38 68.1958 103.664 69.0917 105.531 69.0917ZM105.591 62.1499C107.827 61.1193 108.526 60.4208 108.526 59.3902C108.526 58.3596 107.611 57.6986 106.252 57.6986C104.892 57.6986 103.996 58.4567 103.996 59.5844C103.996 60.2642 104.269 60.9658 105.221 61.821L105.591 62.1531V62.1499Z" fill="currentColor"/>
+      <path d="M123.614 65.436H125.615C126.082 67.8074 127.695 68.9758 130.477 68.9758C133.083 68.9758 134.521 68.0423 134.521 66.6828C134.521 64.8565 132.072 64.5057 129.525 64.0765C126.743 63.591 123.827 62.9864 123.827 60.2642C123.827 58.0276 125.985 56.3767 129.581 56.3767C133.412 56.3767 135.9 58.1466 136.463 61.2948H134.559C134.092 59.077 132.322 57.8521 129.619 57.8521C127.15 57.8521 125.788 58.7856 125.788 60.07C125.788 61.8211 128.159 62.1688 130.668 62.6167C133.487 63.1211 136.482 63.7069 136.482 66.4666C136.482 68.838 134.305 70.4544 130.512 70.4544C126.718 70.4544 124.193 68.7033 123.607 65.436H123.614Z" fill="currentColor"/>
+      <path d="M139.598 56.6083H147.163C150.12 56.6083 151.965 58.1057 151.965 60.6932C151.965 63.2807 150.117 64.778 147.182 64.778H141.562V70.2224H139.598V56.6115V56.6083ZM141.562 58.1433V63.2775H147.025C148.911 63.2775 150.001 62.4035 150.001 60.712C150.001 59.0204 148.911 58.1464 147.025 58.1464H141.562V58.1433Z" fill="currentColor"/>
+      <path d="M157.934 56.6083H160.189L166.548 70.2192H164.371L162.795 66.6983H155.252L153.677 70.2192H151.597L157.937 56.6083H157.934ZM155.891 65.2604H162.134L161.686 64.2486L159.024 58.278L156.339 64.2486L155.891 65.2604Z" fill="currentColor"/>
+        </svg>
+      </a>
+      <nav>
+        <ul class="hero-links">
+          <li><a href="realizacje.html">Realizacje</a></li>
+          <li><a href="showroom.html">Showroom</a></li>
+          <li><a href="o-nas.html">O&nbsp;nas</a></li>
+          <li><a href="#process">Proces</a></li>
+          <li><a href="kontakt.html">Kontakt</a></li>
+        </ul>
+      </nav>
+      <div class="hero-right">
+        <a href="tel:+48663959514" class="tel">+48&nbsp;663&nbsp;959&nbsp;514</a>
+        <a href="kontakt.html" class="btn-outline">Umów spotkanie</a>
+      </div>
+    </header>
+  </div>
+
+  <div class="hero-stack">
+    <div class="hero-lead">
+      <h1 class="hero-headline">
+        <span class="line"><span>Prywatne spa</span></span>
+        <span class="line"><span>zaprojektowane</span></span>
+        <span class="line"><span>pod rytm domu.</span></span>
+      </h1>
+      <div class="hero-loc">
+        <span class="city">Wrocław Trzebnica</span><span class="year">2025</span>
+      </div>
+    </div>
+    <a class="hero-btn" href="realizacje.html">Zobacz realizacje</a>
+  </div>
+
+  <svg class="hero-mask" viewBox="0 0 1920 1080" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+    <defs>
+      <mask id="monza-mask" maskUnits="userSpaceOnUse" x="0" y="0" width="1920" height="1080">
+        <rect width="1920" height="1080" fill="white"/>
+        <g class="mk-group" transform="translate(960 540) scale(0.55) translate(-167.5 -35.5)">
+          <path d="M311.102 0.225543L310.989 0H298.343L298.23 0.228676L279.3 36.018L285.349 39.7301C282.953 38.9814 280.575 38.4363 278.22 38.0698C275.917 37.7127 273.64 37.5154 271.372 37.4621C270.924 37.4496 270.47 37.4402 270.022 37.4402C259.547 37.412 249.447 40.2062 239.527 42.9378C224.29 47.148 209.83 51.1388 193.66 45.6882C193.66 45.6882 193.654 45.6882 193.65 45.6882H201.814V16.2047C201.814 7.33956 194.6 0.125302 185.734 0.125302H146.255V45.6819H158.641V12.5114H185.734C187.771 12.5114 189.428 14.1685 189.428 16.2047V45.6819H189.453V56.414C196.554 58.8292 203.386 59.7533 209.943 59.7533C221.812 59.7533 232.82 56.7148 243.001 53.9049C255.628 50.4121 266.921 47.3014 278.342 49.7668C280.231 50.1677 282.117 50.7253 284.009 51.4615L287.063 45.6851L288.422 43.107L304.668 12.3955L322.273 45.6819H335.144L311.102 0.228676V0.225543Z" fill="black"/>
+          <path d="M272.248 12.3516V0H214.722V11.5184H251.704L214.086 33.3366V45.685H214.828L272.248 12.3516Z" fill="black"/>
+          <path d="M55.0701 0.125488H0V45.6821H12.3861V12.5116H27.0213C28.5876 12.5116 29.8563 13.7803 29.8563 15.3465V45.6852H42.2424V12.5116H55.0701C57.1094 12.5116 58.7634 14.1656 58.7634 16.2048V45.6821H71.1495V16.2048C71.1495 7.32408 63.9509 0.125488 55.0701 0.125488Z" fill="black"/>
+          <path d="M121.69 0H95.7119C86.8218 0 79.6138 7.20486 79.6138 16.095V29.5869C79.6138 38.4771 86.8218 45.685 95.7119 45.685H121.69C130.58 45.685 137.785 38.4771 137.785 29.5869V16.095C137.785 7.20799 130.58 0 121.69 0ZM125.321 33.2238H95.4081C93.5693 33.2238 92.0782 31.7327 92.0782 29.8939V12.4644H121.69C123.695 12.4644 125.321 14.0902 125.321 16.095V33.2238Z" fill="black"/>
+        </g>
+      </mask>
+    </defs>
+    <rect width="1920" height="1080" fill="#0A1D33" mask="url(#monza-mask)"/>
+  </svg>
+  </div>
+</section>
+
+<!-- ===== marquee ===== -->
+<div class="marquee" aria-hidden="true">
+  <div class="marquee-track">
+    <span>Projektujemy <i>·</i> Budujemy <i>·</i> Serwisujemy <i>·</i> Baseny <i>·</i> Wanny SPA <i>·</i> Sauny <i>·</i> Zadaszenia <i>·</i> Od 2019</span>
+    <span>Projektujemy <i>·</i> Budujemy <i>·</i> Serwisujemy <i>·</i> Baseny <i>·</i> Wanny SPA <i>·</i> Sauny <i>·</i> Zadaszenia <i>·</i> Od 2019</span>
+  </div>
+</div>
+
+<!-- ===== intro ===== -->
+<section class="intro">
+  <div class="intro-inner">
+    <div class="intro-label">§ 02 — Filozofia · Brzesko 2026</div>
+    <div class="intro-copy">
+      <span class="eyebrow">— Kompleksowo · Od A do Z</span>
+      <h2>Komfort i&nbsp;<i>prestiż</i> — zaprojektowane na&nbsp;lata.</h2>
+      <div class="body">
+        <p>MONZA to nowoczesny projektant i producent basenów, rozpoznawalny za <em>doskonałą obsługę, terminowość prac oraz fachowe doradztwo</em>. Prowadzimy inwestycję od pierwszego rysunku technicznego, przez budowę, aż po wieloletni serwis — bez podwykonawców, bez przerzucania odpowiedzialności.</p>
+        <p>Projektujemy baseny wewnętrzne i zewnętrzne, wanny SPA, sauny i kompletne strefy wellness. Najnowsze osiągnięcia technologiczne — <em>zaawansowane systemy filtracji i dezynfekcji, oświetlenie LED, inteligentne sterowanie</em> — spinamy z ergonomią, estetyką i rozwiązaniami dostępnymi dla każdego.</p>
+      </div>
+      <div class="intro-meta">
+        <div class="m"><span class="mk">— Od</span><span class="mv">2019<sup>r.</sup></span></div>
+        <div class="m"><span class="mk">— Realizacje</span><span class="mv">180<i>+</i></span></div>
+        <div class="m"><span class="mk">— Showroom</span><span class="mv">Brzesko</span></div>
+      </div>
+      <div class="sign">
+        <svg viewBox="0 0 180 60" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M6 42 C 14 22, 22 18, 28 32 C 32 42, 24 46, 20 40 C 16 32, 30 18, 42 26 C 50 32, 46 40, 52 36 C 58 30, 56 22, 64 28 C 70 34, 68 42, 76 40 C 84 38, 82 26, 90 30 C 96 34, 100 42, 108 36 C 116 30, 118 22, 126 28 C 132 32, 130 42, 138 40 C 146 38, 150 28, 158 32 C 166 36, 170 40, 174 38" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+          <path d="M92 44 C 96 48, 100 48, 104 45" stroke="currentColor" stroke-width="1" stroke-linecap="round" fill="none" opacity=".6"/>
+        </svg>
+        <div><div class="who">Marcin Figiel</div><div class="role">Założyciel · Główny projektant</div></div>
+        <div class="l"></div>
+        <div class="d"><em>Brzesko</em>04 · 2026</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== services ===== -->
+<section class="services" id="uslugi">
+  <div class="services-head">
+    <h3>Trzy etapy. <i>Jedna</i> firma.</h3>
+    <div class="sub">Cykl projektu: od 6 do 14 tygodni. Umowa serwisowa od dnia oddania — przeglądy, zimowanie, uruchamianie.</div>
+  </div>
+
+  <div class="services-grid">
+    <a class="svc" href="o-nas.html#projekt" data-num="01">
+      <div class="svc-top">
+        <div class="svc-num"><span class="d"></span>01 · Projektowanie</div>
+        <div class="svc-name">Projekt<br/><i>techniczny.</i></div>
+        <p class="svc-desc">Pełna dokumentacja budowlana i technologiczna. Wizualizacje 3D, obliczenia hydrauliczne, specyfikacja urządzeń, ergonomiczne strefy pływania.</p>
+        <div class="svc-meta">
+          <div class="mr"><span class="mk">Czas trwania</span><span class="mv">2–4 tygodnie</span></div>
+          <div class="mr"><span class="mk">Dokumenty</span><span class="mv">PZT · PW · BIOZ</span></div>
+          <div class="mr"><span class="mk">Wizualizacje</span><span class="mv">3D · rendery foto</span></div>
+          <div class="mr"><span class="mk">Zespół</span><span class="mv">2 projektantów</span></div>
+        </div>
+      </div>
+      <span class="svc-arr">Zobacz zakres <span class="ln"></span></span>
+    </a>
+    <a class="svc" href="o-nas.html#budowa" data-num="02">
+      <div class="svc-top">
+        <div class="svc-num"><span class="d"></span>02 · Budowa</div>
+        <div class="svc-name">Realizacja<br/><i>pod klucz.</i></div>
+        <p class="svc-desc">Własna ekipa, własne materiały. Bloczki EPS lub beton zbrojony. Termin na papierze — termin na budowie. Cotygodniowe raporty z placu.</p>
+        <div class="svc-meta">
+          <div class="mr"><span class="mk">Czas trwania</span><span class="mv">6–14 tygodni</span></div>
+          <div class="mr"><span class="mk">Technologia</span><span class="mv">EPS · żelbet</span></div>
+          <div class="mr"><span class="mk">Ekipa</span><span class="mv">własna · 4–8 os.</span></div>
+          <div class="mr"><span class="mk">Raport</span><span class="mv">co tydzień</span></div>
+        </div>
+      </div>
+      <span class="svc-arr">Etapy budowy <span class="ln"></span></span>
+    </a>
+    <a class="svc" href="o-nas.html#serwis" data-num="03">
+      <div class="svc-top">
+        <div class="svc-num"><span class="d"></span>03 · Serwis</div>
+        <div class="svc-name">Serwis<br/><i>na lata.</i></div>
+        <p class="svc-desc">Przeglądy sezonowe, zimowanie i uruchamianie, wymiana mediów, części zamienne. SLA 24/7 dla hoteli i szkół pływania.</p>
+        <div class="svc-meta">
+          <div class="mr"><span class="mk">Reakcja</span><span class="mv">24 h / 4 h SLA</span></div>
+          <div class="mr"><span class="mk">Przeglądy</span><span class="mv">2 × rok</span></div>
+          <div class="mr"><span class="mk">Magazyn części</span><span class="mv">Brzesko · Kraków</span></div>
+          <div class="mr"><span class="mk">Pokrycie</span><span class="mv">Małopolska · Podk.</span></div>
+        </div>
+      </div>
+      <span class="svc-arr">Pakiet serwisowy <span class="ln"></span></span>
+    </a>
+  </div>
+
+  </div>
+</section>
+
+<!-- ===== offer carousel ===== -->
+<section class="offer" id="offer" aria-roledescription="carousel" aria-label="Kategorie usług">
+  <div class="offer-hint" aria-hidden="true"><span>Przesuń, aby zobaczyć więcej</span><span class="arr">→</span></div>
+  <div class="offer-stage" id="offer-stage" tabindex="0">
+    <div class="offer-track">
+      <article class="offer-slide" data-idx="0">
+        <div class="offer-img"><img src="assets/img/offer-combined.webp" alt="Baseny wewnętrzne i zewnętrzne" loading="lazy"/></div>
+        <div class="offer-copy">
+          <div class="eyebrow"><span class="k">Kategoria A</span><span>Baseny</span></div>
+          <h3>Dwadzieścia lat <i>doświadczenia,</i> jedna odpowiedzialność — od pierwszego rysunku po ostatni serwis.</h3>
+          <a class="btn-ghost" href="realizacje.html">Odwiedź showroom <span class="arr"></span></a>
+        </div>
+      </article>
+
+      <article class="offer-slide" data-idx="1">
+        <div class="offer-img"><img src="assets/img/offer-combined.webp" alt="Wanny SPA i jacuzzi" loading="lazy"/></div>
+        <div class="offer-copy">
+          <div class="eyebrow"><span class="k">Kategoria B</span><span>Wanny SPA · Jacuzzi</span></div>
+          <h3>Hydromasaż, <i>chromoterapia,</i> audio w wodzie — import i produkcja na zamówienie.</h3>
+          <a class="btn-ghost" href="realizacje.html">Odwiedź showroom <span class="arr"></span></a>
+        </div>
+      </article>
+
+      <article class="offer-slide" data-idx="2">
+        <div class="offer-img"><img src="assets/img/offer-combined.webp" alt="Sauny fińskie i parowe" loading="lazy"/></div>
+        <div class="offer-copy">
+          <div class="eyebrow"><span class="k">Kategoria C</span><span>Sauny · Łaźnie</span></div>
+          <h3>Fińskie, <i>parowe,</i> infrared — jako integralna część strefy SPA.</h3>
+          <a class="btn-ghost" href="realizacje.html">Odwiedź showroom <span class="arr"></span></a>
+        </div>
+      </article>
+
+      <article class="offer-slide" data-idx="3">
+        <div class="offer-img"><img src="assets/img/offer-combined.webp" alt="Zadaszenia basenowe" loading="lazy"/></div>
+        <div class="offer-copy">
+          <div class="eyebrow"><span class="k">Kategoria D</span><span>Zadaszenia</span></div>
+          <h3>Ochrona <i>i termika</i> — niskie, wysokie, przesuwne. Sezon dłuższy o trzy miesiące.</h3>
+          <a class="btn-ghost" href="realizacje.html">Odwiedź showroom <span class="arr"></span></a>
+        </div>
+      </article>
+    </div>
+  </div>
+
+  <div class="offer-foot">
+    <div class="offer-counter" aria-live="polite" aria-atomic="true"><em id="offer-idx">01</em> / 04</div>
+    <div class="offer-dots" id="offer-dots">
+      <button class="dot active" data-idx="0" aria-label="Przejdź do slajdu 1"></button>
+      <button class="dot" data-idx="1" aria-label="Przejdź do slajdu 2"></button>
+      <button class="dot" data-idx="2" aria-label="Przejdź do slajdu 3"></button>
+      <button class="dot" data-idx="3" aria-label="Przejdź do slajdu 4"></button>
+    </div>
+    <div class="offer-arrows">
+      <button class="prev" id="offer-prev" aria-label="Poprzedni slajd">←</button>
+      <button class="next" id="offer-next" aria-label="Następny slajd">→</button>
+    </div>
+  </div>
+</section>
+
+<!-- ===== realizacje ===== -->
+<section class="works" id="realizacje">
+  <div class="works-head">
+    <div class="label">Realizacje</div>
+    <h3>Wybrane <i>projekty</i> 2022 — 2026</h3>
+    <div class="meta">Scroll ↓<em>Baseny · SPA · Sauny</em></div>
+  </div>
+
+  <div class="works-stack">
+    <article class="wc">
+      <div class="wc-photo">
+        <span class="num">No. 01 / 06</span><span class="year">2025</span>
+        <img src="assets/img/realizacje/wroclaw-b.jpg" alt="Prywatne spa — Wrocław Trzebnica" loading="lazy"/>
+      </div>
+      <div class="wc-info">
+        <span class="idx">01 / 06</span>
+        <span class="tag">Prywatne spa · Outdoor</span>
+        <h4>Wrocław <i>Trzebnica</i></h4>
+        <p>Basen outdoor z integrowanym systemem podgrzewania, kamień naturalny, infinity po stronie ogrodu. Realizacja 14 tygodni.</p>
+        <span class="sol-label">Zakres prac</span>
+        <ul class="sol">
+          <li>Basen zewnętrzny 8×4 m</li>
+          <li>Kamień naturalny · egzotyk</li>
+          <li>Automatyka &amp; serwis 24/7</li>
+        </ul>
+        <a class="more" href="realizacje.html">Zobacz realizację →</a>
+      </div>
+    </article>
+
+    <article class="wc">
+      <div class="wc-photo">
+        <span class="num">No. 02 / 06</span><span class="year">2025</span>
+        <img src="assets/img/realizacje/budzow-g.jpg" alt="Basen ogrodowy — Budzów" loading="lazy"/>
+      </div>
+      <div class="wc-info">
+        <span class="idx">02 / 06</span>
+        <span class="tag">Basen · Ogród</span>
+        <h4>Rezydencja <i>Budzów</i></h4>
+        <p>Basen ogrodowy wkomponowany w strefę wypoczynku, z palmami i widokiem na park. Strefa chill &amp; grill na tarasie.</p>
+        <span class="sol-label">Zakres prac</span>
+        <ul class="sol">
+          <li>Basen 10×4 m · EPS</li>
+          <li>Strefa relaksu · pergola</li>
+          <li>Oświetlenie LED RGB</li>
+        </ul>
+        <a class="more" href="realizacje.html">Zobacz realizację →</a>
+      </div>
+    </article>
+
+    <article class="wc">
+      <div class="wc-photo">
+        <span class="num">No. 03 / 06</span><span class="year">2025</span>
+        <img src="assets/img/realizacje/okocim-detail.jpg" alt="Basen rezydencjalny — Okocim" loading="lazy"/>
+      </div>
+      <div class="wc-info">
+        <span class="idx">03 / 06</span>
+        <span class="tag">Basen · Rezydencja</span>
+        <h4>Okocim <i>I</i></h4>
+        <p>Projekt dla dwupoziomowej rezydencji — basen z detalem schodów oraz strefa wellness w podziemiu. Pełna automatyzacja.</p>
+        <span class="sol-label">Zakres prac</span>
+        <ul class="sol">
+          <li>Basen 12×5 m · beton</li>
+          <li>Strefa wellness · sauna</li>
+          <li>Automatyka Pentair IntelliCenter</li>
+        </ul>
+        <a class="more" href="realizacje.html">Zobacz realizację →</a>
+      </div>
+    </article>
+
+    <article class="wc">
+      <div class="wc-photo">
+        <span class="num">No. 04 / 06</span><span class="year">2024</span>
+        <img src="assets/img/realizacje/tarnow-a.jpg" alt="Basen z drewnianym deckiem — Tarnów" loading="lazy"/>
+      </div>
+      <div class="wc-info">
+        <span class="idx">04 / 06</span>
+        <span class="tag">Basen · Deck</span>
+        <h4>Willa <i>Tarnów</i></h4>
+        <p>Drewniany deck z egzotyka i basen zlicowany z tarasem. Otwarta strefa spa z wiszącym fotelem i leżakami.</p>
+        <span class="sol-label">Zakres prac</span>
+        <ul class="sol">
+          <li>Basen 9×3,5 m · skim</li>
+          <li>Deck iroko &amp; egzotyk</li>
+          <li>Podgrzewanie pompą ciepła</li>
+        </ul>
+        <a class="more" href="realizacje.html">Zobacz realizację →</a>
+      </div>
+    </article>
+
+    <article class="wc">
+      <div class="wc-photo">
+        <span class="num">No. 05 / 06</span><span class="year">2025</span>
+        <img src="assets/img/realizacje/budzow-a.jpg" alt="Strefa wypoczynku przy basenie — Budzów" loading="lazy"/>
+      </div>
+      <div class="wc-info">
+        <span class="idx">05 / 06</span>
+        <span class="tag">Strefa · Wypoczynek</span>
+        <h4>Budzów <i>— patio</i></h4>
+        <p>Rozszerzenie istniejącej realizacji o otwartą strefę chill z hamakami i trawnikiem. Całość odwiedlona pod mikroklimat.</p>
+        <span class="sol-label">Zakres prac</span>
+        <ul class="sol">
+          <li>Patio · wyposażenie</li>
+          <li>Trawnik &amp; nawadnianie</li>
+          <li>Oświetlenie zewnętrzne</li>
+        </ul>
+        <a class="more" href="realizacje.html">Zobacz realizację →</a>
+      </div>
+    </article>
+
+    <article class="wc">
+      <div class="wc-photo">
+        <span class="num">No. 06 / 06</span><span class="year">2025</span>
+        <img src="assets/img/realizacje/okocim-steps.jpg" alt="Detal schodów basenowych — Okocim" loading="lazy"/>
+      </div>
+      <div class="wc-info">
+        <span class="idx">06 / 06</span>
+        <span class="tag">Detal · Schody</span>
+        <h4>Okocim <i>— detal</i></h4>
+        <p>Zbliżenie na wykonanie schodów basenowych z mozaiki szklanej, ze zintegrowanym oświetleniem punktowym. Próg wejściowy 30 cm.</p>
+        <span class="sol-label">Zakres prac</span>
+        <ul class="sol">
+          <li>Mozaika Ezarri · turkus</li>
+          <li>Oświetlenie LED niskonapięciowe</li>
+          <li>Wkład antypoślizgowy</li>
+        </ul>
+        <a class="more" href="realizacje.html">Zobacz realizację →</a>
+      </div>
+    </article>
+  </div>
+
+  <div class="works-foot">
+    <a class="cta" href="realizacje.html">Zobacz wszystkie realizacje →</a>
+  </div>
+</section>
+
+<!-- ===== process — horizontal timeline ===== -->
+<section class="process" id="process">
+  <div class="process-head">
+    <h2>Sześć etapów. <i>Jedna</i> odpowiedzialność.</h2>
+  </div>
+  <div class="timeline">
+    <div class="timeline-line" aria-hidden="true"></div>
+    <div class="timeline-grid">
+      <div class="tl-step up">
+        <div class="tl-card">
+          <div class="tl-num">01<sup>/06</sup></div>
+          <div class="tl-t">Konsultacja</div>
+          <div class="tl-dur">1 dzień</div>
+          <p class="tl-desc">Rozmowa w showroomie w Brzesku lub u Ciebie. Analiza działki, potrzeb, budżetu — bezpłatnie.</p>
+        </div>
+        <span class="tl-stem" aria-hidden="true"></span>
+        <span class="tl-node" aria-hidden="true"></span>
+      </div>
+      <div class="tl-step down">
+        <span class="tl-node" aria-hidden="true"></span>
+        <span class="tl-stem" aria-hidden="true"></span>
+        <div class="tl-card">
+          <div class="tl-num">02<sup>/06</sup></div>
+          <div class="tl-t">Koncepcja</div>
+          <div class="tl-dur">10 dni</div>
+          <p class="tl-desc">Wizualizacje 3D, wybór technologii (EPS / beton), wstępny kosztorys.</p>
+        </div>
+      </div>
+      <div class="tl-step up">
+        <div class="tl-card">
+          <div class="tl-num">03<sup>/06</sup></div>
+          <div class="tl-t">Projekt</div>
+          <div class="tl-dur">2–3 tyg.</div>
+          <p class="tl-desc">Pełna dokumentacja techniczna, pozwolenia, koordynacja z architektem, obliczenia hydrauliczne.</p>
+        </div>
+        <span class="tl-stem" aria-hidden="true"></span>
+        <span class="tl-node" aria-hidden="true"></span>
+      </div>
+      <div class="tl-step down">
+        <span class="tl-node" aria-hidden="true"></span>
+        <span class="tl-stem" aria-hidden="true"></span>
+        <div class="tl-card">
+          <div class="tl-num">04<sup>/06</sup></div>
+          <div class="tl-t">Budowa</div>
+          <div class="tl-dur">10–14 tyg.</div>
+          <p class="tl-desc">Od robót ziemnych po ceramikę. Własna ekipa, cotygodniowe raporty z placu.</p>
+        </div>
+      </div>
+      <div class="tl-step up">
+        <div class="tl-card">
+          <div class="tl-num">05<sup>/06</sup></div>
+          <div class="tl-t">Rozruch</div>
+          <div class="tl-dur">3 dni</div>
+          <p class="tl-desc">Napełnienie, uruchomienie filtracji i UV, szkolenie z obsługi, dokumentacja powykonawcza.</p>
+        </div>
+        <span class="tl-stem" aria-hidden="true"></span>
+        <span class="tl-node" aria-hidden="true"></span>
+      </div>
+      <div class="tl-step down">
+        <span class="tl-node" aria-hidden="true"></span>
+        <span class="tl-stem" aria-hidden="true"></span>
+        <div class="tl-card">
+          <div class="tl-num">06<sup>/06</sup></div>
+          <div class="tl-t">Serwis</div>
+          <div class="tl-dur">roczny</div>
+          <p class="tl-desc">Umowa roczna — przeglądy, zimowanie, uruchamianie. SLA 24/7 dla obiektów komercyjnych.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== testimonials ===== -->
+<section class="testimonial" id="opinie">
+  <div class="t-rail" id="t-rail">
+    <div class="t-track">
+      <article class="t-card">
+        <div class="inner">
+          <div class="mk">&ldquo;</div>
+          <blockquote>Prowadzili nas od projektu po dzień, w którym pierwszy raz weszliśmy do wody. <em>Zero</em> przerzucania odpowiedzialności — jedna firma, jedna osoba kontaktowa, jeden termin.</blockquote>
+          <div class="who">
+            <span class="av">MK</span>
+            <div style="text-align:left">
+              <div class="name">Marta Kowalczyk</div>
+              <div class="role">Klient prywatny · Kraków</div>
+            </div>
+          </div>
+          <div class="stars">★ ★ ★ ★ ★</div>
+        </div>
+      </article>
+
+      <article class="t-card">
+        <div class="inner">
+          <div class="mk">&ldquo;</div>
+          <blockquote>Termin trzymali co do dnia. Kosztorys — <em>bez niespodzianek.</em> Ekipa na miejscu wiedziała, co robi, bez pytań do biura co pół godziny.</blockquote>
+          <div class="who">
+            <span class="av">PR</span>
+            <div style="text-align:left">
+              <div class="name">Piotr Rogala</div>
+              <div class="role">Inwestor prywatny · Zakopane</div>
+            </div>
+          </div>
+          <div class="stars">★ ★ ★ ★ ★</div>
+        </div>
+      </article>
+
+      <article class="t-card">
+        <div class="inner">
+          <div class="mk">&ldquo;</div>
+          <blockquote>Mieliśmy trzy oferty. Monza była jedyna, która <em>pokazała pełną technologię</em> zanim poprosili o podpis. Po dwóch latach użytkowania — zero reklamacji.</blockquote>
+          <div class="who">
+            <span class="av">AW</span>
+            <div style="text-align:left">
+              <div class="name">Anna Wiśniewska</div>
+              <div class="role">Architekt wnętrz · Warszawa</div>
+            </div>
+          </div>
+          <div class="stars">★ ★ ★ ★ ★</div>
+        </div>
+      </article>
+
+      <article class="t-card">
+        <div class="inner">
+          <div class="mk">&ldquo;</div>
+          <blockquote>Robili nam basen w hotelu w trakcie sezonu. <em>Zmieściliśmy się w oknie serwisowym</em> — zamknięci w poniedziałek, otwarci w piątek. Od dwóch lat pilnują chemii i serwisują co pół roku.</blockquote>
+          <div class="who">
+            <span class="av">TM</span>
+            <div style="text-align:left">
+              <div class="name">Tomasz Malinowski</div>
+              <div class="role">Dyrektor · Hotel Sosnówka</div>
+            </div>
+          </div>
+          <div class="stars">★ ★ ★ ★ ★</div>
+        </div>
+      </article>
+
+      <article class="t-card">
+        <div class="inner">
+          <div class="mk">&ldquo;</div>
+          <blockquote>Chciałam jacuzzi na tarasie — dostałam cały <em>zaprojektowany fragment ogrodu.</em> Inżynier i architekt usiedli z nami na godzinę i rozrysowali wszystko na kartce. Tak się powinno pracować.</blockquote>
+          <div class="who">
+            <span class="av">KB</span>
+            <div style="text-align:left">
+              <div class="name">Katarzyna Błońska</div>
+              <div class="role">Klient prywatny · Kraków</div>
+            </div>
+          </div>
+          <div class="stars">★ ★ ★ ★ ★</div>
+        </div>
+      </article>
+
+      <article class="t-card">
+        <div class="inner">
+          <div class="mk">&ldquo;</div>
+          <blockquote>Byliśmy w showroomie, testowaliśmy na żywo trzy różne wanny spa. <em>Żadnego handlowca</em> — sami inżynierowie. Decyzja była prosta, bo wiedzieliśmy dokładnie, co kupujemy.</blockquote>
+          <div class="who">
+            <span class="av">JS</span>
+            <div style="text-align:left">
+              <div class="name">Jakub Szymański</div>
+              <div class="role">Klient prywatny · Rzeszów</div>
+            </div>
+          </div>
+          <div class="stars">★ ★ ★ ★ ★</div>
+        </div>
+      </article>
+    </div>
+  </div>
+
+  <div class="t-nav">
+    <button class="arr" id="t-prev" aria-label="Poprzednia opinia"><svg viewBox="0 0 24 24"><path d="M15 4 L7 12 L15 20"/></svg></button>
+    <div class="dots" id="t-dots"></div>
+    <div class="pos"><em id="t-pos">01</em>z 06</div>
+    <button class="arr" id="t-next" aria-label="Następna opinia"><svg viewBox="0 0 24 24"><path d="M9 4 L17 12 L9 20"/></svg></button>
+  </div>
+</section>
+
+<!-- ===== stats ===== -->
+<div class="stats">
+  <div class="stat">
+    <div class="k"><em>—</em> Lata na rynku</div>
+    <div class="n">6<sup>/2019</sup></div>
+    <div class="d">Od 2019. Projektant i producent basenów, SPA i saun.</div>
+  </div>
+  <div class="stat">
+    <div class="k"><em>—</em> Zasięg</div>
+    <div class="n">3<sup>woj.</sup></div>
+    <div class="d">Małopolska, Podkarpacie, Śląsk. Kraków · Nowy Sącz · Rzeszów.</div>
+  </div>
+  <div class="stat">
+    <div class="k"><em>—</em> Serwis SLA</div>
+    <div class="n">24<sup>/7</sup></div>
+    <div class="d">Dla hoteli, sanatoriów i szkół pływania. 48h dla klientów prywatnych.</div>
+  </div>
+  <div class="stat">
+    <div class="k"><em>—</em> Kompleksowość</div>
+    <div class="n">A—Z</div>
+    <div class="d">Projekt, budowa, serwis — u nas. Bez podwykonawców, bez przerzucania winy.</div>
+  </div>
+</div>
+
+<!-- ===== reels (social media) ===== -->
+<section class="reels" id="social">
+  <div class="reels-head">
+    <div class="l">
+      <h2>Woda, <i>światło,</i> detale.</h2>
+    </div>
+  </div>
+
+  <div class="reels-grid">
+    <article class="reel">
+      <video src="assets/img/reels/reel-1.mp4" autoplay muted loop playsinline preload="metadata"></video>
+      <div class="grain"></div>
+      <div class="top">
+        <span class="live"><span class="d"></span>Z budowy</span>
+      </div>
+      <button class="sound" type="button" aria-label="Włącz dźwięk">
+          <svg class="ico-off" viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 8h3l4-3v12l-4-3H4z" fill="currentColor" stroke="none"/><line x1="15" y1="8" x2="19" y2="14"/><line x1="19" y1="8" x2="15" y2="14"/></svg>
+          <svg class="ico-on" viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 8h3l4-3v12l-4-3H4z" fill="currentColor" stroke="none"/><path d="M14 8c1.3 1 1.3 5 0 6"/><path d="M17 6c2.5 1.5 2.5 8.5 0 10"/></svg>
+        </button>
+      <div class="bottom">
+        <div class="cap">Niecka 48 m² — <i>dzień 34.</i></div>
+      </div>
+    </article>
+
+    <article class="reel">
+      <video src="assets/img/reels/reel-2.mp4" autoplay muted loop playsinline preload="metadata"></video>
+      <div class="grain"></div>
+      <div class="top">
+        <span class="live"><span class="d"></span>Detal</span>
+      </div>
+      <button class="sound" type="button" aria-label="Włącz dźwięk">
+          <svg class="ico-off" viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 8h3l4-3v12l-4-3H4z" fill="currentColor" stroke="none"/><line x1="15" y1="8" x2="19" y2="14"/><line x1="19" y1="8" x2="15" y2="14"/></svg>
+          <svg class="ico-on" viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 8h3l4-3v12l-4-3H4z" fill="currentColor" stroke="none"/><path d="M14 8c1.3 1 1.3 5 0 6"/><path d="M17 6c2.5 1.5 2.5 8.5 0 10"/></svg>
+        </button>
+      <div class="bottom">
+        <div class="cap">Kamień <i>travertino</i> — fuga 2 mm.</div>
+      </div>
+    </article>
+
+    <article class="reel">
+      <video src="assets/img/reels/reel-3.mp4" autoplay muted loop playsinline preload="metadata"></video>
+      <div class="grain"></div>
+      <div class="top">
+        <span class="live"><span class="d"></span>Finał</span>
+      </div>
+      <button class="sound" type="button" aria-label="Włącz dźwięk">
+          <svg class="ico-off" viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 8h3l4-3v12l-4-3H4z" fill="currentColor" stroke="none"/><line x1="15" y1="8" x2="19" y2="14"/><line x1="19" y1="8" x2="15" y2="14"/></svg>
+          <svg class="ico-on" viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 8h3l4-3v12l-4-3H4z" fill="currentColor" stroke="none"/><path d="M14 8c1.3 1 1.3 5 0 6"/><path d="M17 6c2.5 1.5 2.5 8.5 0 10"/></svg>
+        </button>
+      <div class="bottom">
+        <div class="cap">Dron nad <i>wodą</i> — nocny lot.</div>
+      </div>
+    </article>
+  </div>
+
+  <div class="reels-foot">
+    <a class="c" href="https://instagram.com/monza_baseny" target="_blank" rel="noopener"><span class="dot"></span>Instagram @monza_baseny</a>
+    <a class="c" href="https://tiktok.com/@monza_baseny" target="_blank" rel="noopener"><span class="dot"></span>TikTok @monza_baseny</a>
+  </div>
+</section>
+
+<script>
+
+/* reels — background autoplay, button toggles sound; auto-hide button when no audio track; pause off-screen */
+(() => {
+  const reels = Array.from(document.querySelectorAll('.reel'));
+  if (!reels.length) return;
+  const hasAudioTrack = (v) => {
+    if (typeof v.mozHasAudio !== 'undefined') return v.mozHasAudio;
+    if (typeof v.webkitAudioDecodedByteCount !== 'undefined') return v.webkitAudioDecodedByteCount > 0;
+    if (v.audioTracks && typeof v.audioTracks.length === 'number') return v.audioTracks.length > 0;
+    return null; // unknown
+  };
+  const probe = (reel, v) => {
+    const present = hasAudioTrack(v);
+    if (present === false) reel.classList.add('no-audio');
+  };
+  reels.forEach(reel => {
+    const v = reel.querySelector('video');
+    const btn = reel.querySelector('.sound');
+    if (!v) return;
+    if (v.readyState >= 1) probe(reel, v);
+    else v.addEventListener('loadedmetadata', () => probe(reel, v), { once: true });
+    v.addEventListener('playing', () => probe(reel, v), { once: true });
+    if (!btn) return;
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      const turnOn = v.muted;
+      if (turnOn) {
+        reels.forEach(other => {
+          if (other === reel) return;
+          const ov = other.querySelector('video');
+          if (ov) ov.muted = true;
+          other.classList.remove('is-unmuted');
+          const ob = other.querySelector('.sound');
+          if (ob) ob.setAttribute('aria-label', 'Włącz dźwięk');
+        });
+        v.muted = false;
+        reel.classList.add('is-unmuted');
+        btn.setAttribute('aria-label', 'Wycisz');
+      } else {
+        v.muted = true;
+        reel.classList.remove('is-unmuted');
+        btn.setAttribute('aria-label', 'Włącz dźwięk');
+      }
+    });
+  });
+  // Pause/resume reels + CTA video when out of viewport
+  const vids = Array.from(document.querySelectorAll('.reel video, .pin-img-box video'));
+  if ('IntersectionObserver' in window && vids.length) {
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        const v = e.target;
+        if (e.isIntersecting) { if (v.paused) v.play().catch(()=>{}); }
+        else { if (!v.paused) v.pause(); }
+      });
+    }, { threshold: 0.15 });
+    vids.forEach(v => io.observe(v));
+  }
+})();
+
+/* works-stack — dim cards that are being covered by the next sticky card */
+(() => {
+  const cards = Array.from(document.querySelectorAll('.works-stack .wc'));
+  if (!cards.length) return;
+  let raf = null;
+  const update = () => {
+    raf = null;
+    const h = window.innerHeight;
+    for (let i = 0; i < cards.length; i++){
+      const next = cards[i+1];
+      if (!next){ cards[i].style.setProperty('--dim', 0); continue; }
+      const nt = next.getBoundingClientRect().top;
+      // as next.top goes from h → 0, dim 0 → 0.55 (max)
+      const p = Math.min(1, Math.max(0, 1 - nt / h));
+      cards[i].style.setProperty('--dim', (p * 0.55).toFixed(3));
+    }
+  };
+  const onScroll = () => { if (raf == null) raf = requestAnimationFrame(update); };
+  document.addEventListener('scroll', onScroll, {passive:true});
+  window.addEventListener('resize', onScroll);
+  update();
+})();
+
+/* sticky nav — show only AFTER hero has fully scrolled past, update progress bar */
+(() => {
+  const nav = document.getElementById('sticky-nav');
+  const bar = document.getElementById('sn-progress');
+  const hero = document.querySelector('.hero');
+  if (!nav || !bar) return;
+  let raf = null;
+  const tick = () => {
+    raf = null;
+    const y = window.scrollY || window.pageYOffset;
+    const h = document.documentElement.scrollHeight - window.innerHeight;
+    // Trigger = bottom of hero (so sticky nav only appears once hero is fully past)
+    const heroBottom = hero ? (hero.offsetTop + hero.offsetHeight) : window.innerHeight * 0.65;
+    const trigger = Math.max(320, heroBottom - 40);
+    if (y > trigger) { if (!nav.classList.contains('visible')) { nav.classList.add('visible'); nav.setAttribute('aria-hidden','false'); } }
+    else { if (nav.classList.contains('visible')) { nav.classList.remove('visible'); nav.setAttribute('aria-hidden','true'); } }
+    const p = h > 0 ? Math.min(1, Math.max(0, y / h)) : 0;
+    bar.style.transform = `scaleX(${p.toFixed(4)})`;
+  };
+  const onScroll = () => { if (raf == null) raf = requestAnimationFrame(tick); };
+  document.addEventListener('scroll', onScroll, {passive:true});
+  window.addEventListener('resize', onScroll);
+  tick();
+})();
+
+/* testimonials slider — scroll snap + dots + arrows */
+(() => {
+  const rail = document.getElementById('t-rail');
+  if (!rail) return;
+  const cards = Array.from(rail.querySelectorAll('.t-card'));
+  const dotsWrap = document.getElementById('t-dots');
+  const pos = document.getElementById('t-pos');
+  const prev = document.getElementById('t-prev');
+  const next = document.getElementById('t-next');
+  if (!cards.length || !dotsWrap) return;
+
+  cards.forEach((_, i) => {
+    const b = document.createElement('button');
+    b.className = 'dot' + (i === 0 ? ' active' : '');
+    b.setAttribute('aria-label', `Opinia ${i+1}`);
+    b.addEventListener('click', () => scrollToCard(i));
+    dotsWrap.appendChild(b);
+  });
+  const dots = Array.from(dotsWrap.children);
+
+  const scrollToCard = (i) => {
+    const c = cards[i]; if (!c) return;
+    rail.scrollTo({ left: c.offsetLeft - rail.offsetLeft, behavior: 'smooth' });
+  };
+
+  let raf = null;
+  const update = () => {
+    raf = null;
+    const sl = rail.scrollLeft;
+    let best = 0, bestDist = Infinity;
+    for (let i = 0; i < cards.length; i++){
+      const d = Math.abs(cards[i].offsetLeft - rail.offsetLeft - sl);
+      if (d < bestDist) { bestDist = d; best = i; }
+    }
+    dots.forEach((d, i) => d.classList.toggle('active', i === best));
+    if (pos) pos.textContent = String(best + 1).padStart(2, '0');
+    if (prev) prev.disabled = sl <= 2;
+    if (next) next.disabled = sl >= rail.scrollWidth - rail.clientWidth - 2;
+  };
+  const onScroll = () => { if (raf == null) raf = requestAnimationFrame(update); };
+  rail.addEventListener('scroll', onScroll, {passive:true});
+  window.addEventListener('resize', onScroll);
+
+  const activeIdx = () => {
+    const sl = rail.scrollLeft;
+    let best = 0, bestDist = Infinity;
+    for (let i = 0; i < cards.length; i++){
+      const d = Math.abs(cards[i].offsetLeft - rail.offsetLeft - sl);
+      if (d < bestDist) { bestDist = d; best = i; }
+    }
+    return best;
+  };
+  if (prev) prev.addEventListener('click', () => scrollToCard(Math.max(0, activeIdx() - 1)));
+  if (next) next.addEventListener('click', () => scrollToCard(Math.min(cards.length - 1, activeIdx() + 1)));
+
+  update();
+})();
+
+// hero: MONZA logo mask auto-plays on page load (time-driven, not scroll).
+// Mask zooms in, fades out, then nav + headline fade in.
+(() => {
+  const section = document.querySelector('.hero');
+  if (!section) return;
+  const g = section.querySelector('.mk-group');
+  const svg = section.querySelector('.hero-mask');
+  const nav = section.querySelector('.hero-nav');
+  const stack = section.querySelector('.hero-stack');
+  if (!g || !svg) return;
+  const START_SCALE = 0.55;
+  const END_SCALE = 12;
+  const DURATION = 2200;        // total zoom duration (ms)
+  const FADE_START = 0.60;      // p at which mask starts fading out
+  const REVEAL_START = 0.82;    // p at which nav + stack start revealing
+  const reduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (reduced) {
+    svg.style.opacity = '0';
+    svg.style.pointerEvents = 'none';
+    if (nav) nav.style.opacity = '1';
+    if (stack) stack.style.opacity = '1';
+    return;
+  }
+  let startTs = null;
+  const step = (ts) => {
+    if (startTs == null) startTs = ts;
+    const elapsed = ts - startTs;
+    const p = Math.min(1, elapsed / DURATION);
+    const eased = 1 - Math.pow(1 - p, 2.2);
+    const s = START_SCALE + (END_SCALE - START_SCALE) * eased;
+    g.setAttribute('transform', `translate(960 540) scale(${s.toFixed(3)}) translate(-167.5 -35.5)`);
+    const maskOp = p < FADE_START ? 1 : Math.max(0, 1 - (p - FADE_START) / (1 - FADE_START));
+    svg.style.opacity = maskOp.toFixed(3);
+    const reveal = p < REVEAL_START ? 0 : Math.min(1, (p - REVEAL_START) / (1 - REVEAL_START));
+    if (nav) nav.style.opacity = reveal.toFixed(3);
+    if (stack) stack.style.opacity = reveal.toFixed(3);
+    if (p < 1) requestAnimationFrame(step);
+    else { svg.style.pointerEvents = 'none'; svg.style.opacity = '0'; }
+  };
+  // kick off after first paint so initial frame renders with mask at START_SCALE
+  requestAnimationFrame(() => requestAnimationFrame(step));
+})();
+
+// hero headline: size gradient across all lines (one gradient, not per-line)
+(() => {
+  const h1 = document.querySelector('.hero-headline');
+  if (!h1) return;
+  const spans = h1.querySelectorAll('.line span');
+  const sync = () => {
+    const hr = h1.getBoundingClientRect();
+    spans.forEach((s) => {
+      const r = s.getBoundingClientRect();
+      s.style.setProperty('--bg-w', hr.width + 'px');
+      s.style.setProperty('--bg-h', hr.height + 'px');
+      s.style.setProperty('--bg-y', -(r.top - hr.top) + 'px');
+    });
+  };
+  sync();
+  // re-sync after reveal animation settles
+  setTimeout(sync, 1500);
+  window.addEventListener('resize', sync);
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(sync);
+})();
+
+// pin-cta: scroll-zoom photo scaling up through the section,
+// revealing the navy footer below as it releases. DOMContentLoaded because this
+// script block sits BEFORE the .pin-cta markup in source order.
+document.addEventListener('DOMContentLoaded', () => {
+  const section = document.querySelector('.pin-cta');
+  if (!section) return;
+  const box = section.querySelector('.pin-img-box');
+  const img = box && (box.querySelector('video') || box.querySelector('img'));
+  const overlay = section.querySelector('.pin-cta-overlay');
+  const hint = section.querySelector('.pin-hint');
+  const eyebrow = section.querySelector('.pin-eyebrow');
+  if (!img) return;
+
+  const REVEAL_START = 0.35; // overlay starts fading in
+  const REVEAL_END = 0.75;   // overlay fully visible
+  let raf = null;
+  const onScroll = () => {
+    raf = null;
+    const rect = section.getBoundingClientRect();
+    const vh = window.innerHeight;
+    const total = rect.height - vh;
+    const scrolled = Math.min(Math.max(-rect.top, 0), total);
+    const p = total > 0 ? scrolled / total : 0;
+    // image darkens: opacity 1 → 0.1
+    img.style.opacity = (1 - p * 0.9).toFixed(3);
+    // CTA overlay crossfades in as image darkens
+    if (overlay) {
+      const r = p < REVEAL_START ? 0 :
+                p > REVEAL_END ? 1 :
+                (p - REVEAL_START) / (REVEAL_END - REVEAL_START);
+      overlay.style.opacity = r.toFixed(3);
+    }
+    if (hint) hint.style.opacity = Math.max(0, 1 - p * 3.2).toFixed(3);
+    if (eyebrow) eyebrow.style.opacity = Math.max(0, 1 - p * 2.4).toFixed(3);
+  };
+  const tick = () => { if (raf == null) raf = requestAnimationFrame(onScroll); };
+  window.addEventListener('scroll', tick, {passive:true});
+  window.addEventListener('resize', tick);
+  onScroll();
+});
+
+// offer carousel: horizontal scroll-snap with peek on either side.
+// IntersectionObserver tracks the centered slide; arrows + dots drive scroll.
+document.addEventListener('DOMContentLoaded', () => {
+  const stage = document.getElementById('offer-stage');
+  if (!stage) return;
+  const slides = Array.from(stage.querySelectorAll('.offer-slide'));
+  const dots = Array.from(document.querySelectorAll('#offer-dots .dot'));
+  const idxEl = document.getElementById('offer-idx');
+  const prev = document.getElementById('offer-prev');
+  const next = document.getElementById('offer-next');
+  if (!slides.length) return;
+
+  let current = 0;
+  const setActive = (i) => {
+    current = Math.max(0, Math.min(slides.length - 1, i));
+    slides.forEach((s, k) => s.classList.toggle('active', k === current));
+    dots.forEach((d, k) => d.classList.toggle('active', k === current));
+    if (idxEl) idxEl.textContent = String(current + 1).padStart(2, '0');
+    if (prev) prev.disabled = current === 0;
+    if (next) next.disabled = current === slides.length - 1;
+  };
+
+  const scrollTo = (i) => {
+    const target = slides[i];
+    if (!target) return;
+    const stageRect = stage.getBoundingClientRect();
+    const targetRect = target.getBoundingClientRect();
+    const delta = (targetRect.left + targetRect.width / 2) - (stageRect.left + stageRect.width / 2);
+    stage.scrollBy({ left: delta, behavior: 'smooth' });
+  };
+
+  const io = new IntersectionObserver((entries) => {
+    let best = null;
+    entries.forEach(e => {
+      if (!best || e.intersectionRatio > best.intersectionRatio) best = e;
+    });
+    if (best && best.isIntersecting && best.intersectionRatio > 0.55) {
+      const i = slides.indexOf(best.target);
+      if (i !== -1 && i !== current) setActive(i);
+    }
+  }, { root: stage, threshold: [0.3, 0.55, 0.8] });
+  slides.forEach(s => io.observe(s));
+
+  if (prev) prev.addEventListener('click', () => scrollTo(current - 1));
+  if (next) next.addEventListener('click', () => scrollTo(current + 1));
+  dots.forEach((d) => d.addEventListener('click', () => scrollTo(Number(d.dataset.idx))));
+
+  stage.addEventListener('keydown', (e) => {
+    if (e.key === 'ArrowLeft')  { e.preventDefault(); scrollTo(current - 1); }
+    if (e.key === 'ArrowRight') { e.preventDefault(); scrollTo(current + 1); }
+    if (e.key === 'Home')       { e.preventDefault(); scrollTo(0); }
+    if (e.key === 'End')        { e.preventDefault(); scrollTo(slides.length - 1); }
+  });
+
+  setActive(0);
+});
+</script>
+
+<!-- ===== pin-cta: scroll-zoom photo transition before footer CTA ===== -->
+<section class="pin-cta" id="pin-cta">
+  <div class="pin-sticky">
+    <div class="pin-img-box">
+      <video src="assets/video/cta.mp4" poster="assets/img/cta.jpg" autoplay muted loop playsinline preload="none" aria-label="Basen z palmami — realizacja Monza Baseny"></video>
+    </div>
+    <div class="pin-cta-overlay">
+      <span class="eyebrow">Zacznijmy od rozmowy</span>
+      <h2>Zaczynamy<br/>od <i>rozmowy.</i></h2>
+      <p>Bezpłatna konsultacja w showroomie w Brzesku lub u Ciebie. Od pierwszego szkicu po rozruch — jedna firma, jedna odpowiedzialność.</p>
+      <div class="pair">
+        <a class="btn btn-solid" href="kontakt.html">Umów konsultację <span class="arr"></span></a>
+        <a class="btn" href="showroom.html">Odwiedź showroom <span class="arr"></span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ===== footer (info grid + legal bar) ===== -->
+<footer class="foot">
+  <div class="foot-grid">
+    <div class="foot-brand">
+      <div class="f-brand">
+        <svg class="f-brand-mark" viewBox="0 0 336 71" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="MONZA baseny & SPA">
+          <path d="M311.102 0.225543L310.989 0H298.343L298.23 0.228676L279.3 36.018L285.349 39.7301C282.953 38.9814 280.575 38.4363 278.22 38.0698C275.917 37.7127 273.64 37.5154 271.372 37.4621C270.924 37.4496 270.47 37.4402 270.022 37.4402C259.547 37.412 249.447 40.2062 239.527 42.9378C224.29 47.148 209.83 51.1388 193.66 45.6882C193.66 45.6882 193.654 45.6882 193.65 45.6882H201.814V16.2047C201.814 7.33956 194.6 0.125302 185.734 0.125302H146.255V45.6819H158.641V12.5114H185.734C187.771 12.5114 189.428 14.1685 189.428 16.2047V45.6819H189.453V56.414C196.554 58.8292 203.386 59.7533 209.943 59.7533C221.812 59.7533 232.82 56.7148 243.001 53.9049C255.628 50.4121 266.921 47.3014 278.342 49.7668C280.231 50.1677 282.117 50.7253 284.009 51.4615L287.063 45.6851L288.422 43.107L304.668 12.3955L322.273 45.6819H335.144L311.102 0.228676V0.225543Z" fill="currentColor"/>
+          <path d="M272.248 12.3516V0H214.722V11.5184H251.704L214.086 33.3366V45.685H214.828L272.248 12.3516Z" fill="currentColor"/>
+          <path d="M55.0701 0.125488H0V45.6821H12.3861V12.5116H27.0213C28.5876 12.5116 29.8563 13.7803 29.8563 15.3465V45.6852H42.2424V12.5116H55.0701C57.1094 12.5116 58.7634 14.1656 58.7634 16.2048V45.6821H71.1495V16.2048C71.1495 7.32408 63.9509 0.125488 55.0701 0.125488Z" fill="currentColor"/>
+          <path d="M121.69 0H95.7119C86.8218 0 79.6138 7.20486 79.6138 16.095V29.5869C79.6138 38.4771 86.8218 45.685 95.7119 45.685H121.69C130.58 45.685 137.785 38.4771 137.785 29.5869V16.095C137.785 7.20799 130.58 0 121.69 0ZM125.321 33.2238H95.4081C93.5693 33.2238 92.0782 31.7327 92.0782 29.8939V12.4644H121.69C123.695 12.4644 125.321 14.0902 125.321 16.095V33.2238Z" fill="currentColor"/>
+          <path d="M0.0675049 56.6083H7.94272C10.6649 56.6083 12.3189 57.9115 12.3189 60.1293C12.3189 61.5296 11.5796 62.6385 10.2577 63.1835C11.7926 63.7098 12.7073 64.8563 12.7073 66.5072C12.7073 68.8002 11.0157 70.2224 8.21525 70.2224H0.0675049V56.6115V56.6083ZM2.03161 58.1245V62.5007H7.82682C9.42128 62.5007 10.3924 61.6831 10.3924 60.2828C10.3924 58.8826 9.44008 58.1245 7.82682 58.1245H2.03161ZM2.03161 63.9949V68.7H8.07742C9.769 68.7 10.7401 67.8448 10.7401 66.385C10.7401 64.9252 9.74707 63.9949 8.07742 63.9949H2.03161Z" fill="currentColor"/>
+          <path d="M20.8934 56.6083H23.1488L29.5079 70.2192H27.3308L25.7551 66.6983H18.212L16.6363 70.2192H14.5563L20.8965 56.6083H20.8934ZM18.851 65.2604H25.0942L24.6462 64.2486L21.9835 58.278L19.2989 64.2486L18.851 65.2604Z" fill="currentColor"/>
+          <path d="M30.9053 65.436H32.907C33.3738 67.8074 34.987 68.9758 37.7687 68.9758C40.375 68.9758 41.8128 68.0423 41.8128 66.6828C41.8128 64.8565 39.3632 64.5057 36.8164 64.0765C34.0347 63.591 31.1183 62.9864 31.1183 60.2642C31.1183 58.0276 33.2767 56.3767 36.8728 56.3767C40.7039 56.3767 43.1912 58.1466 43.755 61.2948H41.8504C41.3837 59.077 39.6138 57.8521 36.9104 57.8521C34.442 57.8521 33.0793 58.7856 33.0793 60.07C33.0793 61.8211 35.4506 62.1688 37.9598 62.6167C40.7791 63.1211 43.7738 63.7069 43.7738 66.4666C43.7738 68.838 41.5967 70.4544 37.8032 70.4544C34.0097 70.4544 31.4848 68.7033 30.899 65.436H30.9053Z" fill="currentColor"/>
+          <path d="M46.8904 56.6086H58.0328V58.1435H48.8545V62.479H55.4642V63.9951H48.8545V68.7002H58.0328V70.2164H46.8904V56.6055V56.6086Z" fill="currentColor"/>
+          <path d="M61.1622 56.6083H63.4553L67.6372 62.2281L71.8192 67.9262L71.7816 62.2093L71.7628 56.6083H73.5327V70.2192H71.2177L67.0577 64.6183L62.8757 58.9421L62.9133 64.6183L62.9321 70.2192H61.1622V56.6083Z" fill="currentColor"/>
+          <path d="M82.4919 65.2012L76.0764 56.6055H78.429L83.5444 63.5096L88.6379 56.6055H90.8934L84.456 65.2388V70.2164H82.4919V65.2012Z" fill="currentColor"/>
+          <path d="M100.475 66.9709C100.475 65.2794 101.525 64.1892 103.974 62.9456C102.634 61.7396 102.167 60.7497 102.167 59.6784C102.167 57.8114 103.683 56.3547 106.289 56.3547C108.623 56.3547 110.315 57.542 110.315 59.2899C110.315 60.8468 109.303 61.915 106.737 63.1398L110.333 66.31C111.129 65.201 111.849 63.7444 112.492 61.9745H114.437C113.522 64.2675 112.611 66.0374 111.558 67.3813L114.807 70.2194H112.084L110.355 68.6625C108.955 69.9249 107.323 70.4888 105.34 70.4888C102.558 70.4888 100.478 69.1073 100.478 66.9678L100.475 66.9709ZM105.531 69.0917C106.894 69.0917 108.119 68.6061 109.187 67.6131L105.064 63.9386C103.063 64.9317 102.38 65.7273 102.38 66.855C102.38 68.1958 103.664 69.0917 105.531 69.0917ZM105.591 62.1499C107.827 61.1193 108.526 60.4208 108.526 59.3902C108.526 58.3596 107.611 57.6986 106.252 57.6986C104.892 57.6986 103.996 58.4567 103.996 59.5844C103.996 60.2642 104.269 60.9658 105.221 61.821L105.591 62.1531V62.1499Z" fill="currentColor"/>
+          <path d="M123.614 65.436H125.615C126.082 67.8074 127.695 68.9758 130.477 68.9758C133.083 68.9758 134.521 68.0423 134.521 66.6828C134.521 64.8565 132.072 64.5057 129.525 64.0765C126.743 63.591 123.827 62.9864 123.827 60.2642C123.827 58.0276 125.985 56.3767 129.581 56.3767C133.412 56.3767 135.9 58.1466 136.463 61.2948H134.559C134.092 59.077 132.322 57.8521 129.619 57.8521C127.15 57.8521 125.788 58.7856 125.788 60.07C125.788 61.8211 128.159 62.1688 130.668 62.6167C133.487 63.1211 136.482 63.7069 136.482 66.4666C136.482 68.838 134.305 70.4544 130.512 70.4544C126.718 70.4544 124.193 68.7033 123.607 65.436H123.614Z" fill="currentColor"/>
+          <path d="M139.598 56.6083H147.163C150.12 56.6083 151.965 58.1057 151.965 60.6932C151.965 63.2807 150.117 64.778 147.182 64.778H141.562V70.2224H139.598V56.6115V56.6083ZM141.562 58.1433V63.2775H147.025C148.911 58.1464 147.025 58.1464H141.562V58.1433Z" fill="currentColor"/>
+          <path d="M157.934 56.6083H160.189L166.548 70.2192H164.371L162.795 66.6983H155.252L153.677 70.2192H151.597L157.937 56.6083H157.934ZM155.891 65.2604H162.134L161.686 64.2486L159.024 58.278L156.339 64.2486L155.891 65.2604Z" fill="currentColor"/>
+        </svg>
+      </div>
+      <div class="ad">
+        ul. Solskiego 20a<br/>
+        32-800 Brzesko<br/>
+        woj. małopolskie · PL
+      </div>
+      <div class="meta">
+        <div><em>Od 2019</em>7 lat</div>
+        <div><em>180+</em>realizacji</div>
+      </div>
+    </div>
+    <div class="foot-col">
+      <h5>Nawigacja</h5>
+      <ul>
+        <li><a href="realizacje.html">Realizacje</a></li>
+        <li><a href="showroom.html">Showroom</a></li>
+        <li><a href="o-nas.html">O nas</a></li>
+        <li><a href="kontakt.html">Kontakt</a></li>
+      </ul>
+    </div>
+    <div class="foot-col">
+      <h5>Usługi</h5>
+      <ul>
+        <li><a href="#">Baseny wewnętrzne</a></li>
+        <li><a href="#">Baseny zewnętrzne</a></li>
+        <li><a href="#">Wanny SPA &amp; jacuzzi</a></li>
+        <li><a href="#">Sauny &amp; zadaszenia</a></li>
+      </ul>
+    </div>
+    <div class="foot-col">
+      <h5>Kontakt</h5>
+      <ul>
+        <li><a href="tel:+48724092452">+48 724 092 452</a></li>
+        <li><a href="tel:+48663959514">+48 663 959 514</a></li>
+        <li><a href="mailto:biuro@monzabaseny.pl">biuro@monzabaseny.pl</a></li>
+        <li><a href="mailto:marcin@monzabaseny.pl">marcin@monzabaseny.pl</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="foot-bar">
+    <span>© 2019—2026 MONZA baseny&amp;SPA</span>
+    <span class="c">Projekt<span class="ln"></span>Budowa<span class="ln"></span>Serwis</span>
+    <span class="r"><a href="#">Polityka prywatności</a></span>
+  </div>
+</footer>
+
+</body>
+</html>
