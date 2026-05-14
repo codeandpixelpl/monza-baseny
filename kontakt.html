@@ -1,0 +1,622 @@
+<!doctype html>
+<html lang="pl">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Kontakt — MONZA baseny&amp;SPA</title>
+<meta name="description" content="Skontaktuj się z MONZA baseny&SPA. Bezpłatna konsultacja w showroomie w Brzesku lub u Ciebie." />
+<meta name="theme-color" content="#113258" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+<style>
+:root{
+  --navy:#113258;
+  --navy-deep:#0A1D33;
+  --cream:#ECEAE5;
+  --cream-2:#E2DFD7;
+  --paper:#F4F2ED;
+  --ink:#0C0B09;
+  --ink-2:#3A3830;
+  --muted:#6B685F;
+  --line:rgba(12,11,9,.14);
+  --f-mono:"JetBrains Mono",ui-monospace,monospace;
+  --f-serif:"Fraunces",Georgia,serif;
+  --edge:clamp(20px,4vw,64px);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:focus-visible{outline:2px solid var(--navy);outline-offset:3px}
+html{scroll-behavior:smooth}
+html,body{background:var(--paper);color:var(--ink);font-family:var(--f-mono);-webkit-font-smoothing:antialiased;font-size:13.5px;line-height:1.55}
+body{overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+img,svg{display:block;max-width:100%}
+button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
+::selection{background:var(--navy);color:var(--cream)}
+
+body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:999;opacity:.04;mix-blend-mode:multiply;
+  background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='240' height='240'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2'/><feColorMatrix values='0 0 0 0 .07  0 0 0 0 .2  0 0 0 0 .35  0 0 0 .6 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>")}
+
+/* ===== topbar ===== */
+.topbar{background:var(--navy-deep);color:rgba(236,234,229,.7);font-family:var(--f-mono);font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;display:grid;grid-template-columns:1fr auto;align-items:center;padding:10px var(--edge);gap:24px;position:relative;z-index:50}
+.topbar .l{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.topbar .dot{width:5px;height:5px;border-radius:50%;background:#4CAF50;flex-shrink:0}
+.topbar .r{display:flex;align-items:center;gap:8px;white-space:nowrap}
+.topbar .r a{color:rgba(236,234,229,.9);font-weight:500;display:inline-flex;align-items:center;gap:8px;transition:color .3s}
+.topbar .r a:hover{color:#fff}
+.topbar .arr{display:inline-block;width:14px;height:1px;background:currentColor;position:relative}
+.topbar .arr::after{content:"";position:absolute;right:0;top:-3px;width:6px;height:6px;border-top:1px solid currentColor;border-right:1px solid currentColor;transform:rotate(45deg)}
+
+/* ===== sticky nav ===== */
+@keyframes pulse-navy{0%{box-shadow:0 0 0 0 rgba(17,50,88,.4)}70%{box-shadow:0 0 0 8px rgba(17,50,88,0)}100%{box-shadow:0 0 0 0 rgba(17,50,88,0)}}
+.sticky-nav{background:var(--cream);color:var(--ink);box-shadow:0 2px 20px -8px rgba(12,11,9,.18);position:sticky;top:0;z-index:60}
+.sticky-nav .sn-header{display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:40px;padding:16px var(--edge)}
+.sticky-nav .sn-logo{height:36px;width:auto;color:var(--navy);display:block}
+.sn-links{display:flex;gap:36px;list-style:none;margin-left:8px}
+.sn-links a{font-family:var(--f-mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink);position:relative;padding:4px 0;transition:opacity .3s}
+.sn-links a:hover{opacity:.55}
+.sn-links a::after{content:"";position:absolute;left:50%;bottom:-3px;width:0;height:1px;background:var(--navy);transition:width .3s,left .3s}
+.sn-links a:hover::after{width:100%;left:0}
+.sn-links .has-drop{position:relative}
+.sn-links .has-drop::after{content:"";position:absolute;left:0;right:0;top:100%;height:14px;display:block;pointer-events:none}
+.sn-links .has-drop>a::before{content:"▾";margin-left:5px;font-size:9px;vertical-align:1px}
+.sn-links .drop{display:none;position:absolute;top:calc(100% + 14px);left:0;background:var(--cream);min-width:210px;padding:12px 0;list-style:none;border:1px solid var(--line);box-shadow:0 12px 32px -8px rgba(12,11,9,.15)}
+.sn-links .has-drop:hover .drop{display:block}
+.sn-links .drop li a{display:block;padding:9px 20px;font-size:11px;letter-spacing:.14em;color:var(--ink-2);white-space:nowrap;transition:color .2s,background .2s}
+.sn-links .drop li a::after{display:none}
+.sn-links .drop li a:hover{color:var(--navy);background:rgba(27,74,125,.04);opacity:1}
+.sn-right{display:flex;align-items:center;gap:20px;justify-content:flex-end}
+.sn-right .tel{font-family:var(--f-mono);font-size:13px;color:var(--ink);letter-spacing:.04em;transition:color .3s}
+.sn-right .tel:hover{color:var(--navy)}
+.sn-cta{display:inline-flex;align-items:center;padding:11px 22px;background:var(--navy);color:#fff;font-family:var(--f-mono);font-size:11px;letter-spacing:.18em;text-transform:uppercase;transition:background .3s}
+.sn-cta:hover{background:var(--navy-deep)}
+
+/* ===== video hero ===== */
+.vid-hero{position:relative;height:clamp(360px,48vh,560px);overflow:hidden;background:var(--navy-deep);display:flex;align-items:center;justify-content:center}
+.vid-hero video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.38}
+.vid-hero .vh-tint{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(10,29,51,.45) 0%,rgba(10,29,51,.25) 50%,rgba(10,29,51,.6) 100%)}
+.vid-hero .vh-inner{position:relative;z-index:2;text-align:center;color:#fff;display:flex;flex-direction:column;align-items:center;gap:clamp(20px,2.2vw,32px);padding:0 var(--edge)}
+.vid-hero h1{font-family:var(--f-serif);font-weight:300;font-size:clamp(52px,7.8vw,120px);line-height:.92;letter-spacing:-.03em;font-variation-settings:"opsz" 144;margin:0;background:linear-gradient(to bottom,#fff 0%,#F2EFE8 28%,#B9A687 70%,#7A6A4F 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent}
+.vid-hero h1 i{font-style:italic;font-variation-settings:"opsz" 144,"SOFT" 80,"WONK" 1}
+.vid-hero p{font-family:var(--f-serif);font-weight:300;font-size:clamp(17px,1.4vw,21px);line-height:1.55;color:rgba(236,234,229,.82);max-width:56ch;font-variation-settings:"opsz" 14;margin:0}
+
+/* ===== main contact layout ===== */
+.contact-main{max-width:1200px;margin:0 auto;padding:clamp(56px,7vw,96px) var(--edge);display:grid;grid-template-columns:1fr 1fr;gap:clamp(48px,5vw,80px);align-items:start}
+
+/* ===== form ===== */
+.contact-form-wrap .form-head{margin-bottom:40px}
+.contact-form-wrap .form-head .eyebrow-sm{font-family:var(--f-mono);font-size:10.5px;letter-spacing:.24em;text-transform:uppercase;color:var(--navy);display:inline-flex;align-items:center;gap:10px;margin-bottom:16px}
+.contact-form-wrap .form-head .eyebrow-sm::before{content:"";width:20px;height:1px;background:var(--navy)}
+.contact-form-wrap .form-head h2{font-family:var(--f-serif);font-weight:300;font-size:clamp(28px,2.6vw,40px);line-height:1.1;letter-spacing:-.02em;color:var(--ink);font-variation-settings:"opsz" 144}
+.contact-form-wrap .form-head h2 i{font-style:italic;color:var(--muted);font-variation-settings:"opsz" 144,"SOFT" 80,"WONK" 1}
+.cform{display:flex;flex-direction:column;gap:20px}
+.cform-row label{display:block;font-family:var(--f-mono);font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);margin-bottom:8px}
+.cform-row input,.cform-row textarea,.cform-row select{width:100%;padding:14px 16px;background:var(--cream);border:1px solid var(--line);font-family:var(--f-mono);font-size:13px;color:var(--ink);outline:none;transition:border-color .25s,background .25s;-webkit-appearance:none;border-radius:0}
+.cform-row input:focus,.cform-row textarea:focus,.cform-row select:focus{border-color:var(--navy);background:#fff}
+.cform-row input::placeholder,.cform-row textarea::placeholder{color:var(--muted)}
+.cform-row textarea{resize:vertical;min-height:120px}
+.cform-row select{cursor:pointer;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%236B685F' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center}
+.cform-file{display:block;cursor:pointer}
+.cform-file input[type=file]{position:absolute;opacity:0;width:0;height:0}
+.cfile-ui{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;padding:28px 20px;border:1px dashed var(--line);background:var(--cream);transition:border-color .25s,background .25s;text-align:center}
+.cform-file:hover .cfile-ui,.cform-file:focus-within .cfile-ui{border-color:var(--navy);background:#fff}
+.cfile-icon{font-size:22px;color:var(--muted);line-height:1}
+.cfile-text{font-family:var(--f-mono);font-size:12px;color:var(--ink-2)}
+.cfile-text u{color:var(--navy);text-decoration:underline;text-underline-offset:3px}
+.cfile-hint{font-family:var(--f-mono);font-size:10px;letter-spacing:.1em;color:var(--muted);text-transform:uppercase}
+.cform-consent{font-size:11px;line-height:1.6;color:var(--muted);padding-left:24px;position:relative}
+.cform-consent input[type=checkbox]{position:absolute;left:0;top:2px;width:14px;height:14px;accent-color:var(--navy);cursor:pointer}
+.cform-submit{display:inline-flex;align-items:center;gap:12px;padding:15px 32px;background:var(--navy);color:#fff;font-family:var(--f-mono);font-size:11.5px;letter-spacing:.2em;text-transform:uppercase;border:none;cursor:pointer;transition:background .3s;align-self:flex-start}
+.cform-submit:hover{background:var(--navy-deep)}
+.cform-submit .arr{display:inline-block;width:16px;height:1px;background:#fff;position:relative}
+.cform-submit .arr::after{content:"";position:absolute;right:0;top:-3px;width:7px;height:7px;border-top:1px solid #fff;border-right:1px solid #fff;transform:rotate(45deg)}
+
+/* ===== contact details panel ===== */
+.contact-details{display:flex;flex-direction:column;gap:48px}
+.contact-details .det-head .eyebrow-sm{font-family:var(--f-mono);font-size:10.5px;letter-spacing:.24em;text-transform:uppercase;color:var(--navy);display:inline-flex;align-items:center;gap:10px;margin-bottom:16px}
+.contact-details .det-head .eyebrow-sm::before{content:"";width:20px;height:1px;background:var(--navy)}
+.contact-details .det-head h2{font-family:var(--f-serif);font-weight:300;font-size:clamp(28px,2.6vw,40px);line-height:1.1;letter-spacing:-.02em;color:var(--ink);font-variation-settings:"opsz" 144}
+.contact-details .det-head h2 i{font-style:italic;color:var(--muted);font-variation-settings:"opsz" 144,"SOFT" 80,"WONK" 1}
+.persons{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.person{padding:24px;background:var(--cream);border:1px solid var(--line);display:flex;flex-direction:column;gap:6px}
+.person .p-name{font-family:var(--f-serif);font-weight:300;font-size:22px;color:var(--ink);letter-spacing:-.01em;font-variation-settings:"opsz" 14}
+.person .p-role{font-family:var(--f-mono);font-size:9.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--muted)}
+.person .p-tel{font-family:var(--f-mono);font-size:15px;color:var(--navy);letter-spacing:.02em;margin-top:8px;transition:opacity .3s;font-weight:500}
+.person .p-tel:hover{opacity:.7}
+.address-block{border-top:1px solid var(--line);padding-top:32px;display:flex;flex-direction:column;gap:16px}
+.address-row{display:flex;gap:16px}
+.address-row .ak{font-family:var(--f-mono);font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);min-width:88px;padding-top:1px}
+.address-row .av{font-family:var(--f-mono);font-size:13px;color:var(--ink);line-height:1.5}
+.address-row .av a{color:var(--navy);transition:opacity .3s}
+.address-row .av a:hover{opacity:.7}
+.map-btn{display:inline-flex;align-items:center;gap:10px;padding:13px 24px;border:1px solid var(--navy);font-family:var(--f-mono);font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--navy);transition:all .3s;margin-top:8px;align-self:flex-start}
+.map-btn:hover{background:var(--navy);color:#fff}
+.map-btn .arr{display:inline-block;width:14px;height:1px;background:currentColor;position:relative}
+.map-btn .arr::after{content:"";position:absolute;right:0;top:-3px;width:6px;height:6px;border-top:1px solid currentColor;border-right:1px solid currentColor;transform:rotate(45deg)}
+.emails-block{border-top:1px solid var(--line);padding-top:24px;display:flex;flex-direction:column;gap:8px}
+.emails-block a{font-family:var(--f-mono);font-size:12.5px;color:var(--ink-2);transition:color .3s}
+.emails-block a:hover{color:var(--navy)}
+
+/* ===== showroom section ===== */
+.showroom-band{background:var(--navy);color:#fff;padding:clamp(48px,5vw,72px) var(--edge)}
+.showroom-band-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr auto;align-items:center;gap:48px}
+.showroom-band h3{font-family:var(--f-serif);font-weight:300;font-size:clamp(28px,2.8vw,42px);line-height:1.1;letter-spacing:-.02em;font-variation-settings:"opsz" 144}
+.showroom-band h3 i{font-style:italic;font-variation-settings:"opsz" 144,"SOFT" 80,"WONK" 1;color:rgba(236,234,229,.6)}
+.showroom-band p{font-family:var(--f-mono);font-size:12px;letter-spacing:.06em;color:rgba(236,234,229,.6);margin-top:10px;line-height:1.65}
+.showroom-band .sb-cta{display:inline-flex;align-items:center;gap:12px;padding:15px 28px;border:1px solid rgba(236,234,229,.35);color:#fff;font-family:var(--f-mono);font-size:11px;letter-spacing:.18em;text-transform:uppercase;white-space:nowrap;transition:all .3s}
+.showroom-band .sb-cta:hover{background:rgba(236,234,229,.1);border-color:rgba(236,234,229,.7)}
+.showroom-band .sb-cta .arr{display:inline-block;width:14px;height:1px;background:#fff;position:relative}
+.showroom-band .sb-cta .arr::after{content:"";position:absolute;right:0;top:-3px;width:6px;height:6px;border-top:1px solid #fff;border-right:1px solid #fff;transform:rotate(45deg)}
+
+/* ===== footer ===== */
+footer.foot{background:var(--navy-deep);color:rgba(236,234,229,.7);position:relative;overflow:hidden}
+footer.foot::after{content:"";position:absolute;top:-20%;right:-10%;width:800px;height:800px;border-radius:50%;background:radial-gradient(circle,rgba(27,74,125,.28) 0%,transparent 60%);pointer-events:none}
+.foot-grid{position:relative;z-index:1;max-width:1440px;margin:0 auto;padding:clamp(48px,5vw,72px) var(--edge) clamp(48px,5vw,72px);display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:clamp(40px,4vw,64px)}
+.foot-brand .f-brand{margin-bottom:28px}
+.foot-brand .f-brand-mark{height:40px;width:auto;color:rgba(236,234,229,.9)}
+.foot-brand .ad{font-family:var(--f-mono);font-size:11.5px;line-height:1.8;color:rgba(236,234,229,.5);margin-bottom:24px;padding-bottom:24px;border-bottom:1px solid rgba(236,234,229,.1)}
+.foot-brand .meta{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.foot-brand .meta .div{display:flex;flex-direction:column;gap:3px}
+.foot-brand .meta em{font-family:var(--f-serif);font-weight:300;font-size:20px;color:var(--cream);font-style:normal;letter-spacing:-.01em}
+.foot-brand .meta>div{display:flex;flex-direction:column;gap:3px}
+.foot-brand .meta>div em{font-family:var(--f-serif);font-weight:300;font-size:20px;color:var(--cream);font-style:normal;letter-spacing:-.01em}
+.foot-brand .meta>div span{font-family:var(--f-mono);font-size:9.5px;letter-spacing:.2em;text-transform:uppercase;color:rgba(236,234,229,.38)}
+.foot-col h5{font-family:var(--f-mono);font-size:10px;letter-spacing:.28em;text-transform:uppercase;color:rgba(236,234,229,.45);margin:0 0 24px;padding-bottom:14px;border-bottom:1px solid rgba(236,234,229,.1)}
+.foot-col ul{list-style:none;display:grid;gap:12px}
+.foot-col ul a{font-family:var(--f-serif);font-weight:300;font-size:16px;color:rgba(236,234,229,.82);transition:color .3s,transform .3s;letter-spacing:-.005em;font-variation-settings:"opsz" 14;display:inline-block}
+.foot-col ul a:hover{color:var(--cream);transform:translateX(3px)}
+.ft-persons{display:grid;gap:24px}
+.ft-person{display:flex;flex-direction:column;gap:3px}
+.ft-name{font-family:var(--f-serif);font-weight:300;font-size:19px;color:var(--cream);letter-spacing:-.01em;font-variation-settings:"opsz" 14}
+.ft-role{font-family:var(--f-mono);font-size:9.5px;letter-spacing:.22em;text-transform:uppercase;color:rgba(236,234,229,.42)}
+.ft-tel{font-family:var(--f-serif);font-weight:300;font-size:16px;color:rgba(236,234,229,.82);text-decoration:none;margin-top:4px;transition:color .3s}
+.ft-tel:hover{color:var(--cream)}
+.ft-emails{display:flex;flex-direction:column;gap:8px;padding-top:8px;border-top:1px solid rgba(236,234,229,.1)}
+.ft-emails a{font-family:var(--f-serif);font-weight:300;font-size:15px;color:rgba(236,234,229,.55);text-decoration:none;transition:color .3s}
+.ft-emails a:hover{color:rgba(236,234,229,.82)}
+.foot-bar{position:relative;z-index:1;max-width:1440px;margin:0 auto;padding:26px var(--edge) 30px;display:grid;grid-template-columns:1fr auto 1fr;gap:24px;border-top:1px solid rgba(236,234,229,.08);font-family:var(--f-mono);font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:rgba(236,234,229,.38);align-items:center}
+.foot-bar .c{text-align:center;display:flex;gap:18px;align-items:center;justify-content:center}
+.foot-bar .c .ln{width:24px;height:1px;background:rgba(236,234,229,.2)}
+.foot-bar .r{text-align:right}
+.foot-bar a{color:rgba(236,234,229,.58);transition:color .3s}
+.foot-bar a:hover{color:var(--cream)}
+
+/* ===== responsive ===== */
+@media(max-width:900px){
+  .contact-main{grid-template-columns:1fr}
+  .showroom-band-inner{grid-template-columns:1fr}
+  .foot-grid{grid-template-columns:1fr 1fr}
+  .foot-bar{grid-template-columns:1fr;text-align:center;gap:12px}
+  .foot-bar .r{text-align:center}
+  .sn-links{gap:20px}
+}
+@media(max-width:600px){
+  .persons{grid-template-columns:1fr}
+  .foot-grid{grid-template-columns:1fr}
+  .sn-strip .l span:last-child{display:none}
+}
+
+/* ===== mobile responsive ===== */
+.mn-logo{display:block;width:120px;color:var(--cream);margin:0 0 28px}
+.mn-logo svg{width:100%;height:auto;display:block}
+.topbar-ext{display:inline}
+.hamburger{display:none;width:44px;height:44px;align-items:center;justify-content:center;flex-direction:column;gap:5px;cursor:pointer;background:transparent;border:0;padding:0;z-index:80}
+.hamburger span{display:block;width:22px;height:2px;background:var(--ink);transition:transform .3s,opacity .25s}
+.hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.hamburger.open span:nth-child(2){opacity:0}
+.hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+.mobile-nav{position:fixed;inset:0;background:var(--navy-deep);color:var(--cream);z-index:75;display:flex;flex-direction:column;padding:24px var(--edge) 24px;overflow-y:auto;transform:translateY(-100%);transition:transform .35s cubic-bezier(.22,.61,.36,1);visibility:hidden}
+.mn-close{position:absolute;top:18px;right:var(--edge);width:44px;height:44px;display:flex;align-items:center;justify-content:center;background:transparent;border:1px solid rgba(236,234,229,.25);color:var(--cream);cursor:pointer;padding:0;z-index:5;transition:background .25s,border-color .25s}
+.mn-close:hover{background:rgba(236,234,229,.08);border-color:rgba(236,234,229,.55)}
+.mn-close svg{width:18px;height:18px;display:block}
+.mobile-nav.open{transform:translateY(0);visibility:visible}
+.mobile-nav .mn-links{list-style:none;display:flex;flex-direction:column;gap:0;margin:0;padding:0}
+.mobile-nav .mn-links>li{border-bottom:1px solid rgba(236,234,229,.1)}
+.mobile-nav .mn-links>li>a,.mobile-nav .mn-drop-toggle{display:flex;align-items:center;justify-content:space-between;padding:18px 0;font-family:var(--f-serif);font-weight:300;font-size:24px;color:rgba(236,234,229,.92);font-variation-settings:"opsz" 14;text-decoration:none;background:transparent;border:0;width:100%;text-align:left;cursor:pointer;letter-spacing:-.01em;min-height:44px}
+.mobile-nav .mn-drop-toggle::after{content:"▾";font-size:14px;color:rgba(236,234,229,.6);transition:transform .3s}
+.mobile-nav .mn-drop.open .mn-drop-toggle::after{transform:rotate(180deg)}
+.mobile-nav .mn-sub{list-style:none;max-height:0;overflow:hidden;transition:max-height .35s ease;margin:0;padding:0}
+.mobile-nav .mn-drop.open .mn-sub{max-height:600px !important}
+.mobile-nav .mn-sub li a{display:block;padding:12px 16px;font-family:var(--f-mono);font-size:13px;letter-spacing:.08em;color:rgba(236,234,229,.6);min-height:44px;display:flex;align-items:center}
+.mobile-nav .mn-sub li a:hover{color:var(--cream)}
+.mobile-nav .mn-foot{margin-top:auto;padding-top:32px;border-top:1px solid rgba(236,234,229,.12);display:flex;flex-direction:column;gap:16px}
+.mobile-nav .mn-foot .mn-tel{font-family:var(--f-serif);font-weight:300;font-size:22px;color:var(--cream);font-variation-settings:"opsz" 14}
+.mobile-nav .mn-foot .mn-tel-label{font-family:var(--f-mono);font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:rgba(236,234,229,.45);margin-bottom:4px;display:block}
+.mobile-nav .mn-cta{display:inline-flex;justify-content:center;align-items:center;padding:14px 22px;background:var(--cream);color:var(--navy);font-family:var(--f-mono);font-size:12px;letter-spacing:.2em;text-transform:uppercase;text-decoration:none;min-height:48px;margin-top:8px}
+body.mn-locked{overflow:hidden}
+.mobile-cta-bar{display:none;position:fixed;bottom:0;left:0;right:0;z-index:55;background:var(--cream);border-top:1px solid var(--line);padding:10px var(--edge) calc(10px + env(safe-area-inset-bottom,0px));gap:10px;box-shadow:0 -4px 16px rgba(12,11,9,.08)}
+.mobile-cta-bar a{flex:1;display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:14px 12px;font-family:var(--f-mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;min-height:48px;text-decoration:none}
+.mobile-cta-bar .mcb-tel{background:var(--navy);color:#fff}
+.mobile-cta-bar .mcb-msg{background:transparent;color:var(--navy);border:1px solid var(--navy)}
+.mobile-cta-bar svg{width:14px;height:14px}
+@media (max-width:860px){
+  .sticky-nav .sn-links,.sticky-nav .sn-right{display:none !important}
+  .hamburger{display:inline-flex}
+  .sticky-nav .sn-header{grid-template-columns:auto 1fr auto;gap:16px}
+  .topbar{font-size:9px;letter-spacing:.12em;padding:8px var(--edge);grid-template-columns:1fr}
+  .topbar .r{display:none}
+  .topbar-ext{display:none}
+  .topbar .l{justify-content:center;text-align:center}
+  .mobile-cta-bar{display:flex}
+  body{padding-bottom:70px}
+  /* Pin-CTA — uproszczona wersja mobile (bez scroll-pin) */
+  .pin-cta{min-height:auto;position:relative}
+  .pin-sticky{position:relative;top:auto;height:auto;min-height:520px;padding:60px var(--edge)}
+  .pin-img-box{position:absolute;inset:0}
+  .pin-img-box video,.pin-img-box img{opacity:.32 !important}
+  .pin-cta-overlay{position:relative;opacity:1 !important;padding:0;justify-content:center;min-height:420px}
+  .pin-cta-overlay h2{font-size:clamp(40px,11vw,64px)}
+  .pin-hint,.pin-eyebrow{display:none}
+
+  /* iOS — zapobiega zoom przy focusie na inputach */
+  .cmodal-row input,.cmodal-row select,.cmodal-row textarea,.cform-row input,.cform-row select,.cform-row textarea{font-size:16px !important}
+  input,select,textarea{font-size:16px}
+}
+@media (max-width:600px){
+  .mobile-nav .mn-links>li>a,.mobile-nav .mn-drop-toggle{font-size:21px;padding:16px 0}
+}
+</style>
+</head>
+<body>
+
+<!-- topbar -->
+<div class="topbar">
+  <div class="l">
+    <span class="dot"></span>
+    <span>Showroom otwarty — Pn–Pt 08:00–17:00<span class="topbar-ext">&nbsp;·&nbsp; spotkania w innym terminie możliwe po wcześniejszym umówieniu</span></span>
+  </div>
+  <div class="r">
+    <span>Brzesko · ul. Solskiego 20A</span>
+    <a href="https://maps.google.com/?q=ul.+Solskiego+20A,+Brzesko" target="_blank" rel="noopener">Wyznacz trasę <span class="arr"></span></a>
+  </div>
+</div>
+
+<!-- nav -->
+<div class="sticky-nav">
+  <div class="sn-header">
+    <a href="index.html" aria-label="MONZA baseny & SPA — strona główna">
+      <svg class="sn-logo" viewBox="0 0 336 71" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M311.102 0.225543L310.989 0H298.343L298.23 0.228676L279.3 36.018L285.349 39.7301C282.953 38.9814 280.575 38.4363 278.22 38.0698C275.917 37.7127 273.64 37.5154 271.372 37.4621C270.924 37.4496 270.47 37.4402 270.022 37.4402C259.547 37.412 249.447 40.2062 239.527 42.9378C224.29 47.148 209.83 51.1388 193.66 45.6882H201.814V16.2047C201.814 7.33956 194.6 0.125302 185.734 0.125302H146.255V45.6819H158.641V12.5114H185.734C187.771 12.5114 189.428 14.1685 189.428 16.2047V45.6819H189.453V56.414C196.554 58.8292 203.386 59.7533 209.943 59.7533C221.812 59.7533 232.82 56.7148 243.001 53.9049C255.628 50.4121 266.921 47.3014 278.342 49.7668C280.231 50.1677 282.117 50.7253 284.009 51.4615L287.063 45.6851L288.422 43.107L304.668 12.3955L322.273 45.6819H335.144L311.102 0.228676V0.225543Z" fill="currentColor"/>
+        <path d="M272.248 12.3516V0H214.722V11.5184H251.704L214.086 33.3366V45.685H214.828L272.248 12.3516Z" fill="currentColor"/>
+        <path d="M55.0701 0.125488H0V45.6821H12.3861V12.5116H27.0213C28.5876 12.5116 29.8563 13.7803 29.8563 15.3465V45.6852H42.2424V12.5116H55.0701C57.1094 12.5116 58.7634 14.1656 58.7634 16.2048V45.6821H71.1495V16.2048C71.1495 7.32408 63.9509 0.125488 55.0701 0.125488Z" fill="currentColor"/>
+        <path d="M121.69 0H95.7119C86.8218 0 79.6138 7.20486 79.6138 16.095V29.5869C79.6138 38.4771 86.8218 45.685 95.7119 45.685H121.69C130.58 45.685 137.785 38.4771 137.785 29.5869V16.095C137.785 7.20799 130.58 0 121.69 0ZM125.321 33.2238H95.4081C93.5693 33.2238 92.0782 31.7327 92.0782 29.8939V12.4644H121.69C123.695 12.4644 125.321 14.0902 125.321 16.095V33.2238Z" fill="currentColor"/>
+        <path d="M0.0675049 56.6083H7.94272C10.6649 56.6083 12.3189 57.9115 12.3189 60.1293C12.3189 61.5296 11.5796 62.6385 10.2577 63.1835C11.7926 63.7098 12.7073 64.8563 12.7073 66.5072C12.7073 68.8002 11.0157 70.2224 8.21525 70.2224H0.0675049V56.6115V56.6083ZM2.03161 58.1245V62.5007H7.82682C9.42128 62.5007 10.3924 61.6831 10.3924 60.2828C10.3924 58.8826 9.44008 58.1245 7.82682 58.1245H2.03161ZM2.03161 63.9949V68.7H8.07742C9.769 68.7 10.7401 67.8448 10.7401 66.385C10.7401 64.9252 9.74707 63.9949 8.07742 63.9949H2.03161Z" fill="currentColor"/>
+        <path d="M20.8934 56.6083H23.1488L29.5079 70.2192H27.3308L25.7551 66.6983H18.212L16.6363 70.2192H14.5563L20.8965 56.6083H20.8934ZM18.851 65.2604H25.0942L24.6462 64.2486L21.9835 58.278L19.2989 64.2486L18.851 65.2604Z" fill="currentColor"/>
+        <path d="M30.9053 65.436H32.907C33.3738 67.8074 34.987 68.9758 37.7687 68.9758C40.375 68.9758 41.8128 68.0423 41.8128 66.6828C41.8128 64.8565 39.3632 64.5057 36.8164 64.0765C34.0347 63.591 31.1183 62.9864 31.1183 60.2642C31.1183 58.0276 33.2767 56.3767 36.8728 56.3767C40.7039 56.3767 43.1912 58.1466 43.755 61.2948H41.8504C41.3837 59.077 39.6138 57.8521 36.9104 57.8521C34.442 57.8521 33.0793 58.7856 33.0793 60.07C33.0793 61.8211 35.4506 62.1688 37.9598 62.6167C40.7791 63.1211 43.7738 63.7069 43.7738 66.4666C43.7738 68.838 41.5967 70.4544 37.8032 70.4544C34.0097 70.4544 31.4848 68.7033 30.899 65.436H30.9053Z" fill="currentColor"/>
+        <path d="M46.8904 56.6086H58.0328V58.1435H48.8545V62.479H55.4642V63.9951H48.8545V68.7002H58.0328V70.2164H46.8904V56.6055V56.6086Z" fill="currentColor"/>
+        <path d="M61.1622 56.6083H63.4553L67.6372 62.2281L71.8192 67.9262L71.7816 62.2093L71.7628 56.6083H73.5327V70.2192H71.2177L67.0577 64.6183L62.8757 58.9421L62.9133 64.6183L62.9321 70.2192H61.1622V56.6083Z" fill="currentColor"/>
+        <path d="M82.4919 65.2012L76.0764 56.6055H78.429L83.5444 63.5096L88.6379 56.6055H90.8934L84.456 65.2388V70.2164H82.4919V65.2012Z" fill="currentColor"/>
+        <path d="M100.475 66.9709C100.475 65.2794 101.525 64.1892 103.974 62.9456C102.634 61.7396 102.167 60.7497 102.167 59.6784C102.167 57.8114 103.683 56.3547 106.289 56.3547C108.623 56.3547 110.315 57.542 110.315 59.2899C110.315 60.8468 109.303 61.915 106.737 63.1398L110.333 66.31C111.129 65.201 111.849 63.7444 112.492 61.9745H114.437C113.522 64.2675 112.611 66.0374 111.558 67.3813L114.807 70.2194H112.084L110.355 68.6625C108.955 69.9249 107.323 70.4888 105.34 70.4888C102.558 70.4888 100.478 69.1073 100.478 66.9678L100.475 66.9709ZM105.531 69.0917C106.894 69.0917 108.119 68.6061 109.187 67.6131L105.064 63.9386C103.063 64.9317 102.38 65.7273 102.38 66.855C102.38 68.1958 103.664 69.0917 105.531 69.0917ZM105.591 62.1499C107.827 61.1193 108.526 60.4208 108.526 59.3902C108.526 58.3596 107.611 57.6986 106.252 57.6986C104.892 57.6986 103.996 58.4567 103.996 59.5844C103.996 60.2642 104.269 60.9658 105.221 61.821L105.591 62.1531V62.1499Z" fill="currentColor"/>
+        <path d="M123.614 65.436H125.615C126.082 67.8074 127.695 68.9758 130.477 68.9758C133.083 68.9758 134.521 68.0423 134.521 66.6828C134.521 64.8565 132.072 64.5057 129.525 64.0765C126.743 63.591 123.827 62.9864 123.827 60.2642C123.827 58.0276 125.985 56.3767 129.581 56.3767C133.412 56.3767 135.9 58.1466 136.463 61.2948H134.559C134.092 59.077 132.322 57.8521 129.619 57.8521C127.15 57.8521 125.788 58.7856 125.788 60.07C125.788 61.8211 128.159 62.1688 130.668 62.6167C133.487 63.1211 136.482 63.7069 136.482 66.4666C136.482 68.838 134.305 70.4544 130.512 70.4544C126.718 70.4544 124.193 68.7033 123.607 65.436H123.614Z" fill="currentColor"/>
+        <path d="M139.598 56.6083H147.163C150.12 56.6083 151.965 58.1057 151.965 60.6932C151.965 63.2807 150.117 64.778 147.182 64.778H141.562V70.2224H139.598V56.6115V56.6083ZM141.562 58.1433V63.2775H147.025C148.911 63.2775 150.001 62.4035 150.001 60.712C150.001 59.0204 148.911 58.1464 147.025 58.1464H141.562V58.1433Z" fill="currentColor"/>
+        <path d="M157.934 56.6083H160.189L166.548 70.2192H164.371L162.795 66.6983H155.252L153.677 70.2192H151.597L157.937 56.6083H157.934ZM155.891 65.2604H162.134L161.686 64.2486L159.024 58.278L156.339 64.2486L155.891 65.2604Z" fill="currentColor"/>
+      </svg>
+    </a>
+    <nav>
+      <ul class="sn-links">
+        <li class="has-drop"><a href="#">Usługi</a>
+          <ul class="drop">
+            <li><a href="baseny-wewnetrzne.html">Baseny wewnętrzne</a></li>
+            <li><a href="baseny-zewnetrzne.html">Baseny zewnętrzne</a></li>
+            <li><a href="wanny-spa.html">Wanny SPA</a></li>
+            <li><a href="sauny.html">Sauny</a></li>
+            <li><a href="laznie-parowe.html">Łaźnie parowe</a></li>
+            <li><a href="strefy-spa.html">Strefy SPA</a></li>
+          </ul>
+        </li>
+        <li><a href="realizacje.html">Realizacje</a></li>
+        <li><a href="showroom.html">Showroom</a></li>
+        <li><a href="o-nas.html">O&nbsp;nas</a></li>
+        <li class="active"><a href="kontakt.html">Kontakt</a></li>
+        <li><a href="architekci.html">Dla architektów</a></li>
+      </ul>
+    </nav>
+    <div class="sn-right">
+      <a href="tel:+48663959514" class="tel">+48&nbsp;663&nbsp;959&nbsp;514</a>
+      <a href="kontakt.html" class="sn-cta">Umów spotkanie</a>
+    </div>
+  </div>
+</div>
+
+<!-- video hero -->
+<section class="vid-hero">
+  <video src="assets/video/cta.mp4" poster="assets/img/cta.jpg" autoplay muted loop playsinline preload="none" aria-label="Basen z palmami — realizacja Monza Baseny"></video>
+  <div class="vh-tint"></div>
+  <div class="vh-inner">
+    <h1>Zapraszamy<br/>do <i>kontaktu.</i></h1>
+  </div>
+</section>
+
+<!-- main content -->
+<main>
+<div class="contact-main">
+
+  <!-- form -->
+  <div class="contact-form-wrap">
+    <div class="form-head">
+      <div class="eyebrow-sm">Formularz kontaktowy</div>
+      <h2>Napisz, <i>co planujesz.</i></h2>
+    </div>
+    <form class="cform" onsubmit="return false;">
+      <div class="cform-row">
+        <label>Imię i nazwisko</label>
+        <input type="text" placeholder="np. Jan Kowalski" autocomplete="name" />
+      </div>
+      <div class="cform-row">
+        <label>Telefon</label>
+        <input type="tel" placeholder="+48 600 000 000" autocomplete="tel" />
+      </div>
+      <div class="cform-row">
+        <label>E-mail</label>
+        <input type="email" placeholder="jan@przykład.pl" autocomplete="email" />
+      </div>
+      <div class="cform-row">
+        <label>Rodzaj projektu</label>
+        <select>
+          <option value="" disabled selected>Wybierz…</option>
+          <option>Baseny wewnętrzne</option>
+          <option>Baseny zewnętrzne</option>
+          <option>Wanny SPA</option>
+          <option>Sauny</option>
+          <option>Łaźnie parowe</option>
+          <option>Strefy SPA</option>
+          <option>Nie wiem jeszcze</option>
+        </select>
+      </div>
+      <div class="cform-row">
+        <label>Lokalizacja inwestycji</label>
+        <input type="text" placeholder="Miasto / województwo" />
+      </div>
+      <div class="cform-row">
+        <label>Opis (opcjonalnie)</label>
+        <textarea placeholder="Kilka słów o projekcie — wymiary, termin, budżet, specjalne wymagania…"></textarea>
+      </div>
+      <div class="cform-row">
+        <label>Załącz plik (opcjonalnie)</label>
+        <label class="cform-file">
+          <input type="file" accept=".pdf,.jpg,.jpeg,.png,.dwg,.dxf,.zip" multiple />
+          <span class="cfile-ui">
+            <span class="cfile-icon">↑</span>
+            <span class="cfile-text">Przeciągnij plik lub <u>wybierz z dysku</u></span>
+            <span class="cfile-hint">PDF, JPG, PNG, DWG — max 20 MB</span>
+          </span>
+        </label>
+      </div>
+      <label class="cform-consent">
+        <input type="checkbox" />
+        Wyrażam zgodę na kontakt ze strony MONZA baseny&amp;SPA w celu odpowiedzi na zapytanie, zgodnie z <a href="#" style="color:var(--navy)">polityką prywatności</a>.
+      </label>
+      <button type="submit" class="cform-submit">
+        Wyślij wiadomość <span class="arr"></span>
+      </button>
+    </form>
+  </div>
+
+  <!-- details -->
+  <div class="contact-details">
+    <div>
+      <div class="det-head">
+        <div class="eyebrow-sm">Bezpośredni kontakt</div>
+        <h2>Zadzwoń <i>lub napisz.</i></h2>
+      </div>
+    </div>
+    <div class="persons">
+      <div class="person">
+        <span class="p-name">Paulina Przybyło</span>
+        <span class="p-role">Specjalista ds. obsługi klienta</span>
+        <a class="p-tel" href="tel:+48691084538">+48 691 084 538</a>
+      </div>
+      <div class="person">
+        <span class="p-name">Mariusz Bąk</span>
+        <span class="p-role">Manager ds. rozwoju firmy</span>
+        <a class="p-tel" href="tel:+48663959514">+48 663 959 514</a>
+      </div>
+    </div>
+    <div class="address-block">
+      <div class="address-row">
+        <span class="ak">E-mail biuro</span>
+        <span class="av"><a href="mailto:biuro@monzabaseny.pl">biuro@monzabaseny.pl</a></span>
+      </div>
+      <div class="address-row">
+        <span class="ak">E-mail Marcin</span>
+        <span class="av"><a href="mailto:marcin@monzabaseny.pl">marcin@monzabaseny.pl</a></span>
+      </div>
+      <div class="address-row">
+        <span class="ak">Showroom</span>
+        <span class="av">ul. Solskiego 20A<br/>32-800 Brzesko</span>
+      </div>
+      <div class="address-row">
+        <span class="ak">Godziny</span>
+        <span class="av">Pn–Pt 08:00–17:00<br/>Inne terminy po wcześniejszym umówieniu</span>
+      </div>
+      <a class="map-btn" href="https://maps.google.com/?q=ul.+Solskiego+20A,+Brzesko" target="_blank" rel="noopener">
+        Wyznacz trasę <span class="arr"></span>
+      </a>
+    </div>
+  </div>
+
+</div>
+</main>
+
+<!-- showroom band -->
+<section class="showroom-band">
+  <div class="showroom-band-inner">
+    <div>
+      <h3>Odwiedź nasz <i>showroom.</i></h3>
+      <p>Brzesko · ul. Solskiego 20A &nbsp;·&nbsp; Pn–Pt 08:00–17:00 &nbsp;·&nbsp; Ponad 200 m² ekspozycji basenów, wanien SPA i saun.</p>
+    </div>
+    <a class="sb-cta" href="showroom.html">
+      Więcej o showroomie <span class="arr"></span>
+    </a>
+  </div>
+</section>
+
+<!-- footer -->
+<footer class="foot">
+  <div class="foot-grid">
+    <div class="foot-brand">
+      <div class="f-brand">
+        <svg class="f-brand-mark" viewBox="0 0 336 71" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="MONZA baseny & SPA">
+          <path d="M311.102 0.225543L310.989 0H298.343L298.23 0.228676L279.3 36.018L285.349 39.7301C282.953 38.9814 280.575 38.4363 278.22 38.0698C275.917 37.7127 273.64 37.5154 271.372 37.4621C270.924 37.4496 270.47 37.4402 270.022 37.4402C259.547 37.412 249.447 40.2062 239.527 42.9378C224.29 47.148 209.83 51.1388 193.66 45.6882H201.814V16.2047C201.814 7.33956 194.6 0.125302 185.734 0.125302H146.255V45.6819H158.641V12.5114H185.734C187.771 12.5114 189.428 14.1685 189.428 16.2047V45.6819H189.453V56.414C196.554 58.8292 203.386 59.7533 209.943 59.7533C221.812 59.7533 232.82 56.7148 243.001 53.9049C255.628 50.4121 266.921 47.3014 278.342 49.7668C280.231 50.1677 282.117 50.7253 284.009 51.4615L287.063 45.6851L288.422 43.107L304.668 12.3955L322.273 45.6819H335.144L311.102 0.228676V0.225543Z" fill="currentColor"/>
+          <path d="M272.248 12.3516V0H214.722V11.5184H251.704L214.086 33.3366V45.685H214.828L272.248 12.3516Z" fill="currentColor"/>
+          <path d="M55.0701 0.125488H0V45.6821H12.3861V12.5116H27.0213C28.5876 12.5116 29.8563 13.7803 29.8563 15.3465V45.6852H42.2424V12.5116H55.0701C57.1094 12.5116 58.7634 14.1656 58.7634 16.2048V45.6821H71.1495V16.2048C71.1495 7.32408 63.9509 0.125488 55.0701 0.125488Z" fill="currentColor"/>
+          <path d="M121.69 0H95.7119C86.8218 0 79.6138 7.20486 79.6138 16.095V29.5869C79.6138 38.4771 86.8218 45.685 95.7119 45.685H121.69C130.58 45.685 137.785 38.4771 137.785 29.5869V16.095C137.785 7.20799 130.58 0 121.69 0ZM125.321 33.2238H95.4081C93.5693 33.2238 92.0782 31.7327 92.0782 29.8939V12.4644H121.69C123.695 12.4644 125.321 14.0902 125.321 16.095V33.2238Z" fill="currentColor"/>
+        </svg>
+      </div>
+      <div class="ad">
+        ul. Solskiego 20a<br/>
+        32-800 Brzesko<br/>
+        woj. małopolskie · PL
+      </div>
+      <div class="meta">
+        <div><em>Od 2020</em><span>na rynku</span></div>
+        <div><em>180+</em><span>realizacji</span></div>
+      </div>
+    </div>
+    <div class="foot-col">
+      <h5>Nawigacja</h5>
+      <ul>
+        <li><a href="realizacje.html">Realizacje</a></li>
+        <li><a href="showroom.html">Showroom</a></li>
+        <li><a href="o-nas.html">O nas</a></li>
+        <li><a href="kontakt.html">Kontakt</a></li>
+        <li><a href="architekci.html">Dla architektów</a></li>
+      </ul>
+    </div>
+    <div class="foot-col">
+      <h5>Usługi</h5>
+      <ul>
+        <li><a href="baseny-wewnetrzne.html">Baseny wewnętrzne</a></li>
+        <li><a href="baseny-zewnetrzne.html">Baseny zewnętrzne</a></li>
+        <li><a href="wanny-spa.html">Wanny SPA</a></li>
+        <li><a href="sauny.html">Sauny &amp; Łaźnie parowe</a></li>
+        <li><a href="strefy-spa.html">Strefy SPA</a></li>
+      </ul>
+    </div>
+    <div class="foot-col">
+      <h5>Kontakt</h5>
+      <div class="ft-persons">
+        <div class="ft-person">
+          <span class="ft-name">Paulina Przybyło</span>
+          <span class="ft-role">Specjalista ds. obsługi klienta</span>
+          <a class="ft-tel" href="tel:+48691084538">+48 691 084 538</a>
+        </div>
+        <div class="ft-person">
+          <span class="ft-name">Mariusz Bąk</span>
+          <span class="ft-role">Manager ds. rozwoju firmy</span>
+          <a class="ft-tel" href="tel:+48663959514">+48 663 959 514</a>
+        </div>
+        <div class="ft-emails">
+          <a href="mailto:biuro@monzabaseny.pl">biuro@monzabaseny.pl</a>
+          <a href="mailto:marcin@monzabaseny.pl">marcin@monzabaseny.pl</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="foot-bar">
+    <span>© 2020—2026 MONZA baseny&amp;SPA</span>
+    <span class="c">Projekt<span class="ln"></span>Budowa<span class="ln"></span>Serwis</span>
+    <span class="r"><a href="#">Polityka prywatności</a></span>
+  </div>
+</footer>
+
+<!-- mobile nav overlay -->
+<div class="mobile-nav" id="mobile-nav" aria-hidden="true">
+  <button class="mn-close" type="button" aria-label="Zamknij menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><line x1="6" y1="6" x2="18" y2="18"/><line x1="18" y1="6" x2="6" y2="18"/></svg></button>
+  <a href="index.html" class="mn-logo" aria-label="MONZA baseny & SPA"><svg viewBox="0 0 336 71" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M311.102 0.225543L310.989 0H298.343L298.23 0.228676L279.3 36.018L285.349 39.7301C282.953 38.9814 280.575 38.4363 278.22 38.0698C275.917 37.7127 273.64 37.5154 271.372 37.4621C270.924 37.4496 270.47 37.4402 270.022 37.4402C259.547 37.412 249.447 40.2062 239.527 42.9378C224.29 47.148 209.83 51.1388 193.66 45.6882H201.814V16.2047C201.814 7.33956 194.6 0.125302 185.734 0.125302H146.255V45.6819H158.641V12.5114H185.734C187.771 12.5114 189.428 14.1685 189.428 16.2047V45.6819H189.453V56.414C196.554 58.8292 203.386 59.7533 209.943 59.7533C221.812 59.7533 232.82 56.7148 243.001 53.9049C255.628 50.4121 266.921 47.3014 278.342 49.7668C280.231 50.1677 282.117 50.7253 284.009 51.4615L287.063 45.6851L288.422 43.107L304.668 12.3955L322.273 45.6819H335.144L311.102 0.228676V0.225543Z" fill="currentColor"/><path d="M272.248 12.3516V0H214.722V11.5184H251.704L214.086 33.3366V45.685H214.828L272.248 12.3516Z" fill="currentColor"/><path d="M55.0701 0.125488H0V45.6821H12.3861V12.5116H27.0213C28.5876 12.5116 29.8563 13.7803 29.8563 15.3465V45.6852H42.2424V12.5116H55.0701C57.1094 12.5116 58.7634 14.1656 58.7634 16.2048V45.6821H71.1495V16.2048C71.1495 7.32408 63.9509 0.125488 55.0701 0.125488Z" fill="currentColor"/><path d="M121.69 0H95.7119C86.8218 0 79.6138 7.20486 79.6138 16.095V29.5869C79.6138 38.4771 86.8218 45.685 95.7119 45.685H121.69C130.58 45.685 137.785 38.4771 137.785 29.5869V16.095C137.785 7.20799 130.58 0 121.69 0ZM125.321 33.2238H95.4081C93.5693 33.2238 92.0782 31.7327 92.0782 29.8939V12.4644H121.69C123.695 12.4644 125.321 14.0902 125.321 16.095V33.2238Z" fill="currentColor"/></svg></a>
+  <ul class="mn-links">
+    <li class="mn-drop"><button class="mn-drop-toggle" type="button" aria-expanded="false">Usługi</button>
+      <ul class="mn-sub">
+        <li><a href="baseny-wewnetrzne.html">Baseny wewnętrzne</a></li>
+        <li><a href="baseny-zewnetrzne.html">Baseny zewnętrzne</a></li>
+        <li><a href="wanny-spa.html">Wanny SPA</a></li>
+        <li><a href="sauny.html">Sauny</a></li>
+        <li><a href="laznie-parowe.html">Łaźnie parowe</a></li>
+        <li><a href="strefy-spa.html">Strefy SPA</a></li>
+      </ul>
+    </li>
+    <li><a href="realizacje.html">Realizacje</a></li>
+    <li><a href="showroom.html">Showroom</a></li>
+    <li><a href="o-nas.html">O nas</a></li>
+    <li><a href="kontakt.html">Kontakt</a></li>
+    <li><a href="architekci.html">Dla architektów</a></li>
+  </ul>
+  <div class="mn-foot">
+    <div>
+      <span class="mn-tel-label">Zadzwoń</span>
+      <a class="mn-tel" href="tel:+48663959514">+48 663 959 514</a>
+    </div>
+    <a class="mn-cta" href="kontakt.html" data-modal="form">Umów konsultację</a>
+  </div>
+</div>
+
+<!-- sticky mobile CTA bar -->
+<div class="mobile-cta-bar">
+  <a class="mcb-tel" href="tel:+48663959514"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.69 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.33 1.85.56 2.81.69A2 2 0 0 1 22 16.92z"/></svg>Zadzwoń</a>
+  <a class="mcb-msg" href="kontakt.html" data-modal="form"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>Zapytaj</a>
+</div>
+
+<!-- mobile nav script -->
+<script>
+(function(){
+  const nav=document.getElementById('mobile-nav');
+  if(!nav)return;
+  const header=document.querySelector('.sticky-nav .sn-header');
+  if(!header)return;
+  // wstrzyknij hamburger jeśli go nie ma
+  if(!header.querySelector('.hamburger')){
+    const btn=document.createElement('button');
+    btn.className='hamburger';btn.setAttribute('aria-label','Otwórz menu');btn.setAttribute('aria-expanded','false');btn.type='button';
+    btn.innerHTML='<span></span><span></span><span></span>';
+    header.appendChild(btn);
+    btn.addEventListener('click',()=>{
+      const open=nav.classList.toggle('open');
+      btn.classList.toggle('open',open);
+      document.body.classList.toggle('mn-locked',open);
+      btn.setAttribute('aria-expanded',open?'true':'false');
+      nav.setAttribute('aria-hidden',open?'false':'true');
+    });
+  }
+  // dropdown w mobile
+  nav.querySelectorAll('.mn-drop-toggle').forEach(t=>{
+    t.addEventListener('click',()=>{
+      const li=t.closest('.mn-drop');
+      const wasOpen=li.classList.contains('open');
+      li.classList.toggle('open',!wasOpen);
+      t.setAttribute('aria-expanded',!wasOpen?'true':'false');
+    });
+  });
+  // ESC zamyka
+  // close button
+  const closeBtn=nav.querySelector('.mn-close');
+  if(closeBtn){
+    closeBtn.addEventListener('click',()=>{
+      nav.classList.remove('open');
+      document.body.classList.remove('mn-locked');
+      const ham=header.querySelector('.hamburger');
+      if(ham){ham.classList.remove('open');ham.setAttribute('aria-expanded','false');}
+      nav.setAttribute('aria-hidden','true');
+    });
+  }
+  document.addEventListener('keydown',e=>{
+    if(e.key==='Escape'&&nav.classList.contains('open')){
+      nav.classList.remove('open');
+      document.body.classList.remove('mn-locked');
+      const ham=header.querySelector('.hamburger');
+      if(ham){ham.classList.remove('open');ham.setAttribute('aria-expanded','false');}
+      nav.setAttribute('aria-hidden','true');
+    }
+  });
+  // klik w link w mobile-nav zamyka menu
+  nav.querySelectorAll('a').forEach(a=>{
+    a.addEventListener('click',()=>{
+      nav.classList.remove('open');
+      document.body.classList.remove('mn-locked');
+      const ham=header.querySelector('.hamburger');
+      if(ham){ham.classList.remove('open');ham.setAttribute('aria-expanded','false');}
+    });
+  });
+})();
+</script>
+</body>
+</html>

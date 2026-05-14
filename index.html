@@ -69,8 +69,8 @@ body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:999;o
 @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(255,255,255,.45)}70%{box-shadow:0 0 0 9px rgba(255,255,255,0)}100%{box-shadow:0 0 0 0 rgba(255,255,255,0)}}
 
 /* ===== hero (full-bleed) ===== */
-.hero{position:relative;width:100%;height:100vh;min-height:560px;background:var(--navy-deep);color:#fff;overflow:hidden;isolation:isolate}
-.hero-sticky{position:absolute;inset:0;width:100%;height:100%;overflow:hidden;isolation:isolate;background:#0A0A0A}
+.hero{position:relative;width:100%;height:100vh;min-height:560px;background:var(--navy-deep);color:#fff;overflow:visible;isolation:isolate}
+.hero-sticky{position:absolute;inset:0;width:100%;height:100%;overflow:visible;isolation:isolate;background:#0A0A0A}
 .hero-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;z-index:0}
 .hero-tint{position:absolute;inset:0;z-index:1;pointer-events:none;background:rgba(0,0,0,.22)}
 .hero-vignette{position:absolute;inset:0;z-index:1;pointer-events:none;
@@ -98,6 +98,14 @@ body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:999;o
 .hero-links a:hover{opacity:.7}
 .hero-links a::after{content:"";position:absolute;left:50%;bottom:-3px;width:0;height:1px;background:#fff;transition:width .3s,left .3s}
 .hero-links a:hover::after{width:100%;left:0}
+/* dropdown Usługi — hero nav */
+.hero-links .has-drop{position:relative}
+.hero-links .has-drop>a::before{content:"▾";margin-left:5px;font-size:9px;vertical-align:1px}
+.hero-links .drop{display:none;position:absolute;top:100%;left:0;background:rgba(10,29,51,.97);backdrop-filter:blur(12px);min-width:210px;padding:14px 0 12px;list-style:none;border:1px solid rgba(236,234,229,.1)}
+.hero-links .has-drop:hover .drop{display:block}
+.hero-links .drop li a{display:block;padding:9px 20px;font-size:11px;letter-spacing:.14em;color:rgba(236,234,229,.75);white-space:nowrap;transition:color .2s,background .2s}
+.hero-links .drop li a:hover{color:var(--cream);background:rgba(236,234,229,.06);opacity:1}
+.hero-links .drop li a::after{display:none}
 .hero-right{display:flex;align-items:center;gap:20px;justify-content:flex-end}
 .hero-right .tel{font-family:var(--f-mono);font-size:16px;color:#fff;letter-spacing:.04em}
 
@@ -123,6 +131,15 @@ body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:999;o
 .sticky-nav .sn-links a:hover{opacity:.55}
 .sticky-nav .sn-links a::after{content:"";position:absolute;left:50%;bottom:-3px;width:0;height:1px;background:var(--navy);transition:width .3s,left .3s}
 .sticky-nav .sn-links a:hover::after{width:100%;left:0}
+/* dropdown Usługi — sticky nav */
+.sn-links .has-drop{position:relative}
+.sn-links .has-drop::after{content:"";position:absolute;left:0;right:0;top:100%;height:14px;display:block;pointer-events:none}
+.sn-links .has-drop>a::before{content:"▾";margin-left:5px;font-size:9px;vertical-align:1px}
+.sn-links .drop{display:none;position:absolute;top:100%;left:0;background:var(--cream);min-width:210px;padding:14px 0 12px;list-style:none;border:1px solid var(--line);box-shadow:0 12px 32px -8px rgba(12,11,9,.15)}
+.sn-links .has-drop:hover .drop{display:block}
+.sn-links .drop li a{display:block;padding:9px 20px;font-size:11px;letter-spacing:.14em;color:var(--ink-2);white-space:nowrap;transition:color .2s,background .2s}
+.sn-links .drop li a:hover{color:var(--navy);background:rgba(27,74,125,.04);opacity:1}
+.sn-links .drop li a::after{display:none}
 .sticky-nav .sn-right{display:flex;align-items:center;gap:20px;justify-content:flex-end}
 .sticky-nav .sn-right .tel{font-family:var(--f-mono);font-size:13px;color:var(--ink);letter-spacing:.04em;transition:color .3s}
 .sticky-nav .sn-right .tel:hover{color:var(--navy)}
@@ -140,8 +157,8 @@ body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:999;o
 
 .hero-stack{position:absolute;left:60px;bottom:60px;z-index:3;display:flex;flex-direction:column;gap:clamp(36px, 5vw, 67px);align-items:flex-start;max-width:min(640px, 80vw);opacity:0;will-change:opacity}
 .hero-lead{display:flex;flex-direction:column;gap:38px;align-items:flex-start}
-.hero-headline{font-family:var(--f-serif);font-weight:300;font-size:clamp(48px, 7.4vw, 101px);line-height:1;letter-spacing:-.035em;font-variation-settings:"opsz" 144, "SOFT" 0, "WONK" 1;margin:0;color:#fff}
-.hero-headline .line{display:block;overflow:hidden}
+.hero-headline{font-family:var(--f-serif);font-weight:300;font-size:clamp(48px, 7.4vw, 101px);line-height:1.1;padding-bottom:0.18em;letter-spacing:-.035em;font-variation-settings:"opsz" 144, "SOFT" 0, "WONK" 1;margin:0;color:#fff}
+.hero-headline .line{display:block;overflow:hidden;padding-bottom:0.22em;margin-bottom:-0.22em}
 .hero-headline .line span{display:inline-block;transform:translateY(101%);animation:rise 1s cubic-bezier(.2,.7,.1,1) forwards;background:linear-gradient(to bottom,#ffffff 0%,#F2EFE8 30%,#B9A687 72%,#7A6A4F 100%);background-size:var(--bg-w,100%) var(--bg-h,100%);background-position:0 var(--bg-y,0);background-repeat:no-repeat;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent}
 .hero-headline .line:nth-child(1) span{animation-delay:.18s}
 .hero-headline .line:nth-child(2) span{animation-delay:.32s}
@@ -246,9 +263,9 @@ body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:999;o
 .offer-head .r{font-family:var(--f-mono);font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);text-align:right;white-space:nowrap}
 
 .offer-hint{display:none}
-.offer-stage{position:relative;width:100%;overflow-x:auto;overflow-y:visible;scroll-snap-type:x mandatory;scrollbar-width:none;-ms-overflow-style:none;-webkit-overflow-scrolling:touch}
+.offer-stage{position:relative;width:100%;overflow-x:auto;overflow-y:visible;scroll-snap-type:x mandatory;scroll-padding-inline:max(var(--edge), calc((100vw - min(1160px, 78vw)) / 2));scrollbar-width:none;-ms-overflow-style:none;-webkit-overflow-scrolling:touch}
 .offer-stage::-webkit-scrollbar{display:none}
-.offer-track{display:flex;gap:clamp(44px,4.4vw,76px);padding:0 max(var(--edge), calc((100vw - min(1160px, 78vw)) / 2))}
+.offer-track{display:flex;gap:clamp(44px,4.4vw,76px);padding-left:max(var(--edge), calc((100vw - min(1160px, 78vw)) / 2));padding-right:max(var(--edge), calc((100vw - min(1160px, 78vw)) / 2))}.offer-track::after{content:"";flex:0 0 max(var(--edge), calc((100vw - min(1160px, 78vw)) / 2));}
 .offer-slide{flex:0 0 min(1160px, 78vw);scroll-snap-align:center;display:grid;grid-template-columns:1.55fr 1fr;gap:clamp(40px,4vw,68px);align-items:center;opacity:.22;transition:opacity .6s ease}
 .offer-slide.active{opacity:1}
 .offer-slide .offer-img{position:relative;aspect-ratio:910/595;overflow:visible;background:transparent;filter:drop-shadow(0 44px 60px rgba(12,11,9,.28))}
@@ -453,7 +470,7 @@ body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:999;o
 
 /* ===== stats ===== */
 .stats{display:grid;grid-template-columns:repeat(4,1fr);background:var(--cream);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
-.stat{padding:56px 32px;border-right:1px solid var(--line);position:relative}
+.stat{padding:56px 32px;border-right:1px solid var(--line);position:relative;display:flex;flex-direction:column;align-items:center;text-align:center}
 .stat:last-child{border-right:0}
 .stat .k{font-family:var(--f-mono);font-size:10.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--muted)}
 .stat .k em{font-style:normal;color:var(--navy)}
@@ -494,7 +511,7 @@ body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:999;o
 
 /* ===== footer ===== */
 footer.foot{background:var(--navy-deep);color:rgba(236,234,229,.7);position:relative;overflow:hidden}
-footer.foot::before{content:"";position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(236,234,229,.2),transparent)}
+footer.foot::before{display:none}
 footer.foot::after{content:"";position:absolute;top:-20%;right:-10%;width:800px;height:800px;border-radius:50%;background:radial-gradient(circle,rgba(27,74,125,.28) 0%,transparent 60%);pointer-events:none}
 
 .foot-cta{position:relative;max-width:960px;margin:0 auto;padding:clamp(100px,11vw,160px) var(--edge) clamp(80px,8vw,120px);display:flex;justify-content:center;text-align:center;z-index:1}
@@ -518,7 +535,7 @@ footer.foot::after{content:"";position:absolute;top:-20%;right:-10%;width:800px;
 .foot-cta-aside .caption{position:absolute;left:20px;right:20px;bottom:20px;display:flex;justify-content:space-between;align-items:flex-end;font-family:var(--f-mono);font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:rgba(236,234,229,.7)}
 .foot-cta-aside .caption em{font-style:normal;color:var(--cream);font-family:var(--f-serif);font-size:14px;letter-spacing:-.005em;text-transform:none;font-variation-settings:"opsz" 14}
 
-.foot-grid{position:relative;z-index:1;max-width:1440px;margin:0 auto;padding:clamp(48px,5vw,72px) var(--edge) clamp(48px,5vw,72px);display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:clamp(40px,4vw,64px);border-top:1px solid rgba(236,234,229,.1)}
+.foot-grid{position:relative;z-index:1;max-width:1440px;margin:0 auto;padding:clamp(48px,5vw,72px) var(--edge) clamp(48px,5vw,72px);display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:clamp(40px,4vw,64px)}
 .foot-brand{display:flex;flex-direction:column;gap:24px}
 .foot-brand .f-brand-mark{height:40px;width:auto;color:var(--cream)}
 .foot-brand .ad{font-family:var(--f-mono);font-size:11.5px;letter-spacing:.08em;line-height:1.8;color:rgba(236,234,229,.55)}
@@ -529,6 +546,16 @@ footer.foot::after{content:"";position:absolute;top:-20%;right:-10%;width:800px;
 .foot-col ul{list-style:none;margin:0;padding:0;display:grid;gap:12px}
 .foot-col ul a{font-family:var(--f-serif);font-weight:300;font-size:16px;color:rgba(236,234,229,.82);transition:color .3s,transform .3s;letter-spacing:-.005em;font-variation-settings:"opsz" 14;display:inline-block}
 .foot-col ul a:hover{color:var(--cream);transform:translateX(3px)}
+.foot-col .ft-meta{font-family:var(--f-mono);font-size:9.5px;letter-spacing:.18em;text-transform:uppercase;color:rgba(236,234,229,.38);margin-left:6px}
+.ft-persons{display:grid;gap:24px}
+.ft-person{display:flex;flex-direction:column;gap:3px}
+.ft-name{font-family:var(--f-serif);font-weight:300;font-size:19px;color:var(--cream);letter-spacing:-.01em;font-variation-settings:"opsz" 14}
+.ft-role{font-family:var(--f-mono);font-size:9.5px;letter-spacing:.22em;text-transform:uppercase;color:rgba(236,234,229,.42)}
+.ft-tel{font-family:var(--f-serif);font-weight:300;font-size:16px;color:rgba(236,234,229,.82);text-decoration:none;margin-top:4px;transition:color .3s}
+.ft-tel:hover{color:var(--cream)}
+.ft-emails{display:flex;flex-direction:column;gap:8px;padding-top:8px;border-top:1px solid rgba(236,234,229,.1)}
+.ft-emails a{font-family:var(--f-serif);font-weight:300;font-size:15px;color:rgba(236,234,229,.55);text-decoration:none;transition:color .3s}
+.ft-emails a:hover{color:rgba(236,234,229,.82)}
 
 .foot-bar{position:relative;z-index:1;max-width:1440px;margin:0 auto;padding:26px var(--edge) 30px;display:grid;grid-template-columns:1fr auto 1fr;gap:24px;border-top:1px solid rgba(236,234,229,.08);font-family:var(--f-mono);font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:rgba(236,234,229,.38);align-items:center}
 .foot-bar .c{text-align:center;display:flex;gap:18px;align-items:center;justify-content:center}
@@ -610,6 +637,116 @@ footer.foot::after{content:"";position:absolute;top:-20%;right:-10%;width:800px;
   .marquee-track span{gap:36px}
   .marquee-track span::after{margin-left:36px}
 }
+
+/* ===== mobile responsive ===== */
+.mn-logo{display:block;width:120px;color:var(--cream);margin:0 0 28px}
+.mn-logo svg{width:100%;height:auto;display:block}
+.topbar-ext{display:inline}
+.hamburger{display:none;width:44px;height:44px;align-items:center;justify-content:center;flex-direction:column;gap:5px;cursor:pointer;background:transparent;border:0;padding:0;z-index:80}
+.hamburger span{display:block;width:22px;height:2px;background:var(--ink);transition:transform .3s,opacity .25s}
+.hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.hamburger.open span:nth-child(2){opacity:0}
+.hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+.mobile-nav{position:fixed;inset:0;background:var(--navy-deep);color:var(--cream);z-index:75;display:flex;flex-direction:column;padding:24px var(--edge) 24px;overflow-y:auto;transform:translateY(-100%);transition:transform .35s cubic-bezier(.22,.61,.36,1);visibility:hidden}
+.mn-close{position:absolute;top:18px;right:var(--edge);width:44px;height:44px;display:flex;align-items:center;justify-content:center;background:transparent;border:1px solid rgba(236,234,229,.25);color:var(--cream);cursor:pointer;padding:0;z-index:5;transition:background .25s,border-color .25s}
+.mn-close:hover{background:rgba(236,234,229,.08);border-color:rgba(236,234,229,.55)}
+.mn-close svg{width:18px;height:18px;display:block}
+.mobile-nav.open{transform:translateY(0);visibility:visible}
+.mobile-nav .mn-links{list-style:none;display:flex;flex-direction:column;gap:0;margin:0;padding:0}
+.mobile-nav .mn-links>li{border-bottom:1px solid rgba(236,234,229,.1)}
+.mobile-nav .mn-links>li>a,.mobile-nav .mn-drop-toggle{display:flex;align-items:center;justify-content:space-between;padding:18px 0;font-family:var(--f-serif);font-weight:300;font-size:24px;color:rgba(236,234,229,.92);font-variation-settings:"opsz" 14;text-decoration:none;background:transparent;border:0;width:100%;text-align:left;cursor:pointer;letter-spacing:-.01em;min-height:44px}
+.mobile-nav .mn-drop-toggle::after{content:"▾";font-size:14px;color:rgba(236,234,229,.6);transition:transform .3s}
+.mobile-nav .mn-drop.open .mn-drop-toggle::after{transform:rotate(180deg)}
+.mobile-nav .mn-sub{list-style:none;max-height:0;overflow:hidden;transition:max-height .35s ease;margin:0;padding:0}
+.mobile-nav .mn-drop.open .mn-sub{max-height:600px !important}
+.mobile-nav .mn-sub li a{display:block;padding:12px 16px;font-family:var(--f-mono);font-size:13px;letter-spacing:.08em;color:rgba(236,234,229,.6);min-height:44px;display:flex;align-items:center}
+.mobile-nav .mn-sub li a:hover{color:var(--cream)}
+.mobile-nav .mn-foot{margin-top:auto;padding-top:32px;border-top:1px solid rgba(236,234,229,.12);display:flex;flex-direction:column;gap:16px}
+.mobile-nav .mn-foot .mn-tel{font-family:var(--f-serif);font-weight:300;font-size:22px;color:var(--cream);font-variation-settings:"opsz" 14}
+.mobile-nav .mn-foot .mn-tel-label{font-family:var(--f-mono);font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:rgba(236,234,229,.45);margin-bottom:4px;display:block}
+.mobile-nav .mn-cta{display:inline-flex;justify-content:center;align-items:center;padding:14px 22px;background:var(--cream);color:var(--navy);font-family:var(--f-mono);font-size:12px;letter-spacing:.2em;text-transform:uppercase;text-decoration:none;min-height:48px;margin-top:8px}
+body.mn-locked{overflow:hidden}
+.mobile-cta-bar{display:none;position:fixed;bottom:0;left:0;right:0;z-index:55;background:var(--cream);border-top:1px solid var(--line);padding:10px var(--edge) calc(10px + env(safe-area-inset-bottom,0px));gap:10px;box-shadow:0 -4px 16px rgba(12,11,9,.08)}
+.mobile-cta-bar a{flex:1;display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:14px 12px;font-family:var(--f-mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;min-height:48px;text-decoration:none}
+.mobile-cta-bar .mcb-tel{background:var(--navy);color:#fff}
+.mobile-cta-bar .mcb-msg{background:transparent;color:var(--navy);border:1px solid var(--navy)}
+.mobile-cta-bar svg{width:14px;height:14px}
+@media (max-width:860px){
+  .sticky-nav .sn-links,.sticky-nav .sn-right{display:none !important}
+  .hamburger{display:inline-flex}
+  .sticky-nav .sn-header{grid-template-columns:auto 1fr auto;gap:16px}
+  .topbar{font-size:9px;letter-spacing:.12em;padding:8px var(--edge);grid-template-columns:1fr}
+  .topbar .r{display:none}
+  .topbar-ext{display:none}
+  .topbar .l{justify-content:center;text-align:center}
+  /* index.html: wymuszamy sticky-nav zawsze widoczną, chowamy hero-nav i sn-strip */
+  .sticky-nav{transform:translateY(0) !important;pointer-events:auto !important;background:var(--cream) !important}
+  .sticky-nav .sn-strip{display:none}
+  .hero-nav{display:none !important}
+  .marquee{display:none}
+  /* hero: niższe na mobile */
+  .hero{height:auto !important;min-height:520px !important}
+  .hero-sticky{position:relative !important;min-height:520px}
+  .hero-headline{font-size:clamp(34px,8vw,46px) !important;line-height:1.05 !important}
+  /* stats: 2 kolumny */
+  .stats{grid-template-columns:1fr 1fr !important}
+  .stat{padding:32px 16px !important;border-right:0 !important;border-bottom:1px solid var(--line)}
+  .stat:nth-child(odd){border-right:1px solid var(--line) !important}
+  .stat:nth-last-child(-n+2){border-bottom:0}
+  .stat .n{font-size:54px !important;line-height:.95 !important}
+  .stat .k{font-size:9px !important}
+  .stat .d{font-size:11px !important;margin-top:10px}
+  /* timeline procesu: 2 kolumny */
+  .timeline-line{display:none}
+  .timeline-grid{grid-template-columns:1fr 1fr !important;min-height:auto !important;gap:48px 16px;padding:24px 0}
+  .tl-step{height:auto !important;align-items:center}
+  .tl-step .tl-node,.tl-step .tl-stem{display:none}
+  .tl-step .tl-card{position:relative !important;transform:none !important;left:auto !important;bottom:auto !important;top:auto !important;width:100% !important;padding:0}
+  .tl-step.up .tl-card,.tl-step.down .tl-card{bottom:auto;top:auto}
+  .tl-step .tl-num{font-size:48px !important}
+  .tl-step .tl-t{font-size:17px !important}
+  .tl-step .tl-desc{font-size:11px !important;max-width:none}
+  .process{padding:80px var(--edge) !important}
+  .process-head{margin-bottom:48px !important}
+  .process-meta{margin-bottom:32px !important}
+  /* offer slide: 1 kolumna, wycentrowane (kategorie A/B/C/D) */
+  .offer-slide{grid-template-columns:1fr !important;text-align:center;flex:0 0 88vw !important;gap:20px !important;padding:0 var(--edge)}
+  .offer-slide .offer-img{aspect-ratio:4/3;max-width:420px;margin:0 auto;width:100%}
+  .offer-slide .offer-copy{align-items:center !important;max-width:none !important;text-align:center;padding:8px 0 0;gap:18px !important}
+  .offer-slide .offer-copy .eyebrow{align-items:center}
+  .offer-slide .offer-copy h3{font-size:clamp(24px,6vw,32px) !important;text-align:center;line-height:1.1 !important}
+  .offer-slide .offer-copy .btn-ghost{align-self:center}
+  /* intro section (Filozofia) */
+  .intro{padding:60px var(--edge) !important}
+  .intro::before{font-size:140px !important;top:20px !important;right:auto !important;left:50% !important;transform:translateX(-50%);opacity:.04 !important}
+  .intro-inner{grid-template-columns:1fr !important;gap:24px !important}
+  .intro-label{writing-mode:horizontal-tb !important;transform:none !important;border-left:0 !important;border-top:1px solid var(--line);padding:14px 0 0 !important;align-self:auto !important}
+  .intro-copy h2{font-size:clamp(28px,7vw,38px) !important;line-height:1.05 !important}
+  .intro-copy .body{grid-template-columns:1fr !important;gap:20px !important;margin-top:32px !important;padding-top:28px !important;max-width:none !important}
+  .intro-copy .body p{font-size:15px !important;line-height:1.65}
+  .intro-copy .body p:first-child::first-letter{font-size:54px !important;padding:4px 8px 0 0 !important}
+  .intro-meta{grid-template-columns:1fr 1fr !important;margin-top:36px !important;max-width:none !important}
+  .intro-meta .mv{font-size:22px !important}
+  .intro-meta .m{padding:16px 14px !important}
+  .intro-copy .sign{grid-template-columns:1fr !important;gap:12px !important;margin-top:36px !important;max-width:none !important}
+  .mobile-cta-bar{display:flex}
+  body{padding-bottom:70px}
+  /* Pin-CTA — uproszczona wersja mobile (bez scroll-pin) */
+  .pin-cta{min-height:auto;position:relative}
+  .pin-sticky{position:relative;top:auto;height:auto;min-height:520px;padding:60px var(--edge)}
+  .pin-img-box{position:absolute;inset:0}
+  .pin-img-box video,.pin-img-box img{opacity:.32 !important}
+  .pin-cta-overlay{position:relative;opacity:1 !important;padding:0;justify-content:center;min-height:420px}
+  .pin-cta-overlay h2{font-size:clamp(40px,11vw,64px)}
+  .pin-hint,.pin-eyebrow{display:none}
+
+  /* iOS — zapobiega zoom przy focusie na inputach */
+  .cmodal-row input,.cmodal-row select,.cmodal-row textarea,.cform-row input,.cform-row select,.cform-row textarea{font-size:16px !important}
+  input,select,textarea{font-size:16px}
+}
+@media (max-width:600px){
+  .mobile-nav .mn-links>li>a,.mobile-nav .mn-drop-toggle{font-size:21px;padding:16px 0}
+}
 </style>
 </head>
 <body>
@@ -639,16 +776,26 @@ footer.foot::after{content:"";position:absolute;top:-20%;right:-10%;width:800px;
     </a>
     <nav>
       <ul class="sn-links">
+        <li class="has-drop"><a href="#">Usługi</a>
+          <ul class="drop">
+            <li><a href="baseny-wewnetrzne.html">Baseny wewnętrzne</a></li>
+            <li><a href="baseny-zewnetrzne.html">Baseny zewnętrzne</a></li>
+            <li><a href="wanny-spa.html">Wanny SPA</a></li>
+            <li><a href="sauny.html">Sauny</a></li>
+            <li><a href="laznie-parowe.html">Łaźnie parowe</a></li>
+            <li><a href="strefy-spa.html">Strefy SPA</a></li>
+          </ul>
+        </li>
         <li><a href="realizacje.html">Realizacje</a></li>
         <li><a href="showroom.html">Showroom</a></li>
         <li><a href="o-nas.html">O&nbsp;nas</a></li>
-        <li><a href="#process">Proces</a></li>
         <li><a href="kontakt.html">Kontakt</a></li>
+        <li><a href="architekci.html">Dla architektów</a></li>
       </ul>
     </nav>
     <div class="sn-right">
       <a href="tel:+48663959514" class="tel">+48&nbsp;663&nbsp;959&nbsp;514</a>
-      <a href="kontakt.html" class="sn-cta">Umów spotkanie</a>
+      <a href="kontakt.html" class="sn-cta" data-modal="form">Umów spotkanie</a>
     </div>
     <div class="sn-progress" id="sn-progress" aria-hidden="true"></div>
   </header>
@@ -666,7 +813,7 @@ footer.foot::after{content:"";position:absolute;top:-20%;right:-10%;width:800px;
   <!-- overlaid nav -->
   <div class="hero-nav">
     <div class="hero-strip">
-      <div class="l"><span class="dot"></span>Showroom otwarty — Pn–Pt 09:00–18:00</div>
+      <div class="l"><span class="dot"></span>Showroom otwarty — Pn–Pt 08:00–17:00 &nbsp;·&nbsp; spotkania w innym terminie możliwe po wcześniejszym umówieniu</div>
       <div class="c"></div>
       <div class="r">
         <span>Brzesko · ul. Solskiego 20a</span>
@@ -694,16 +841,26 @@ footer.foot::after{content:"";position:absolute;top:-20%;right:-10%;width:800px;
       </a>
       <nav>
         <ul class="hero-links">
+          <li class="has-drop"><a href="#">Usługi</a>
+            <ul class="drop">
+              <li><a href="baseny-wewnetrzne.html">Baseny wewnętrzne</a></li>
+              <li><a href="baseny-zewnetrzne.html">Baseny zewnętrzne</a></li>
+              <li><a href="wanny-spa.html">Wanny SPA</a></li>
+              <li><a href="sauny.html">Sauny</a></li>
+              <li><a href="laznie-parowe.html">Łaźnie parowe</a></li>
+              <li><a href="strefy-spa.html">Strefy SPA</a></li>
+            </ul>
+          </li>
           <li><a href="realizacje.html">Realizacje</a></li>
           <li><a href="showroom.html">Showroom</a></li>
           <li><a href="o-nas.html">O&nbsp;nas</a></li>
-          <li><a href="#process">Proces</a></li>
           <li><a href="kontakt.html">Kontakt</a></li>
+          <li><a href="architekci.html">Dla architektów</a></li>
         </ul>
       </nav>
       <div class="hero-right">
         <a href="tel:+48663959514" class="tel">+48&nbsp;663&nbsp;959&nbsp;514</a>
-        <a href="kontakt.html" class="btn-outline">Umów spotkanie</a>
+        <a href="kontakt.html" class="btn-outline" data-modal="form">Umów spotkanie</a>
       </div>
     </header>
   </div>
@@ -742,8 +899,8 @@ footer.foot::after{content:"";position:absolute;top:-20%;right:-10%;width:800px;
 <!-- ===== marquee ===== -->
 <div class="marquee" aria-hidden="true">
   <div class="marquee-track">
-    <span>Projektujemy <i>·</i> Budujemy <i>·</i> Serwisujemy <i>·</i> Baseny <i>·</i> Wanny SPA <i>·</i> Sauny <i>·</i> Zadaszenia <i>·</i> Od 2019</span>
-    <span>Projektujemy <i>·</i> Budujemy <i>·</i> Serwisujemy <i>·</i> Baseny <i>·</i> Wanny SPA <i>·</i> Sauny <i>·</i> Zadaszenia <i>·</i> Od 2019</span>
+    <span>Projektujemy <i>·</i> Budujemy <i>·</i> Serwisujemy <i>·</i> Baseny <i>·</i> Wanny SPA <i>·</i> Sauny <i>·</i> Strefy SPA <i>·</i> Zadaszenia <i>·</i> Od 2020</span>
+    <span>Projektujemy <i>·</i> Budujemy <i>·</i> Serwisujemy <i>·</i> Baseny <i>·</i> Wanny SPA <i>·</i> Sauny <i>·</i> Strefy SPA <i>·</i> Zadaszenia <i>·</i> Od 2020</span>
   </div>
 </div>
 
@@ -752,14 +909,14 @@ footer.foot::after{content:"";position:absolute;top:-20%;right:-10%;width:800px;
   <div class="intro-inner">
     <div class="intro-label">§ 02 — Filozofia · Brzesko 2026</div>
     <div class="intro-copy">
-      <span class="eyebrow">— Kompleksowo · Od A do Z</span>
+      <span class="eyebrow">Kompleksowo · Od A do Z</span>
       <h2>Komfort i&nbsp;<i>prestiż</i> — zaprojektowane na&nbsp;lata.</h2>
       <div class="body">
-        <p>MONZA to nowoczesny projektant i producent basenów, rozpoznawalny za <em>doskonałą obsługę, terminowość prac oraz fachowe doradztwo</em>. Prowadzimy inwestycję od pierwszego rysunku technicznego, przez budowę, aż po wieloletni serwis — bez podwykonawców, bez przerzucania odpowiedzialności.</p>
-        <p>Projektujemy baseny wewnętrzne i zewnętrzne, wanny SPA, sauny i kompletne strefy wellness. Najnowsze osiągnięcia technologiczne — <em>zaawansowane systemy filtracji i dezynfekcji, oświetlenie LED, inteligentne sterowanie</em> — spinamy z ergonomią, estetyką i rozwiązaniami dostępnymi dla każdego.</p>
+        <p>MONZA to nowoczesna firma zajmująca się projektowaniem i wykonawstwem basenów oraz stref SPA, zarówno dla klientów indywidualnych jak i obiektów użyteczności publicznej. Współpracujemy z obiektami noclegowymi, Generalnymi Wykonawcami, szkołami pływania a także sanatoriami.</p>
+        <p>Firma zyskała uznanie dzięki indywidualnemu podejściu do każdego klienta, zastosowaniu innowacyjnych rozwiązań oraz dbaniu o wysoką estetykę wykonania realizacji, a także przemyślany design i funkcjonalność budowanych basenów. Najnowsze osiągnięcia technologiczne — zaawansowane systemy filtracji i dezynfekcji, oświetlenie LED, inteligentne sterowanie — łączymy z ergonomią i rozwiązaniami dostępnymi dla każdego.</p>
       </div>
       <div class="intro-meta">
-        <div class="m"><span class="mk">— Od</span><span class="mv">2019<sup>r.</sup></span></div>
+        <div class="m"><span class="mk">— Od</span><span class="mv">2020<sup>r.</sup></span></div>
         <div class="m"><span class="mk">— Realizacje</span><span class="mv">180<i>+</i></span></div>
         <div class="m"><span class="mk">— Showroom</span><span class="mv">Brzesko</span></div>
       </div>
@@ -768,7 +925,7 @@ footer.foot::after{content:"";position:absolute;top:-20%;right:-10%;width:800px;
           <path d="M6 42 C 14 22, 22 18, 28 32 C 32 42, 24 46, 20 40 C 16 32, 30 18, 42 26 C 50 32, 46 40, 52 36 C 58 30, 56 22, 64 28 C 70 34, 68 42, 76 40 C 84 38, 82 26, 90 30 C 96 34, 100 42, 108 36 C 116 30, 118 22, 126 28 C 132 32, 130 42, 138 40 C 146 38, 150 28, 158 32 C 166 36, 170 40, 174 38" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
           <path d="M92 44 C 96 48, 100 48, 104 45" stroke="currentColor" stroke-width="1" stroke-linecap="round" fill="none" opacity=".6"/>
         </svg>
-        <div><div class="who">Marcin Figiel</div><div class="role">Założyciel · Główny projektant</div></div>
+        <div><div class="who">Marcin Figiel</div><div class="role">Prezes Zarządu · CEO</div></div>
         <div class="l"></div>
         <div class="d"><em>Brzesko</em>04 · 2026</div>
       </div>
@@ -788,7 +945,7 @@ footer.foot::after{content:"";position:absolute;top:-20%;right:-10%;width:800px;
       <div class="svc-top">
         <div class="svc-num"><span class="d"></span>01 · Projektowanie</div>
         <div class="svc-name">Projekt<br/><i>techniczny.</i></div>
-        <p class="svc-desc">Pełna dokumentacja budowlana i technologiczna. Wizualizacje 3D, obliczenia hydrauliczne, specyfikacja urządzeń, ergonomiczne strefy pływania.</p>
+        <p class="svc-desc">Pełna dokumentacja budowlana i technologiczna. Wizualizacje 3D oraz rzuty — wszystko co pomoże uniknąć kosztownych błędów na dalszych etapach realizacji.</p>
         <div class="svc-meta">
           <div class="mr"><span class="mk">Czas trwania</span><span class="mv">2–4 tygodnie</span></div>
           <div class="mr"><span class="mk">Dokumenty</span><span class="mv">PZT · PW · BIOZ</span></div>
@@ -796,35 +953,32 @@ footer.foot::after{content:"";position:absolute;top:-20%;right:-10%;width:800px;
           <div class="mr"><span class="mk">Zespół</span><span class="mv">2 projektantów</span></div>
         </div>
       </div>
-      <span class="svc-arr">Zobacz zakres <span class="ln"></span></span>
     </a>
     <a class="svc" href="o-nas.html#budowa" data-num="02">
       <div class="svc-top">
         <div class="svc-num"><span class="d"></span>02 · Budowa</div>
         <div class="svc-name">Realizacja<br/><i>pod klucz.</i></div>
-        <p class="svc-desc">Własna ekipa, własne materiały. Bloczki EPS lub beton zbrojony. Termin na papierze — termin na budowie. Cotygodniowe raporty z placu.</p>
+        <p class="svc-desc">Zaplecze logistyczne w postaci własnych ekip oraz dużego magazynu pozwala nam zająć się projektem od A do Z.</p>
         <div class="svc-meta">
           <div class="mr"><span class="mk">Czas trwania</span><span class="mv">6–14 tygodni</span></div>
           <div class="mr"><span class="mk">Technologia</span><span class="mv">EPS · żelbet</span></div>
           <div class="mr"><span class="mk">Ekipa</span><span class="mv">własna · 4–8 os.</span></div>
-          <div class="mr"><span class="mk">Raport</span><span class="mv">co tydzień</span></div>
+          <div class="mr"><span class="mk">Raport</span><span class="mv">po każdym etapie</span></div>
         </div>
       </div>
-      <span class="svc-arr">Etapy budowy <span class="ln"></span></span>
     </a>
     <a class="svc" href="o-nas.html#serwis" data-num="03">
       <div class="svc-top">
         <div class="svc-num"><span class="d"></span>03 · Serwis</div>
-        <div class="svc-name">Serwis<br/><i>na lata.</i></div>
-        <p class="svc-desc">Przeglądy sezonowe, zimowanie i uruchamianie, wymiana mediów, części zamienne. SLA 24/7 dla hoteli i szkół pływania.</p>
+        <div class="svc-name">Pełen<br/><i>serwis.</i></div>
+        <p class="svc-desc">Przeglądy techniczne, zimowanie i uruchamianie, wymiana części, dostawa chemii. Kompleksowa obsługa.</p>
         <div class="svc-meta">
-          <div class="mr"><span class="mk">Reakcja</span><span class="mv">24 h / 4 h SLA</span></div>
+          <div class="mr"><span class="mk">Reakcja</span><span class="mv">1–3 dni</span></div>
           <div class="mr"><span class="mk">Przeglądy</span><span class="mv">2 × rok</span></div>
           <div class="mr"><span class="mk">Magazyn części</span><span class="mv">Brzesko · Kraków</span></div>
-          <div class="mr"><span class="mk">Pokrycie</span><span class="mv">Małopolska · Podk.</span></div>
+          <div class="mr"><span class="mk">Pokrycie</span><span class="mv">Polska Południowa</span></div>
         </div>
       </div>
-      <span class="svc-arr">Pakiet serwisowy <span class="ln"></span></span>
     </a>
   </div>
 
@@ -837,37 +991,37 @@ footer.foot::after{content:"";position:absolute;top:-20%;right:-10%;width:800px;
   <div class="offer-stage" id="offer-stage" tabindex="0">
     <div class="offer-track">
       <article class="offer-slide" data-idx="0">
-        <div class="offer-img"><img src="assets/img/offer-combined.webp" alt="Baseny wewnętrzne i zewnętrzne" loading="lazy"/></div>
+        <div class="offer-img"><img src="assets/img/offer-basen.png" alt="Baseny wewnętrzne i zewnętrzne" loading="lazy"/></div>
         <div class="offer-copy">
           <div class="eyebrow"><span class="k">Kategoria A</span><span>Baseny</span></div>
-          <h3>Dwadzieścia lat <i>doświadczenia,</i> jedna odpowiedzialność — od pierwszego rysunku po ostatni serwis.</h3>
+          <h3>Dziesięć lat <i>doświadczenia,</i> indywidualne podejście, odpowiedzialność za etap projektowy oraz wykonawczy.</h3>
           <a class="btn-ghost" href="realizacje.html">Odwiedź showroom <span class="arr"></span></a>
         </div>
       </article>
 
       <article class="offer-slide" data-idx="1">
-        <div class="offer-img"><img src="assets/img/offer-combined.webp" alt="Wanny SPA i jacuzzi" loading="lazy"/></div>
+        <div class="offer-img"><img src="assets/img/offer-wanna-spa.png" alt="Wanny SPA" loading="lazy"/></div>
         <div class="offer-copy">
-          <div class="eyebrow"><span class="k">Kategoria B</span><span>Wanny SPA · Jacuzzi</span></div>
-          <h3>Hydromasaż, <i>chromoterapia,</i> audio w wodzie — import i produkcja na zamówienie.</h3>
+          <div class="eyebrow"><span class="k">Kategoria B</span><span>Wanny SPA</span></div>
+          <h3>Hydromasaż, <i>chromoterapia,</i> relaks w ciepłej wodzie. Zadbaj o wypoczynek i zdrowie.</h3>
           <a class="btn-ghost" href="realizacje.html">Odwiedź showroom <span class="arr"></span></a>
         </div>
       </article>
 
       <article class="offer-slide" data-idx="2">
-        <div class="offer-img"><img src="assets/img/offer-combined.webp" alt="Sauny fińskie i parowe" loading="lazy"/></div>
+        <div class="offer-img"><img src="assets/img/offer-sauna.png" alt="Sauny i łaźnie parowe" loading="lazy"/></div>
         <div class="offer-copy">
-          <div class="eyebrow"><span class="k">Kategoria C</span><span>Sauny · Łaźnie</span></div>
-          <h3>Fińskie, <i>parowe,</i> infrared — jako integralna część strefy SPA.</h3>
+          <div class="eyebrow"><span class="k">Kategoria C</span><span>Sauny · Łaźnie Parowe</span></div>
+          <h3>Fińskie, <i>parowe,</i> infrared — jako integralna część strefy SPA lub samodzielny element w Twoim domu.</h3>
           <a class="btn-ghost" href="realizacje.html">Odwiedź showroom <span class="arr"></span></a>
         </div>
       </article>
 
       <article class="offer-slide" data-idx="3">
-        <div class="offer-img"><img src="assets/img/offer-combined.webp" alt="Zadaszenia basenowe" loading="lazy"/></div>
+        <div class="offer-img"><img src="assets/img/offer-strefa-spa.png" alt="Strefy SPA" loading="lazy"/></div>
         <div class="offer-copy">
-          <div class="eyebrow"><span class="k">Kategoria D</span><span>Zadaszenia</span></div>
-          <h3>Ochrona <i>i termika</i> — niskie, wysokie, przesuwne. Sezon dłuższy o trzy miesiące.</h3>
+          <div class="eyebrow"><span class="k">Kategoria D</span><span>Strefy SPA</span></div>
+          <h3>Kompleksowe rozwiązania zarówno dla klientów indywidualnych jak i obiektów komercyjnych.</h3>
           <a class="btn-ghost" href="realizacje.html">Odwiedź showroom <span class="arr"></span></a>
         </div>
       </article>
@@ -907,12 +1061,13 @@ footer.foot::after{content:"";position:absolute;top:-20%;right:-10%;width:800px;
         <span class="idx">01 / 06</span>
         <span class="tag">Prywatne spa · Outdoor</span>
         <h4>Wrocław <i>Trzebnica</i></h4>
-        <p>Basen outdoor z integrowanym systemem podgrzewania, kamień naturalny, infinity po stronie ogrodu. Realizacja 14 tygodni.</p>
+        <p>Strefa SPA w skład której wchodzi basen, ponad 100m² tarasu oraz altana z funkcją kuchni ogrodowej i wypoczynku w ogrodzie.</p>
         <span class="sol-label">Zakres prac</span>
         <ul class="sol">
-          <li>Basen zewnętrzny 8×4 m</li>
-          <li>Kamień naturalny · egzotyk</li>
-          <li>Automatyka &amp; serwis 24/7</li>
+          <li>Koncepcja i projekt całej strefy SPA</li>
+          <li>Budowa basenu z przeszkloną ścianą</li>
+          <li>Wykonanie tarasu</li>
+          <li>Montaż altany</li>
         </ul>
         <a class="more" href="realizacje.html">Zobacz realizację →</a>
       </div>
@@ -930,9 +1085,11 @@ footer.foot::after{content:"";position:absolute;top:-20%;right:-10%;width:800px;
         <p>Basen ogrodowy wkomponowany w strefę wypoczynku, z palmami i widokiem na park. Strefa chill &amp; grill na tarasie.</p>
         <span class="sol-label">Zakres prac</span>
         <ul class="sol">
-          <li>Basen 10×4 m · EPS</li>
-          <li>Strefa relaksu · pergola</li>
-          <li>Oświetlenie LED RGB</li>
+          <li>Koncepcja i projekt całej strefy SPA</li>
+          <li>Budowa basenu w pełni zautomatyzowanego</li>
+          <li>Podgrzewana woda</li>
+          <li>Roleta podwodna</li>
+          <li>Stanowisko masażów podwodnych przy szerokich schodach w basenie</li>
         </ul>
         <a class="more" href="realizacje.html">Zobacz realizację →</a>
       </div>
@@ -947,12 +1104,13 @@ footer.foot::after{content:"";position:absolute;top:-20%;right:-10%;width:800px;
         <span class="idx">03 / 06</span>
         <span class="tag">Basen · Rezydencja</span>
         <h4>Okocim <i>I</i></h4>
-        <p>Projekt dla dwupoziomowej rezydencji — basen z detalem schodów oraz strefa wellness w podziemiu. Pełna automatyzacja.</p>
+        <p>Renowacja ponad 30-letniego basenu.</p>
         <span class="sol-label">Zakres prac</span>
         <ul class="sol">
-          <li>Basen 12×5 m · beton</li>
-          <li>Strefa wellness · sauna</li>
-          <li>Automatyka Pentair IntelliCenter</li>
+          <li>Projekt nowego basenu w miejscu istniejącej, starej niecki</li>
+          <li>Schody oraz ławki z funkcją masażów podwodnych</li>
+          <li>Basen z dwoma poziomami głębokości</li>
+          <li>Automatyka, podgrzewanie wody, roleta</li>
         </ul>
         <a class="more" href="realizacje.html">Zobacz realizację →</a>
       </div>
@@ -967,12 +1125,11 @@ footer.foot::after{content:"";position:absolute;top:-20%;right:-10%;width:800px;
         <span class="idx">04 / 06</span>
         <span class="tag">Basen · Deck</span>
         <h4>Willa <i>Tarnów</i></h4>
-        <p>Drewniany deck z egzotyka i basen zlicowany z tarasem. Otwarta strefa spa z wiszącym fotelem i leżakami.</p>
+        <p>Basen 8×4 w obudowie z deski kompozytowej. Otwarta strefa wypoczynku dla całej rodziny.</p>
         <span class="sol-label">Zakres prac</span>
         <ul class="sol">
-          <li>Basen 9×3,5 m · skim</li>
-          <li>Deck iroko &amp; egzotyk</li>
-          <li>Podgrzewanie pompą ciepła</li>
+          <li>Projekt i wykonanie basenu</li>
+          <li>Kompleksowa realizacja</li>
         </ul>
         <a class="more" href="realizacje.html">Zobacz realizację →</a>
       </div>
@@ -985,14 +1142,14 @@ footer.foot::after{content:"";position:absolute;top:-20%;right:-10%;width:800px;
       </div>
       <div class="wc-info">
         <span class="idx">05 / 06</span>
-        <span class="tag">Strefa · Wypoczynek</span>
-        <h4>Budzów <i>— patio</i></h4>
+        <span class="tag">Basen · Ogród</span>
+        <h4>Tarnów <i>II</i></h4>
         <p>Rozszerzenie istniejącej realizacji o otwartą strefę chill z hamakami i trawnikiem. Całość odwiedlona pod mikroklimat.</p>
         <span class="sol-label">Zakres prac</span>
         <ul class="sol">
-          <li>Patio · wyposażenie</li>
-          <li>Trawnik &amp; nawadnianie</li>
-          <li>Oświetlenie zewnętrzne</li>
+          <li>Projekt i wykonanie basenu</li>
+          <li>Pełna automatyka, masaże podwodne, przeciwprąd</li>
+          <li>Zadaszenie basenowe</li>
         </ul>
         <a class="more" href="realizacje.html">Zobacz realizację →</a>
       </div>
@@ -1049,7 +1206,7 @@ footer.foot::after{content:"";position:absolute;top:-20%;right:-10%;width:800px;
           <div class="tl-num">02<sup>/06</sup></div>
           <div class="tl-t">Koncepcja</div>
           <div class="tl-dur">10 dni</div>
-          <p class="tl-desc">Wizualizacje 3D, wybór technologii (EPS / beton), wstępny kosztorys.</p>
+          <p class="tl-desc">Wstępny kosztorys, dobór materiałów oraz technologii wykonania, szczegóły systemu filtracji oraz automatyki.</p>
         </div>
       </div>
       <div class="tl-step up">
@@ -1057,7 +1214,7 @@ footer.foot::after{content:"";position:absolute;top:-20%;right:-10%;width:800px;
           <div class="tl-num">03<sup>/06</sup></div>
           <div class="tl-t">Projekt</div>
           <div class="tl-dur">2–3 tyg.</div>
-          <p class="tl-desc">Pełna dokumentacja techniczna, pozwolenia, koordynacja z architektem, obliczenia hydrauliczne.</p>
+          <p class="tl-desc">Dokumentacja techniczna, koordynacja z architektem, wizualizacja 3D.</p>
         </div>
         <span class="tl-stem" aria-hidden="true"></span>
         <span class="tl-node" aria-hidden="true"></span>
@@ -1069,7 +1226,7 @@ footer.foot::after{content:"";position:absolute;top:-20%;right:-10%;width:800px;
           <div class="tl-num">04<sup>/06</sup></div>
           <div class="tl-t">Budowa</div>
           <div class="tl-dur">10–14 tyg.</div>
-          <p class="tl-desc">Od robót ziemnych po ceramikę. Własna ekipa, cotygodniowe raporty z placu.</p>
+          <p class="tl-desc">Od robót ziemnych po wykończenie. Realizujemy zakres prac na jaki umawiamy się przy podpisaniu umowy.</p>
         </div>
       </div>
       <div class="tl-step up">
@@ -1089,7 +1246,7 @@ footer.foot::after{content:"";position:absolute;top:-20%;right:-10%;width:800px;
           <div class="tl-num">06<sup>/06</sup></div>
           <div class="tl-t">Serwis</div>
           <div class="tl-dur">roczny</div>
-          <p class="tl-desc">Umowa roczna — przeglądy, zimowanie, uruchamianie. SLA 24/7 dla obiektów komercyjnych.</p>
+          <p class="tl-desc">Przeglądy, zimowanie, uruchamianie, dostawa chemii. Kompleksowa obsługa serwisowa.</p>
         </div>
       </div>
     </div>
@@ -1204,23 +1361,23 @@ footer.foot::after{content:"";position:absolute;top:-20%;right:-10%;width:800px;
 <div class="stats">
   <div class="stat">
     <div class="k"><em>—</em> Lata na rynku</div>
-    <div class="n">6<sup>/2019</sup></div>
-    <div class="d">Od 2019. Projektant i producent basenów, SPA i saun.</div>
+    <div class="n">6<sup>/2020</sup></div>
+    <div class="d">Od 2020. Projektant i producent basenów, SPA i saun.</div>
   </div>
   <div class="stat">
     <div class="k"><em>—</em> Zasięg</div>
     <div class="n">3<sup>woj.</sup></div>
-    <div class="d">Małopolska, Podkarpacie, Śląsk. Kraków · Nowy Sącz · Rzeszów.</div>
+    <div class="d">Małopolska, Podkarpacie, Śląsk. Kraków · Nowy Sącz · Rzeszów · Szczawnica · Zakopane · Katowice · Bielsko Biała.</div>
   </div>
   <div class="stat">
     <div class="k"><em>—</em> Serwis SLA</div>
-    <div class="n">24<sup>/7</sup></div>
-    <div class="d">Dla hoteli, sanatoriów i szkół pływania. 48h dla klientów prywatnych.</div>
+    <div class="n">1–3<sup>dni</sup></div>
+    <div class="d">Czas reakcji serwisowej w dni robocze.</div>
   </div>
   <div class="stat">
     <div class="k"><em>—</em> Kompleksowość</div>
     <div class="n">A—Z</div>
-    <div class="d">Projekt, budowa, serwis — u nas. Bez podwykonawców, bez przerzucania winy.</div>
+    <div class="d">Projekt, budowa, serwis — u nas. Kompleksowo od początku do końca.</div>
   </div>
 </div>
 
@@ -1622,11 +1779,10 @@ document.addEventListener('DOMContentLoaded', () => {
       <video src="assets/video/cta.mp4" poster="assets/img/cta.jpg" autoplay muted loop playsinline preload="none" aria-label="Basen z palmami — realizacja Monza Baseny"></video>
     </div>
     <div class="pin-cta-overlay">
-      <span class="eyebrow">Zacznijmy od rozmowy</span>
-      <h2>Zaczynamy<br/>od <i>rozmowy.</i></h2>
-      <p>Bezpłatna konsultacja w showroomie w Brzesku lub u Ciebie. Od pierwszego szkicu po rozruch — jedna firma, jedna odpowiedzialność.</p>
+      <h2>Zapraszamy<br/>do <i>kontaktu.</i></h2>
+      <p>Bezpłatna konsultacja. Umówmy się w naszym showroomie, online lub u Ciebie. Od pierwszego szkicu po rozruch — jedna firma, jedna odpowiedzialność.</p>
       <div class="pair">
-        <a class="btn btn-solid" href="kontakt.html">Umów konsultację <span class="arr"></span></a>
+        <a class="btn btn-solid" href="kontakt.html" data-modal="form">Umów konsultację <span class="arr"></span></a>
         <a class="btn" href="showroom.html">Odwiedź showroom <span class="arr"></span></a>
       </div>
     </div>
@@ -1663,7 +1819,7 @@ document.addEventListener('DOMContentLoaded', () => {
         woj. małopolskie · PL
       </div>
       <div class="meta">
-        <div><em>Od 2019</em>7 lat</div>
+        <div><em>Od 2020</em>6 lat</div>
         <div><em>180+</em>realizacji</div>
       </div>
     </div>
@@ -1674,25 +1830,37 @@ document.addEventListener('DOMContentLoaded', () => {
         <li><a href="showroom.html">Showroom</a></li>
         <li><a href="o-nas.html">O nas</a></li>
         <li><a href="kontakt.html">Kontakt</a></li>
+        <li><a href="architekci.html">Dla architektów</a></li>
       </ul>
     </div>
     <div class="foot-col">
       <h5>Usługi</h5>
       <ul>
-        <li><a href="#">Baseny wewnętrzne</a></li>
-        <li><a href="#">Baseny zewnętrzne</a></li>
-        <li><a href="#">Wanny SPA &amp; jacuzzi</a></li>
-        <li><a href="#">Sauny &amp; zadaszenia</a></li>
+        <li><a href="baseny-wewnetrzne.html">Baseny wewnętrzne</a></li>
+        <li><a href="baseny-zewnetrzne.html">Baseny zewnętrzne</a></li>
+        <li><a href="wanny-spa.html">Wanny SPA</a></li>
+        <li><a href="sauny.html">Sauny &amp; Łaźnie parowe</a></li>
+        <li><a href="strefy-spa.html">Strefy SPA</a></li>
       </ul>
     </div>
     <div class="foot-col">
       <h5>Kontakt</h5>
-      <ul>
-        <li><a href="tel:+48724092452">+48 724 092 452</a></li>
-        <li><a href="tel:+48663959514">+48 663 959 514</a></li>
-        <li><a href="mailto:biuro@monzabaseny.pl">biuro@monzabaseny.pl</a></li>
-        <li><a href="mailto:marcin@monzabaseny.pl">marcin@monzabaseny.pl</a></li>
-      </ul>
+      <div class="ft-persons">
+        <div class="ft-person">
+          <span class="ft-name">Paulina Przybyło</span>
+          <span class="ft-role">Specjalista ds. obsługi klienta</span>
+          <a class="ft-tel" href="tel:+48691084538">+48 691 084 538</a>
+        </div>
+        <div class="ft-person">
+          <span class="ft-name">Mariusz Bąk</span>
+          <span class="ft-role">Manager ds. rozwoju firmy</span>
+          <a class="ft-tel" href="tel:+48663959514">+48 663 959 514</a>
+        </div>
+        <div class="ft-emails">
+          <a href="mailto:biuro@monzabaseny.pl">biuro@monzabaseny.pl</a>
+          <a href="mailto:marcin@monzabaseny.pl">marcin@monzabaseny.pl</a>
+        </div>
+      </div>
     </div>
   </div>
 
@@ -1703,5 +1871,271 @@ document.addEventListener('DOMContentLoaded', () => {
   </div>
 </footer>
 
+<!-- ===== contact modal ===== -->
+<style>
+@keyframes modal-in{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
+@keyframes backdrop-in{from{opacity:0}to{opacity:1}}
+.cmodal-backdrop{position:fixed;inset:0;background:rgba(10,29,51,.62);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);z-index:900;display:none;align-items:center;justify-content:center;padding:20px}
+.cmodal-backdrop.open{display:flex;animation:backdrop-in .25s ease}
+.cmodal{background:var(--paper);width:100%;max-width:780px;max-height:90vh;overflow-y:auto;position:relative;animation:modal-in .3s cubic-bezier(.22,.61,.36,1)}
+.cmodal-close{position:absolute;top:20px;right:20px;width:36px;height:36px;display:flex;align-items:center;justify-content:center;border:1px solid var(--line);font-size:18px;color:var(--muted);cursor:pointer;transition:all .2s;z-index:10}
+.cmodal-close:hover{background:var(--cream);color:var(--ink)}
+.cmodal-tabs{display:flex;border-bottom:1px solid var(--line)}
+.cmodal-tab{flex:1;padding:18px 24px;font-family:var(--f-mono);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);cursor:pointer;border:none;background:none;transition:color .2s;border-bottom:2px solid transparent;margin-bottom:-1px}
+.cmodal-tab:hover{color:var(--ink)}
+.cmodal-tab.active{color:var(--navy);border-bottom-color:var(--navy)}
+.cmodal-body{padding:32px 32px 36px}
+.cmodal-panel{display:none}
+.cmodal-panel.active{display:block}
+.cmodal-head{margin-bottom:28px}
+.cmodal-head h3{font-family:var(--f-serif);font-weight:300;font-size:clamp(26px,2.8vw,36px);line-height:1.1;letter-spacing:-.02em;color:var(--ink);font-variation-settings:"opsz" 144}
+.cmodal-head h3 i{font-style:italic;color:var(--muted);font-variation-settings:"opsz" 144,"SOFT" 80,"WONK" 1}
+.cmodal-form{display:flex;flex-direction:column;gap:16px}
+.cmodal-row label{display:block;font-family:var(--f-mono);font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);margin-bottom:7px}
+.cmodal-row input,.cmodal-row select,.cmodal-row textarea{width:100%;padding:13px 14px;background:var(--cream);border:1px solid var(--line);font-family:var(--f-mono);font-size:13px;color:var(--ink);outline:none;transition:border-color .25s,background .25s;border-radius:0;-webkit-appearance:none}
+.cmodal-row input:focus,.cmodal-row select:focus,.cmodal-row textarea:focus{border-color:var(--navy);background:#fff}
+.cmodal-row input::placeholder,.cmodal-row textarea::placeholder{color:var(--muted)}
+.cmodal-row textarea{resize:none;height:90px}
+.cmodal-row select{cursor:pointer;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%236B685F' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center}
+.cmodal-row2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.cmodal-consent{font-size:11px;line-height:1.6;color:var(--muted);padding-left:22px;position:relative}
+.cmodal-consent input[type=checkbox]{position:absolute;left:0;top:2px;width:14px;height:14px;accent-color:var(--navy);cursor:pointer}
+.cmodal-submit{display:inline-flex;align-items:center;gap:12px;padding:14px 28px;background:var(--navy);color:#fff;font-family:var(--f-mono);font-size:11px;letter-spacing:.2em;text-transform:uppercase;border:none;cursor:pointer;transition:background .3s;margin-top:4px}
+.cmodal-submit:hover{background:var(--navy-deep)}
+.cmodal-submit .arr{display:inline-block;width:14px;height:1px;background:#fff;position:relative}
+.cmodal-submit .arr::after{content:"";position:absolute;right:0;top:-3px;width:6px;height:6px;border-top:1px solid #fff;border-right:1px solid #fff;transform:rotate(45deg)}
+.cmodal-fulllink{display:inline-flex;align-items:center;gap:8px;font-family:var(--f-mono);font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin-top:14px;transition:color .3s}
+.cmodal-fulllink:hover{color:var(--navy)}
+/* call panel */
+.cmodal-persons{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:24px}
+.cmodal-person{padding:20px;background:var(--cream);border:1px solid var(--line)}
+.cmodal-person .cp-name{font-family:var(--f-serif);font-weight:300;font-size:20px;color:var(--ink);display:block;margin-bottom:4px;font-variation-settings:"opsz" 14}
+.cmodal-person .cp-role{font-family:var(--f-mono);font-size:9.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);display:block;margin-bottom:12px}
+.cmodal-person .cp-tel{font-family:var(--f-mono);font-size:16px;color:var(--navy);font-weight:500;transition:opacity .3s;display:block}
+.cmodal-person .cp-tel:hover{opacity:.7}
+.cmodal-emails{display:flex;flex-direction:column;gap:8px;padding:20px;background:var(--cream);border:1px solid var(--line)}
+.cmodal-emails span{font-family:var(--f-mono);font-size:9.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);margin-bottom:4px;display:block}
+.cmodal-emails a{font-family:var(--f-mono);font-size:13px;color:var(--navy);transition:opacity .3s}
+.cmodal-emails a:hover{opacity:.7}
+@media(max-width:600px){
+  .cmodal{max-height:100vh;border-radius:0}
+  .cmodal-row2{grid-template-columns:1fr}
+  .cmodal-persons{grid-template-columns:1fr}
+  .cmodal-body{padding:24px 20px 28px}
+}
+</style>
+
+<div class="cmodal-backdrop" id="cmodal-backdrop" role="dialog" aria-modal="true" aria-label="Formularz kontaktowy">
+  <div class="cmodal" id="cmodal">
+    <button class="cmodal-close" id="cmodal-close" aria-label="Zamknij">✕</button>
+    <div class="cmodal-tabs">
+      <button class="cmodal-tab active" data-panel="form">Formularz</button>
+      <button class="cmodal-tab" data-panel="call">Zadzwoń</button>
+    </div>
+    <div class="cmodal-body">
+
+      <!-- panel: formularz -->
+      <div class="cmodal-panel active" id="cpanel-form">
+        <div class="cmodal-head">
+          <h3>Napisz, <i>co planujesz.</i></h3>
+        </div>
+        <form class="cmodal-form" onsubmit="return false;">
+          <div class="cmodal-row2">
+            <div class="cmodal-row">
+              <label>Imię i nazwisko</label>
+              <input type="text" placeholder="np. Jan Kowalski" />
+            </div>
+            <div class="cmodal-row">
+              <label>Telefon</label>
+              <input type="tel" placeholder="+48 600 000 000" />
+            </div>
+          </div>
+          <div class="cmodal-row">
+            <label>Rodzaj projektu</label>
+            <select>
+              <option value="" disabled selected>Wybierz…</option>
+              <option>Baseny wewnętrzne</option>
+              <option>Baseny zewnętrzne</option>
+              <option>Wanny SPA</option>
+              <option>Sauny</option>
+              <option>Łaźnie parowe</option>
+              <option>Strefy SPA</option>
+              <option>Nie wiem jeszcze</option>
+            </select>
+          </div>
+          <div class="cmodal-row">
+            <label>Krótki opis (opcjonalnie)</label>
+            <textarea placeholder="Kilka słów o projekcie — wymiary, lokalizacja, termin…"></textarea>
+          </div>
+          <label class="cmodal-consent">
+            <input type="checkbox" />
+            Wyrażam zgodę na kontakt ze strony MONZA baseny&amp;SPA w celu odpowiedzi na zapytanie.
+          </label>
+          <div style="display:flex;align-items:center;gap:24px;flex-wrap:wrap">
+            <button type="submit" class="cmodal-submit">Wyślij <span class="arr"></span></button>
+            <a class="cmodal-fulllink" href="kontakt.html">Pełny formularz z załącznikiem →</a>
+          </div>
+        </form>
+      </div>
+
+      <!-- panel: zadzwoń -->
+      <div class="cmodal-panel" id="cpanel-call">
+        <div class="cmodal-head">
+          <h3>Zadzwoń <i>lub napisz.</i></h3>
+        </div>
+        <div class="cmodal-persons">
+          <div class="cmodal-person">
+            <span class="cp-name">Paulina Przybyło</span>
+            <span class="cp-role">Specjalista ds. obsługi klienta</span>
+            <a class="cp-tel" href="tel:+48691084538">+48 691 084 538</a>
+          </div>
+          <div class="cmodal-person">
+            <span class="cp-name">Mariusz Bąk</span>
+            <span class="cp-role">Manager ds. rozwoju firmy</span>
+            <a class="cp-tel" href="tel:+48663959514">+48 663 959 514</a>
+          </div>
+        </div>
+        <div class="cmodal-emails">
+          <span>E-mail</span>
+          <a href="mailto:biuro@monzabaseny.pl">biuro@monzabaseny.pl</a>
+          <a href="mailto:marcin@monzabaseny.pl">marcin@monzabaseny.pl</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<script>
+(function(){
+  const backdrop = document.getElementById('cmodal-backdrop');
+  const modal = document.getElementById('cmodal');
+
+  function openModal(panel){
+    backdrop.classList.add('open');
+    document.body.style.overflow = 'hidden';
+    if(panel) switchPanel(panel);
+  }
+  function closeModal(){
+    backdrop.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+  function switchPanel(name){
+    document.querySelectorAll('.cmodal-tab').forEach(t => t.classList.toggle('active', t.dataset.panel === name));
+    document.querySelectorAll('.cmodal-panel').forEach(p => p.classList.toggle('active', p.id === 'cpanel-' + name));
+  }
+
+  document.getElementById('cmodal-close').addEventListener('click', closeModal);
+  backdrop.addEventListener('click', e => { if(e.target === backdrop) closeModal(); });
+  document.addEventListener('keydown', e => { if(e.key === 'Escape') closeModal(); });
+  document.querySelectorAll('.cmodal-tab').forEach(t => t.addEventListener('click', () => switchPanel(t.dataset.panel)));
+
+  document.querySelectorAll('[data-modal]').forEach(btn => {
+    btn.addEventListener('click', e => {
+      e.preventDefault();
+      openModal(btn.dataset.modal || 'form');
+    });
+  });
+})();
+</script>
+
+<!-- mobile nav overlay -->
+<div class="mobile-nav" id="mobile-nav" aria-hidden="true">
+  <button class="mn-close" type="button" aria-label="Zamknij menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><line x1="6" y1="6" x2="18" y2="18"/><line x1="18" y1="6" x2="6" y2="18"/></svg></button>
+  <a href="index.html" class="mn-logo" aria-label="MONZA baseny & SPA"><svg viewBox="0 0 336 71" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M311.102 0.225543L310.989 0H298.343L298.23 0.228676L279.3 36.018L285.349 39.7301C282.953 38.9814 280.575 38.4363 278.22 38.0698C275.917 37.7127 273.64 37.5154 271.372 37.4621C270.924 37.4496 270.47 37.4402 270.022 37.4402C259.547 37.412 249.447 40.2062 239.527 42.9378C224.29 47.148 209.83 51.1388 193.66 45.6882H201.814V16.2047C201.814 7.33956 194.6 0.125302 185.734 0.125302H146.255V45.6819H158.641V12.5114H185.734C187.771 12.5114 189.428 14.1685 189.428 16.2047V45.6819H189.453V56.414C196.554 58.8292 203.386 59.7533 209.943 59.7533C221.812 59.7533 232.82 56.7148 243.001 53.9049C255.628 50.4121 266.921 47.3014 278.342 49.7668C280.231 50.1677 282.117 50.7253 284.009 51.4615L287.063 45.6851L288.422 43.107L304.668 12.3955L322.273 45.6819H335.144L311.102 0.228676V0.225543Z" fill="currentColor"/><path d="M272.248 12.3516V0H214.722V11.5184H251.704L214.086 33.3366V45.685H214.828L272.248 12.3516Z" fill="currentColor"/><path d="M55.0701 0.125488H0V45.6821H12.3861V12.5116H27.0213C28.5876 12.5116 29.8563 13.7803 29.8563 15.3465V45.6852H42.2424V12.5116H55.0701C57.1094 12.5116 58.7634 14.1656 58.7634 16.2048V45.6821H71.1495V16.2048C71.1495 7.32408 63.9509 0.125488 55.0701 0.125488Z" fill="currentColor"/><path d="M121.69 0H95.7119C86.8218 0 79.6138 7.20486 79.6138 16.095V29.5869C79.6138 38.4771 86.8218 45.685 95.7119 45.685H121.69C130.58 45.685 137.785 38.4771 137.785 29.5869V16.095C137.785 7.20799 130.58 0 121.69 0ZM125.321 33.2238H95.4081C93.5693 33.2238 92.0782 31.7327 92.0782 29.8939V12.4644H121.69C123.695 12.4644 125.321 14.0902 125.321 16.095V33.2238Z" fill="currentColor"/></svg></a>
+  <ul class="mn-links">
+    <li class="mn-drop"><button class="mn-drop-toggle" type="button" aria-expanded="false">Usługi</button>
+      <ul class="mn-sub">
+        <li><a href="baseny-wewnetrzne.html">Baseny wewnętrzne</a></li>
+        <li><a href="baseny-zewnetrzne.html">Baseny zewnętrzne</a></li>
+        <li><a href="wanny-spa.html">Wanny SPA</a></li>
+        <li><a href="sauny.html">Sauny</a></li>
+        <li><a href="laznie-parowe.html">Łaźnie parowe</a></li>
+        <li><a href="strefy-spa.html">Strefy SPA</a></li>
+      </ul>
+    </li>
+    <li><a href="realizacje.html">Realizacje</a></li>
+    <li><a href="showroom.html">Showroom</a></li>
+    <li><a href="o-nas.html">O nas</a></li>
+    <li><a href="kontakt.html">Kontakt</a></li>
+    <li><a href="architekci.html">Dla architektów</a></li>
+  </ul>
+  <div class="mn-foot">
+    <div>
+      <span class="mn-tel-label">Zadzwoń</span>
+      <a class="mn-tel" href="tel:+48663959514">+48 663 959 514</a>
+    </div>
+    <a class="mn-cta" href="kontakt.html" data-modal="form">Umów konsultację</a>
+  </div>
+</div>
+
+<!-- sticky mobile CTA bar -->
+<div class="mobile-cta-bar">
+  <a class="mcb-tel" href="tel:+48663959514"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.69 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.33 1.85.56 2.81.69A2 2 0 0 1 22 16.92z"/></svg>Zadzwoń</a>
+  <a class="mcb-msg" href="kontakt.html" data-modal="form"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>Zapytaj</a>
+</div>
+
+<!-- mobile nav script -->
+<script>
+(function(){
+  const nav=document.getElementById('mobile-nav');
+  if(!nav)return;
+  const header=document.querySelector('.sticky-nav .sn-header');
+  if(!header)return;
+  // wstrzyknij hamburger jeśli go nie ma
+  if(!header.querySelector('.hamburger')){
+    const btn=document.createElement('button');
+    btn.className='hamburger';btn.setAttribute('aria-label','Otwórz menu');btn.setAttribute('aria-expanded','false');btn.type='button';
+    btn.innerHTML='<span></span><span></span><span></span>';
+    header.appendChild(btn);
+    btn.addEventListener('click',()=>{
+      const open=nav.classList.toggle('open');
+      btn.classList.toggle('open',open);
+      document.body.classList.toggle('mn-locked',open);
+      btn.setAttribute('aria-expanded',open?'true':'false');
+      nav.setAttribute('aria-hidden',open?'false':'true');
+    });
+  }
+  // dropdown w mobile
+  nav.querySelectorAll('.mn-drop-toggle').forEach(t=>{
+    t.addEventListener('click',()=>{
+      const li=t.closest('.mn-drop');
+      const wasOpen=li.classList.contains('open');
+      li.classList.toggle('open',!wasOpen);
+      t.setAttribute('aria-expanded',!wasOpen?'true':'false');
+    });
+  });
+  // ESC zamyka
+  // close button
+  const closeBtn=nav.querySelector('.mn-close');
+  if(closeBtn){
+    closeBtn.addEventListener('click',()=>{
+      nav.classList.remove('open');
+      document.body.classList.remove('mn-locked');
+      const ham=header.querySelector('.hamburger');
+      if(ham){ham.classList.remove('open');ham.setAttribute('aria-expanded','false');}
+      nav.setAttribute('aria-hidden','true');
+    });
+  }
+  document.addEventListener('keydown',e=>{
+    if(e.key==='Escape'&&nav.classList.contains('open')){
+      nav.classList.remove('open');
+      document.body.classList.remove('mn-locked');
+      const ham=header.querySelector('.hamburger');
+      if(ham){ham.classList.remove('open');ham.setAttribute('aria-expanded','false');}
+      nav.setAttribute('aria-hidden','true');
+    }
+  });
+  // klik w link w mobile-nav zamyka menu
+  nav.querySelectorAll('a').forEach(a=>{
+    a.addEventListener('click',()=>{
+      nav.classList.remove('open');
+      document.body.classList.remove('mn-locked');
+      const ham=header.querySelector('.hamburger');
+      if(ham){ham.classList.remove('open');ham.setAttribute('aria-expanded','false');}
+    });
+  });
+})();
+</script>
 </body>
 </html>

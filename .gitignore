@@ -1,14 +1,4 @@
 .DS_Store
-o-nas.html
-kontakt.html
-realizacje.html
-showroom.html
-assets/img/offer-bg.png
-assets/img/offer-product.png
-assets/img/realizacje/budzow-d.jpg
-assets/img/realizacje/budzow-h.jpg
-assets/img/realizacje/okocim-drone.jpg
-assets/img/realizacje/okocim.jpg
-assets/img/realizacje/tarnow-e.jpg
-assets/img/realizacje/wroclaw-c.jpg
-assets/img/realizacje/wroclaw-trzebnica.jpg
+.claude/
+00 - zdjecia/
+*.log

@@ -1,0 +1,875 @@
+<!doctype html>
+<html lang="pl">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Baseny zewnętrzne — MONZA baseny&amp;SPA</title>
+<meta name="description" content="Baseny zewnętrzne na zamówienie — projekt, budowa i serwis. MONZA baseny&SPA, Brzesko. Małopolska, Podkarpacie, Śląsk." />
+<meta name="theme-color" content="#113258" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+<style>
+:root{
+  --navy:#113258;--navy-deep:#0A1D33;--cream:#ECEAE5;--cream-2:#E2DFD7;--paper:#F4F2ED;
+  --ink:#0C0B09;--ink-2:#3A3830;--muted:#6B685F;--line:rgba(12,11,9,.14);
+  --f-mono:"JetBrains Mono",ui-monospace,monospace;--f-serif:"Fraunces",Georgia,serif;
+  --edge:clamp(20px,4vw,64px);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:focus-visible{outline:2px solid var(--navy);outline-offset:3px}
+html{scroll-behavior:smooth}
+html,body{background:var(--paper);color:var(--ink);font-family:var(--f-mono);-webkit-font-smoothing:antialiased;font-size:13.5px;line-height:1.55}
+body{overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+img,svg{display:block;max-width:100%}
+button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
+::selection{background:var(--navy);color:var(--cream)}
+body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:999;opacity:.04;mix-blend-mode:multiply;
+  background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='240' height='240'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2'/><feColorMatrix values='0 0 0 0 .07  0 0 0 0 .2  0 0 0 0 .35  0 0 0 .6 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>")}
+
+/* topbar */
+.topbar{background:var(--navy-deep);color:rgba(236,234,229,.7);font-family:var(--f-mono);font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;display:grid;grid-template-columns:1fr auto;align-items:center;padding:10px var(--edge);gap:24px;position:relative;z-index:50}
+.topbar .l{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.topbar .dot{width:5px;height:5px;border-radius:50%;background:#4CAF50;flex-shrink:0}
+.topbar .r{display:flex;align-items:center;gap:8px;white-space:nowrap}
+.topbar .r a{color:rgba(236,234,229,.9);font-weight:500;display:inline-flex;align-items:center;gap:8px;transition:color .3s}
+.topbar .r a:hover{color:#fff}
+.topbar .arr{display:inline-block;width:14px;height:1px;background:currentColor;position:relative}
+.topbar .arr::after{content:"";position:absolute;right:0;top:-3px;width:6px;height:6px;border-top:1px solid currentColor;border-right:1px solid currentColor;transform:rotate(45deg)}
+
+/* nav */
+.sticky-nav{background:var(--cream);color:var(--ink);box-shadow:0 2px 20px -8px rgba(12,11,9,.18);position:sticky;top:0;z-index:60}
+.sticky-nav .sn-header{display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:40px;padding:16px var(--edge)}
+.sticky-nav .sn-logo{height:36px;width:auto;color:var(--navy);display:block}
+.sn-links{display:flex;gap:36px;list-style:none;margin-left:8px}
+.sn-links a{font-family:var(--f-mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink);position:relative;padding:4px 0;transition:opacity .3s}
+.sn-links a:hover{opacity:.55}
+.sn-links a::after{content:"";position:absolute;left:50%;bottom:-3px;width:0;height:1px;background:var(--navy);transition:width .3s,left .3s}
+.sn-links a:hover::after{width:100%;left:0}
+.sn-links .active>a{color:var(--navy)}
+.sn-links .active>a::after{width:100%;left:0}
+.sn-links .has-drop{position:relative}
+.sn-links .has-drop::after{content:"";position:absolute;left:0;right:0;top:100%;height:14px;display:block;pointer-events:none}
+.sn-links .has-drop>a::before{content:"▾";margin-left:5px;font-size:9px;vertical-align:1px}
+.sn-links .drop{display:none;position:absolute;top:100%;left:0;background:var(--cream);min-width:210px;padding:14px 0 12px;list-style:none;border:1px solid var(--line);box-shadow:0 12px 32px -8px rgba(12,11,9,.15)}
+.sn-links .has-drop:hover .drop{display:block}
+.sn-links .drop li a{display:block;padding:9px 20px;font-size:11px;letter-spacing:.14em;color:var(--ink-2);white-space:nowrap;transition:color .2s,background .2s}
+.sn-links .drop li a::after{display:none}
+.sn-links .drop li a:hover{color:var(--navy);background:rgba(27,74,125,.04);opacity:1}
+.sn-links .drop .active-sub a{color:var(--navy)}
+.sn-right{display:flex;align-items:center;gap:20px;justify-content:flex-end}
+.sn-right .tel{font-family:var(--f-mono);font-size:13px;color:var(--ink);letter-spacing:.04em;transition:color .3s}
+.sn-right .tel:hover{color:var(--navy)}
+.sn-cta{display:inline-flex;align-items:center;padding:11px 22px;background:var(--navy);color:#fff;font-family:var(--f-mono);font-size:11px;letter-spacing:.18em;text-transform:uppercase;transition:background .3s}
+.sn-cta:hover{background:var(--navy-deep)}
+
+/* breadcrumb */
+.breadcrumb{padding:20px var(--edge);border-bottom:1px solid var(--line)}
+.breadcrumb-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;gap:8px;font-family:var(--f-mono);font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted)}
+.breadcrumb a{color:var(--muted);transition:color .2s}
+.breadcrumb a:hover{color:var(--navy)}
+.breadcrumb .sep{opacity:.4}
+
+/* hero */
+.page-hero{background:var(--navy-deep);padding:clamp(72px,9vw,128px) var(--edge) clamp(64px,8vw,112px);position:relative;overflow:hidden}
+.page-hero::after{content:"";position:absolute;top:-20%;right:-8%;width:700px;height:700px;border-radius:50%;background:radial-gradient(circle,rgba(27,74,125,.32) 0%,transparent 65%);pointer-events:none}
+.page-hero-inner{max-width:1200px;margin:0 auto;position:relative;z-index:1;display:grid;grid-template-columns:1fr 1fr;gap:clamp(48px,5vw,80px);align-items:end}
+.page-hero .eyebrow{font-family:var(--f-mono);font-size:10.5px;letter-spacing:.28em;text-transform:uppercase;color:rgba(236,234,229,.5);display:inline-flex;align-items:center;gap:14px;margin-bottom:24px}
+.page-hero .eyebrow::before{content:"";width:32px;height:1px;background:rgba(236,234,229,.3)}
+.page-hero h1{font-family:var(--f-serif);font-weight:300;font-size:clamp(48px,6.4vw,96px);line-height:1.0;letter-spacing:-.03em;color:#fff;font-variation-settings:"opsz" 144}
+.page-hero h1 i{font-style:italic;font-variation-settings:"opsz" 144,"SOFT" 80,"WONK" 1;background:linear-gradient(to bottom,#fff 0%,#F2EFE8 28%,#B9A687 70%,#7A6A4F 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.page-hero-lead{color:rgba(236,234,229,.75)}
+.page-hero-lead p{font-family:var(--f-serif);font-weight:300;font-size:clamp(17px,1.4vw,21px);line-height:1.6;font-variation-settings:"opsz" 14;margin-bottom:32px}
+.page-hero-actions{display:flex;gap:12px;flex-wrap:wrap}
+.btn-white{display:inline-flex;align-items:center;gap:10px;padding:14px 26px;background:#fff;color:var(--navy);font-family:var(--f-mono);font-size:11px;letter-spacing:.18em;text-transform:uppercase;transition:opacity .3s}
+.btn-white:hover{opacity:.88}
+.btn-ghost-w{display:inline-flex;align-items:center;gap:10px;padding:13px 26px;border:1px solid rgba(236,234,229,.35);color:rgba(236,234,229,.9);font-family:var(--f-mono);font-size:11px;letter-spacing:.18em;text-transform:uppercase;transition:all .3s}
+.btn-ghost-w:hover{background:rgba(236,234,229,.1);border-color:rgba(236,234,229,.6)}
+
+/* section common */
+.section{padding:clamp(64px,8vw,112px) var(--edge)}
+.section-inner{max-width:1200px;margin:0 auto}
+.section-eyebrow{font-family:var(--f-mono);font-size:10.5px;letter-spacing:.24em;text-transform:uppercase;color:var(--navy);display:inline-flex;align-items:center;gap:10px;margin-bottom:20px}
+.section-eyebrow::before{content:"";width:22px;height:1px;background:var(--navy)}
+.section h2{font-family:var(--f-serif);font-weight:300;font-size:clamp(36px,4.4vw,64px);line-height:1.05;letter-spacing:-.025em;color:var(--ink);font-variation-settings:"opsz" 144;margin-bottom:clamp(32px,4vw,56px)}
+.section h2 i{font-style:italic;color:var(--muted);font-variation-settings:"opsz" 144,"SOFT" 80,"WONK" 1}
+
+/* intro split */
+.intro-grid{display:grid;grid-template-columns:1.1fr 1fr;gap:clamp(56px,7vw,112px);align-items:start}
+.intro-body p{font-family:var(--f-serif);font-weight:300;font-size:clamp(16px,1.3vw,19px);line-height:1.7;color:var(--ink-2);font-variation-settings:"opsz" 14;margin-bottom:20px}
+.intro-body p:last-child{margin-bottom:0}
+.intro-body p strong{color:var(--ink);font-weight:400}
+.intro-img{aspect-ratio:4/5;background:linear-gradient(135deg,var(--navy-deep) 0%,var(--navy) 100%);overflow:hidden;display:flex;align-items:center;justify-content:center}
+.intro-img img{width:100%;height:100%;object-fit:cover}
+.intro-img svg{opacity:.1;width:50%;max-width:160px}
+
+/* technologies */
+.tech-section{background:var(--cream);border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:clamp(64px,8vw,112px) var(--edge)}
+.tech-inner{max-width:1200px;margin:0 auto}
+.tech-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);margin-top:clamp(32px,4vw,52px)}
+.tech-item{background:var(--cream);padding:clamp(28px,3vw,44px) clamp(24px,2.6vw,40px)}
+.tech-item .ti-n{font-family:var(--f-mono);font-size:9.5px;letter-spacing:.24em;text-transform:uppercase;color:var(--muted);margin-bottom:16px}
+.tech-item h3{font-family:var(--f-serif);font-weight:300;font-size:clamp(22px,2.2vw,30px);line-height:1.1;letter-spacing:-.02em;color:var(--ink);font-variation-settings:"opsz" 144;margin-bottom:10px}
+.tech-item h3 i{font-style:italic;color:var(--navy);font-variation-settings:"opsz" 144,"SOFT" 60,"WONK" 1}
+.tech-item p{font-family:var(--f-mono);font-size:11.5px;line-height:1.65;color:var(--muted);margin-bottom:14px}
+.tech-item ul{list-style:none;display:flex;flex-direction:column;gap:7px}
+.tech-item ul li{font-family:var(--f-mono);font-size:11px;color:var(--ink-2);padding-left:14px;position:relative;line-height:1.5}
+.tech-item ul li::before{content:"—";position:absolute;left:0;color:var(--muted)}
+
+/* process */
+.process-section{padding:clamp(64px,8vw,112px) var(--edge)}
+.process-inner{max-width:1200px;margin:0 auto}
+.process-steps{display:grid;grid-template-columns:repeat(5,1fr);gap:0;margin-top:clamp(32px,4vw,52px)}
+.process-step{padding:clamp(24px,2.6vw,40px) clamp(20px,2.2vw,32px);border-right:1px solid var(--line);position:relative}
+.process-step:last-child{border-right:0}
+.process-step .ps-n{font-family:var(--f-serif);font-weight:300;font-size:clamp(40px,4vw,60px);line-height:1;color:var(--cream-2);letter-spacing:-.04em;font-variation-settings:"opsz" 144;display:block;margin-bottom:16px}
+.process-step h3{font-family:var(--f-serif);font-weight:300;font-size:clamp(16px,1.5vw,20px);line-height:1.15;letter-spacing:-.015em;color:var(--ink);font-variation-settings:"opsz" 144;margin-bottom:8px}
+.process-step h3 i{font-style:italic;color:var(--navy);font-variation-settings:"opsz" 144,"SOFT" 60,"WONK" 1}
+.process-step p{font-family:var(--f-mono);font-size:11px;line-height:1.6;color:var(--muted)}
+
+/* options */
+.options-section{background:var(--navy);padding:clamp(64px,8vw,112px) var(--edge)}
+.options-inner{max-width:1200px;margin:0 auto}
+.options-inner .section-eyebrow{color:rgba(236,234,229,.5)}
+.options-inner .section-eyebrow::before{background:rgba(236,234,229,.3)}
+.options-inner h2{color:#fff}
+.options-inner h2 i{color:rgba(236,234,229,.5);font-variation-settings:"opsz" 144,"SOFT" 80,"WONK" 1}
+.options-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:rgba(236,234,229,.12)}
+.option-item{background:var(--navy);padding:clamp(28px,3vw,44px) clamp(24px,2.6vw,40px)}
+.option-item .oi-n{font-family:var(--f-mono);font-size:9.5px;letter-spacing:.22em;text-transform:uppercase;color:rgba(236,234,229,.42);margin-bottom:14px}
+.option-item h3{font-family:var(--f-serif);font-weight:300;font-size:clamp(22px,2vw,28px);line-height:1.1;letter-spacing:-.02em;color:#fff;font-variation-settings:"opsz" 144;margin-bottom:10px}
+.option-item h3 i{font-style:italic;font-variation-settings:"opsz" 144,"SOFT" 60,"WONK" 1;color:rgba(236,234,229,.55)}
+.option-item p{font-family:var(--f-mono);font-size:11.5px;line-height:1.65;color:rgba(236,234,229,.6)}
+
+/* realizations strip */
+.real-strip{padding:clamp(64px,8vw,112px) var(--edge)}
+.real-strip-inner{max-width:1200px;margin:0 auto}
+.real-strip-head{display:flex;align-items:baseline;justify-content:space-between;margin-bottom:clamp(24px,3vw,40px);gap:24px}
+.real-strip-head h2{margin-bottom:0}
+.real-strip-link{font-family:var(--f-mono);font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--navy);white-space:nowrap;display:inline-flex;align-items:center;gap:8px;transition:opacity .3s}
+.real-strip-link:hover{opacity:.65}
+.real-strip-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(16px,2vw,28px)}
+.rs-card{display:block;position:relative;overflow:hidden}
+.rs-card:hover .rs-img-ph{transform:scale(1.04)}
+.rs-img{aspect-ratio:4/3;overflow:hidden;background:var(--cream-2)}
+.rs-img-ph{width:100%;height:100%;background:linear-gradient(135deg,var(--navy-deep) 0%,var(--navy) 100%);display:flex;align-items:center;justify-content:center;transition:transform .6s cubic-bezier(.22,.61,.36,1)}
+.rs-img-ph svg{opacity:.12;width:44%;max-width:100px}
+.rs-body{padding:16px 0 4px}
+.rs-title{font-family:var(--f-serif);font-weight:300;font-size:clamp(18px,1.6vw,22px);color:var(--ink);letter-spacing:-.015em;font-variation-settings:"opsz" 14;line-height:1.15;margin-bottom:6px}
+.rs-meta{font-family:var(--f-mono);font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+
+/* faq */
+.faq-section{background:var(--cream);border-top:1px solid var(--line);padding:clamp(64px,8vw,112px) var(--edge)}
+.faq-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 1.4fr;gap:clamp(56px,7vw,112px);align-items:start}
+.faq-list{display:flex;flex-direction:column;gap:0}
+.faq-item{border-bottom:1px solid var(--line)}
+.faq-item:first-child{border-top:1px solid var(--line)}
+.faq-q{width:100%;text-align:left;padding:20px 0;display:flex;align-items:center;justify-content:space-between;gap:16px;font-family:var(--f-serif);font-weight:300;font-size:clamp(16px,1.4vw,19px);color:var(--ink);font-variation-settings:"opsz" 14;cursor:pointer;transition:color .2s}
+.faq-q:hover{color:var(--navy)}
+.faq-q .fq-icon{flex-shrink:0;width:20px;height:20px;border:1px solid var(--line);display:flex;align-items:center;justify-content:center;font-size:14px;color:var(--muted);transition:all .2s;font-style:normal}
+.faq-item.open .fq-icon{background:var(--navy);border-color:var(--navy);color:#fff}
+.faq-a{display:none;padding:0 0 20px;font-family:var(--f-mono);font-size:12px;line-height:1.7;color:var(--muted)}
+.faq-item.open .faq-a{display:block}
+
+/* pin-cta (z index.html) */
+.pin-cta{position:relative;min-height:180vh;background:var(--navy-deep)}
+.pin-sticky{position:sticky;top:0;height:100vh;min-height:620px;overflow:hidden;background:var(--navy-deep)}
+.pin-sticky::before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at 50% 55%,rgba(27,74,125,.28) 0%,transparent 65%);pointer-events:none;z-index:0}
+.pin-img-box{position:absolute;inset:0;width:100%;height:100%;overflow:hidden;will-change:opacity;z-index:1}
+.pin-img-box img,.pin-img-box video{width:100%;height:100%;object-fit:cover;display:block;filter:saturate(.95) contrast(1.02);will-change:opacity}
+.pin-cta-overlay{position:absolute;inset:0;z-index:4;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:clamp(20px,2.2vw,32px);padding:clamp(60px,8vw,120px) clamp(24px,5vw,80px);text-align:center;color:var(--cream);opacity:0;will-change:opacity;pointer-events:none}
+.pin-cta-overlay>*{pointer-events:auto}
+.pin-cta-overlay h2{font-family:var(--f-serif);font-weight:300;font-size:clamp(56px,8.6vw,148px);line-height:.92;letter-spacing:-.03em;font-variation-settings:"opsz" 144;margin:0;background:linear-gradient(to bottom,#fff 0%,#F2EFE8 28%,#B9A687 70%,#7A6A4F 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent}
+.pin-cta-overlay h2 i{font-style:italic;font-variation-settings:"opsz" 144,"SOFT" 80,"WONK" 1}
+.pin-cta-overlay p{font-family:var(--f-serif);font-weight:300;font-size:clamp(17px,1.4vw,21px);line-height:1.55;color:rgba(236,234,229,.82);max-width:56ch;font-variation-settings:"opsz" 14;margin:0}
+.pin-cta-overlay .pair{display:flex;flex-wrap:wrap;gap:14px;margin-top:8px;justify-content:center}
+.btn{display:inline-flex;align-items:center;gap:10px;padding:14px 24px;border:1px solid var(--navy);color:var(--navy);font-family:var(--f-mono);font-size:11px;letter-spacing:.18em;text-transform:uppercase;background:transparent;transition:all .3s}
+.btn:hover{background:var(--navy);color:var(--cream)}
+.btn .arr{display:inline-block;width:16px;height:1px;background:currentColor;position:relative}
+.btn .arr::after{content:"";position:absolute;right:0;top:-3px;width:6px;height:6px;border-top:1px solid currentColor;border-right:1px solid currentColor;transform:rotate(45deg)}
+.btn-solid{background:var(--navy);color:var(--cream);border-color:var(--navy)}
+.btn-solid:hover{background:var(--ink);border-color:var(--ink);color:var(--cream)}
+.pin-cta-overlay .btn{border-color:var(--cream);color:var(--cream)}
+.pin-cta-overlay .btn:hover{background:var(--cream);color:var(--navy)}
+.pin-cta-overlay .btn-solid{background:var(--cream);color:var(--navy);border-color:var(--cream)}
+.pin-cta-overlay .btn-solid:hover{background:transparent;color:var(--cream)}
+.arr{display:inline-block;width:14px;height:1px;background:currentColor;position:relative}
+.arr::after{content:"";position:absolute;right:0;top:-3px;width:6px;height:6px;border-top:1px solid currentColor;border-right:1px solid currentColor;transform:rotate(45deg)}
+
+/* footer */
+footer.foot{background:var(--navy-deep);color:rgba(236,234,229,.7);position:relative;overflow:hidden}
+footer.foot::after{content:"";position:absolute;top:-20%;right:-10%;width:800px;height:800px;border-radius:50%;background:radial-gradient(circle,rgba(27,74,125,.28) 0%,transparent 60%);pointer-events:none}
+.foot-grid{position:relative;z-index:1;max-width:1440px;margin:0 auto;padding:clamp(48px,5vw,72px) var(--edge);display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:clamp(40px,4vw,64px)}
+.foot-brand .f-brand{margin-bottom:28px}
+.foot-brand .f-brand-mark{height:40px;width:auto;color:rgba(236,234,229,.9)}
+.foot-brand .ad{font-family:var(--f-mono);font-size:11.5px;line-height:1.8;color:rgba(236,234,229,.5);margin-bottom:24px;padding-bottom:24px;border-bottom:1px solid rgba(236,234,229,.1)}
+.foot-brand .meta{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.foot-brand .meta>div{display:flex;flex-direction:column;gap:3px}
+.foot-brand .meta>div em{font-family:var(--f-serif);font-weight:300;font-size:20px;color:var(--cream);font-style:normal;letter-spacing:-.01em}
+.foot-brand .meta>div span{font-family:var(--f-mono);font-size:9.5px;letter-spacing:.2em;text-transform:uppercase;color:rgba(236,234,229,.38)}
+.foot-col h5{font-family:var(--f-mono);font-size:10px;letter-spacing:.28em;text-transform:uppercase;color:rgba(236,234,229,.45);margin:0 0 24px;padding-bottom:14px;border-bottom:1px solid rgba(236,234,229,.1)}
+.foot-col ul{list-style:none;display:grid;gap:12px}
+.foot-col ul a{font-family:var(--f-serif);font-weight:300;font-size:16px;color:rgba(236,234,229,.82);transition:color .3s,transform .3s;letter-spacing:-.005em;font-variation-settings:"opsz" 14;display:inline-block}
+.foot-col ul a:hover{color:var(--cream);transform:translateX(3px)}
+.ft-persons{display:grid;gap:24px}
+.ft-person{display:flex;flex-direction:column;gap:3px}
+.ft-name{font-family:var(--f-serif);font-weight:300;font-size:19px;color:var(--cream);letter-spacing:-.01em;font-variation-settings:"opsz" 14}
+.ft-role{font-family:var(--f-mono);font-size:9.5px;letter-spacing:.22em;text-transform:uppercase;color:rgba(236,234,229,.42)}
+.ft-tel{font-family:var(--f-serif);font-weight:300;font-size:16px;color:rgba(236,234,229,.82);text-decoration:none;margin-top:4px;transition:color .3s}
+.ft-tel:hover{color:var(--cream)}
+.ft-emails{display:flex;flex-direction:column;gap:8px;padding-top:8px;border-top:1px solid rgba(236,234,229,.1)}
+.ft-emails a{font-family:var(--f-serif);font-weight:300;font-size:15px;color:rgba(236,234,229,.55);text-decoration:none;transition:color .3s}
+.ft-emails a:hover{color:rgba(236,234,229,.82)}
+.foot-bar{position:relative;z-index:1;max-width:1440px;margin:0 auto;padding:26px var(--edge) 30px;display:grid;grid-template-columns:1fr auto 1fr;gap:24px;border-top:1px solid rgba(236,234,229,.08);font-family:var(--f-mono);font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:rgba(236,234,229,.38);align-items:center}
+.foot-bar .c{text-align:center;display:flex;gap:18px;align-items:center;justify-content:center}
+.foot-bar .c .ln{width:24px;height:1px;background:rgba(236,234,229,.2)}
+.foot-bar .r{text-align:right}
+.foot-bar a{color:rgba(236,234,229,.58);transition:color .3s}
+.foot-bar a:hover{color:var(--cream)}
+
+@media(max-width:960px){
+  .page-hero-inner,.intro-grid,.faq-inner{grid-template-columns:1fr}
+  .process-steps{grid-template-columns:1fr 1fr;border-top:1px solid var(--line)}
+  .process-step{border-top:0;border-right:1px solid var(--line)}
+  .process-step:nth-child(even){border-right:0}
+  .options-grid,.tech-grid{grid-template-columns:1fr 1fr}
+  .real-strip-grid{grid-template-columns:1fr 1fr}
+  .foot-grid{grid-template-columns:1fr 1fr}
+  .sn-links{gap:20px}
+}
+@media(max-width:600px){
+  .process-steps,.options-grid,.tech-grid{grid-template-columns:1fr}
+  .process-step{border-right:0;border-bottom:1px solid var(--line)}
+  .real-strip-grid{grid-template-columns:1fr}
+  .foot-grid{grid-template-columns:1fr}
+  .foot-bar{grid-template-columns:1fr;text-align:center;gap:12px}
+  .foot-bar .r{text-align:center}
+}
+
+/* ===== mobile responsive ===== */
+.mn-logo{display:block;width:120px;color:var(--cream);margin:0 0 28px}
+.mn-logo svg{width:100%;height:auto;display:block}
+.topbar-ext{display:inline}
+.hamburger{display:none;width:44px;height:44px;align-items:center;justify-content:center;flex-direction:column;gap:5px;cursor:pointer;background:transparent;border:0;padding:0;z-index:80}
+.hamburger span{display:block;width:22px;height:2px;background:var(--ink);transition:transform .3s,opacity .25s}
+.hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.hamburger.open span:nth-child(2){opacity:0}
+.hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+.mobile-nav{position:fixed;inset:0;background:var(--navy-deep);color:var(--cream);z-index:75;display:flex;flex-direction:column;padding:24px var(--edge) 24px;overflow-y:auto;transform:translateY(-100%);transition:transform .35s cubic-bezier(.22,.61,.36,1);visibility:hidden}
+.mn-close{position:absolute;top:18px;right:var(--edge);width:44px;height:44px;display:flex;align-items:center;justify-content:center;background:transparent;border:1px solid rgba(236,234,229,.25);color:var(--cream);cursor:pointer;padding:0;z-index:5;transition:background .25s,border-color .25s}
+.mn-close:hover{background:rgba(236,234,229,.08);border-color:rgba(236,234,229,.55)}
+.mn-close svg{width:18px;height:18px;display:block}
+.mobile-nav.open{transform:translateY(0);visibility:visible}
+.mobile-nav .mn-links{list-style:none;display:flex;flex-direction:column;gap:0;margin:0;padding:0}
+.mobile-nav .mn-links>li{border-bottom:1px solid rgba(236,234,229,.1)}
+.mobile-nav .mn-links>li>a,.mobile-nav .mn-drop-toggle{display:flex;align-items:center;justify-content:space-between;padding:18px 0;font-family:var(--f-serif);font-weight:300;font-size:24px;color:rgba(236,234,229,.92);font-variation-settings:"opsz" 14;text-decoration:none;background:transparent;border:0;width:100%;text-align:left;cursor:pointer;letter-spacing:-.01em;min-height:44px}
+.mobile-nav .mn-drop-toggle::after{content:"▾";font-size:14px;color:rgba(236,234,229,.6);transition:transform .3s}
+.mobile-nav .mn-drop.open .mn-drop-toggle::after{transform:rotate(180deg)}
+.mobile-nav .mn-sub{list-style:none;max-height:0;overflow:hidden;transition:max-height .35s ease;margin:0;padding:0}
+.mobile-nav .mn-drop.open .mn-sub{max-height:600px !important}
+.mobile-nav .mn-sub li a{display:block;padding:12px 16px;font-family:var(--f-mono);font-size:13px;letter-spacing:.08em;color:rgba(236,234,229,.6);min-height:44px;display:flex;align-items:center}
+.mobile-nav .mn-sub li a:hover{color:var(--cream)}
+.mobile-nav .mn-foot{margin-top:auto;padding-top:32px;border-top:1px solid rgba(236,234,229,.12);display:flex;flex-direction:column;gap:16px}
+.mobile-nav .mn-foot .mn-tel{font-family:var(--f-serif);font-weight:300;font-size:22px;color:var(--cream);font-variation-settings:"opsz" 14}
+.mobile-nav .mn-foot .mn-tel-label{font-family:var(--f-mono);font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:rgba(236,234,229,.45);margin-bottom:4px;display:block}
+.mobile-nav .mn-cta{display:inline-flex;justify-content:center;align-items:center;padding:14px 22px;background:var(--cream);color:var(--navy);font-family:var(--f-mono);font-size:12px;letter-spacing:.2em;text-transform:uppercase;text-decoration:none;min-height:48px;margin-top:8px}
+body.mn-locked{overflow:hidden}
+.mobile-cta-bar{display:none;position:fixed;bottom:0;left:0;right:0;z-index:55;background:var(--cream);border-top:1px solid var(--line);padding:10px var(--edge) calc(10px + env(safe-area-inset-bottom,0px));gap:10px;box-shadow:0 -4px 16px rgba(12,11,9,.08)}
+.mobile-cta-bar a{flex:1;display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:14px 12px;font-family:var(--f-mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;min-height:48px;text-decoration:none}
+.mobile-cta-bar .mcb-tel{background:var(--navy);color:#fff}
+.mobile-cta-bar .mcb-msg{background:transparent;color:var(--navy);border:1px solid var(--navy)}
+.mobile-cta-bar svg{width:14px;height:14px}
+@media (max-width:860px){
+  .sticky-nav .sn-links,.sticky-nav .sn-right{display:none !important}
+  .hamburger{display:inline-flex}
+  .sticky-nav .sn-header{grid-template-columns:auto 1fr auto;gap:16px}
+  .topbar{font-size:9px;letter-spacing:.12em;padding:8px var(--edge);grid-template-columns:1fr}
+  .topbar .r{display:none}
+  .topbar-ext{display:none}
+  .topbar .l{justify-content:center;text-align:center}
+  .mobile-cta-bar{display:flex}
+  body{padding-bottom:70px}
+  /* Pin-CTA — uproszczona wersja mobile (bez scroll-pin) */
+  .pin-cta{min-height:auto;position:relative}
+  .pin-sticky{position:relative;top:auto;height:auto;min-height:520px;padding:60px var(--edge)}
+  .pin-img-box{position:absolute;inset:0}
+  .pin-img-box video,.pin-img-box img{opacity:.32 !important}
+  .pin-cta-overlay{position:relative;opacity:1 !important;padding:0;justify-content:center;min-height:420px}
+  .pin-cta-overlay h2{font-size:clamp(40px,11vw,64px)}
+  .pin-hint,.pin-eyebrow{display:none}
+
+  /* iOS — zapobiega zoom przy focusie na inputach */
+  .cmodal-row input,.cmodal-row select,.cmodal-row textarea,.cform-row input,.cform-row select,.cform-row textarea{font-size:16px !important}
+  input,select,textarea{font-size:16px}
+}
+@media (max-width:600px){
+  .mobile-nav .mn-links>li>a,.mobile-nav .mn-drop-toggle{font-size:21px;padding:16px 0}
+}
+</style>
+</head>
+<body>
+
+<!-- topbar -->
+<div class="topbar">
+  <div class="l">
+    <span class="dot"></span>
+    <span>Showroom otwarty — Pn–Pt 08:00–17:00<span class="topbar-ext">&nbsp;·&nbsp; spotkania w innym terminie możliwe po wcześniejszym umówieniu</span></span>
+  </div>
+  <div class="r">
+    <span>Brzesko · ul. Solskiego 20A</span>
+    <a href="https://maps.google.com/?q=ul.+Solskiego+20A,+Brzesko" target="_blank" rel="noopener">Wyznacz trasę <span class="arr"></span></a>
+  </div>
+</div>
+
+<!-- nav -->
+<div class="sticky-nav">
+  <div class="sn-header">
+    <a href="index.html" aria-label="MONZA baseny & SPA — strona główna">
+      <svg class="sn-logo" viewBox="0 0 336 71" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M311.102 0.225543L310.989 0H298.343L298.23 0.228676L279.3 36.018L285.349 39.7301C282.953 38.9814 280.575 38.4363 278.22 38.0698C275.917 37.7127 273.64 37.5154 271.372 37.4621C270.924 37.4496 270.47 37.4402 270.022 37.4402C259.547 37.412 249.447 40.2062 239.527 42.9378C224.29 47.148 209.83 51.1388 193.66 45.6882H201.814V16.2047C201.814 7.33956 194.6 0.125302 185.734 0.125302H146.255V45.6819H158.641V12.5114H185.734C187.771 12.5114 189.428 14.1685 189.428 16.2047V45.6819H189.453V56.414C196.554 58.8292 203.386 59.7533 209.943 59.7533C221.812 59.7533 232.82 56.7148 243.001 53.9049C255.628 50.4121 266.921 47.3014 278.342 49.7668C280.231 50.1677 282.117 50.7253 284.009 51.4615L287.063 45.6851L288.422 43.107L304.668 12.3955L322.273 45.6819H335.144L311.102 0.228676V0.225543Z" fill="currentColor"/>
+        <path d="M272.248 12.3516V0H214.722V11.5184H251.704L214.086 33.3366V45.685H214.828L272.248 12.3516Z" fill="currentColor"/>
+        <path d="M55.0701 0.125488H0V45.6821H12.3861V12.5116H27.0213C28.5876 12.5116 29.8563 13.7803 29.8563 15.3465V45.6852H42.2424V12.5116H55.0701C57.1094 12.5116 58.7634 14.1656 58.7634 16.2048V45.6821H71.1495V16.2048C71.1495 7.32408 63.9509 0.125488 55.0701 0.125488Z" fill="currentColor"/>
+        <path d="M121.69 0H95.7119C86.8218 0 79.6138 7.20486 79.6138 16.095V29.5869C79.6138 38.4771 86.8218 45.685 95.7119 45.685H121.69C130.58 45.685 137.785 38.4771 137.785 29.5869V16.095C137.785 7.20799 130.58 0 121.69 0ZM125.321 33.2238H95.4081C93.5693 33.2238 92.0782 31.7327 92.0782 29.8939V12.4644H121.69C123.695 12.4644 125.321 14.0902 125.321 16.095V33.2238Z" fill="currentColor"/>
+      </svg>
+    </a>
+    <nav>
+      <ul class="sn-links">
+        <li class="has-drop active"><a href="#">Usługi</a>
+          <ul class="drop">
+            <li><a href="baseny-wewnetrzne.html">Baseny wewnętrzne</a></li>
+            <li class="active-sub"><a href="baseny-zewnetrzne.html">Baseny zewnętrzne</a></li>
+            <li><a href="wanny-spa.html">Wanny SPA</a></li>
+            <li><a href="sauny.html">Sauny</a></li>
+            <li><a href="laznie-parowe.html">Łaźnie parowe</a></li>
+            <li><a href="strefy-spa.html">Strefy SPA</a></li>
+          </ul>
+        </li>
+        <li><a href="realizacje.html">Realizacje</a></li>
+        <li><a href="showroom.html">Showroom</a></li>
+        <li><a href="o-nas.html">O&nbsp;nas</a></li>
+        <li><a href="kontakt.html">Kontakt</a></li>
+        <li><a href="architekci.html">Dla architektów</a></li>
+      </ul>
+    </nav>
+    <div class="sn-right">
+      <a href="tel:+48663959514" class="tel">+48&nbsp;663&nbsp;959&nbsp;514</a>
+      <a href="kontakt.html" class="sn-cta" data-modal="form">Umów spotkanie</a>
+    </div>
+  </div>
+</div>
+
+<!-- hero -->
+<section class="page-hero">
+  <div class="page-hero-inner">
+    <div>
+      <div class="eyebrow">Usługa</div>
+      <h1>Baseny<br/><i>zewnętrzne</i></h1>
+    </div>
+    <div class="page-hero-lead">
+      <p>Basen ogrodowy zaprojektowany i zbudowany przez MONZA to inwestycja na dekady. Dobieramy technologię do działki, warunków gruntowych i Twoich potrzeb — a potem budujemy, wykańczamy i serwisujemy.</p>
+      <div class="page-hero-actions">
+        <a href="kontakt.html" class="btn-white" data-modal="form">Umów konsultację <span class="arr"></span></a>
+        <a href="realizacje.html" class="btn-ghost-w">Zobacz realizacje</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- intro -->
+<section class="section">
+  <div class="section-inner">
+    <div class="intro-grid">
+      <div>
+        <div class="section-eyebrow">O usłudze</div>
+        <h2>Od projektu<br/><i>po pierwsze kąpanie.</i></h2>
+        <div class="intro-body">
+          <p>Realizujemy baseny ogrodowe od podstaw — od analizy terenu i dokumentacji technicznej, przez budowę i wykończenie, po uruchomienie i długoletni serwis. <strong>Jedna firma, jeden kontakt, jedna umowa.</strong></p>
+          <p>Zajmujemy się basenami zagłębianymi, naziemnymi i częściowo zagłębianymi. Dobieramy technologię wykonania — żelbet, folia, tynk mozaikowy lub okładziny ceramiczne — do warunków gruntowych, budżetu i estetyki ogrodu.</p>
+          <p>Każdy projekt jest indywidualny. Pracujemy zarówno na gotowych projektach ogrodów, jak i od zera — koordynując się z architektem lub projektantem zieleni.</p>
+        </div>
+      </div>
+      <div class="intro-img"><img src="assets/img/realizacje/budzow-a.jpg" alt="Basen zewnętrzny MONZA" /></div>
+    </div>
+  </div>
+</section>
+
+<!-- technologie -->
+<div class="tech-section">
+  <div class="tech-inner">
+    <div class="section-eyebrow">Technologie wykonania</div>
+    <h2>Dobieramy metodę<br/><i>do Twojej działki.</i></h2>
+    <div class="tech-grid">
+      <div class="tech-item">
+        <div class="ti-n">Technologia A</div>
+        <h3>Folia <i>PCV</i></h3>
+        <p>Najszybsza w realizacji i najczęściej wybierana. Folia układana na wylewce lub szkielecie stalowym — odporna na UV, dostępna w wielu kolorach i wzorach.</p>
+        <ul>
+          <li>Czas budowy 6–10 tygodni</li>
+          <li>Szeroka paleta kolorów</li>
+          <li>Łatwa wymiana po latach</li>
+          <li>Krawędziówki beton / drewno / kamień</li>
+        </ul>
+      </div>
+      <div class="tech-item">
+        <div class="ti-n">Technologia B</div>
+        <h3>Tynk <i>mozaikowy</i></h3>
+        <p>Mozaika ceramiczna lub szklana nakładana na żelbet — trwałość powyżej 30 lat, dowolny kolor, efekt lustra wody. Szczyt estetyki basenu ogrodowego.</p>
+        <ul>
+          <li>Trwałość 30+ lat</li>
+          <li>Efekt lustra wody</li>
+          <li>Pełna dowolność kształtu</li>
+          <li>Opcja podświetlenia LED</li>
+        </ul>
+      </div>
+      <div class="tech-item">
+        <div class="ti-n">Technologia C</div>
+        <h3>Poliester <i>gotowy</i></h3>
+        <p>Prefabrykowana misa poliestrowa — montaż w ciągu tygodnia. Idealna dla działek z trudnym dostępem lub gdy zależy na czasie. Wiele kształtów i wymiarów.</p>
+        <ul>
+          <li>Montaż do 7 dni roboczych</li>
+          <li>Gotowe kształty — różne wymiary</li>
+          <li>Brak spoin i łączeń</li>
+          <li>Niski koszt utrzymania</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- proces -->
+<section class="process-section">
+  <div class="process-inner">
+    <div class="section-eyebrow">Jak działamy</div>
+    <h2>Pięć etapów<br/><i>jednej realizacji.</i></h2>
+    <div class="process-steps">
+      <div class="process-step">
+        <span class="ps-n">01</span>
+        <h3>Konsultacja<br/><i>i wizja lokalna</i></h3>
+        <p>Spotkanie na działce, analiza gruntu i warunków. Wstępna koncepcja i budżet — bezpłatnie.</p>
+      </div>
+      <div class="process-step">
+        <span class="ps-n">02</span>
+        <h3>Projekt<br/><i>techniczny</i></h3>
+        <p>Dokumentacja techniczna basenu, maszynowni i instalacji. Koordynacja z architektem lub GW.</p>
+      </div>
+      <div class="process-step">
+        <span class="ps-n">03</span>
+        <h3>Budowa<br/><i>i instalacje</i></h3>
+        <p>Wykopaliska, żelbet lub montaż misy, hydraulika, elektrotechnika. Własna ekipa — zgodnie z harmonogramem.</p>
+      </div>
+      <div class="process-step">
+        <span class="ps-n">04</span>
+        <h3>Wykończenie<br/><i>i uruchomienie</i></h3>
+        <p>Okładziny, krawędziówki, oświetlenie, maszynownia. Pierwsze napełnienie i balansowanie chemii.</p>
+      </div>
+      <div class="process-step">
+        <span class="ps-n">05</span>
+        <h3>Serwis<br/><i>wieloletni</i></h3>
+        <p>Zimowanie, uruchamianie, przeglądy, dostawa chemii. Reakcja serwisowa 1–3 dni przez cały rok.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- opcje -->
+<div class="options-section">
+  <div class="options-inner">
+    <div class="section-eyebrow">Opcje i dodatki</div>
+    <h2>Dopasuj basen<br/><i>do siebie.</i></h2>
+    <div class="options-grid" style="margin-top:clamp(32px,4vw,52px)">
+      <div class="option-item">
+        <div class="oi-n">Ogrzewanie</div>
+        <h3>Pompa ciepła<br/><i>lub kolektor</i></h3>
+        <p>Pompa ciepła powietrze-woda lub woda-woda, kolektor słoneczny, grzałka elektryczna — dobieramy do dostępnego źródła ciepła i budżetu eksploatacji.</p>
+      </div>
+      <div class="option-item">
+        <div class="oi-n">Dezynfekcja</div>
+        <h3>Elektroliza solna<br/><i>lub chlor</i></h3>
+        <p>Elektroliza solna — mniejszy nakład pracy, łagodniejsza woda. Standardowy chlor — niższy koszt instalacji. Oba systemy obsługujemy i serwisujemy.</p>
+      </div>
+      <div class="option-item">
+        <div class="oi-n">Przykrycie</div>
+        <h3>Roleta <i>automatyczna</i></h3>
+        <p>Roleta najazdowa lub podpływowa — zmniejsza parowanie, utrzymuje temperaturę, ogranicza zabrudzenie. Sterowanie manualne lub automatyczne.</p>
+      </div>
+      <div class="option-item">
+        <div class="oi-n">Masaże</div>
+        <h3>Dysze <i>i atrakcje</i></h3>
+        <p>System hydromasażu, przelew lustra wody, wodospad, diody LED RGB pod wodą i najazdowe. Sterowanie z aplikacji lub panelu przy basenie.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- realizacje strip -->
+<section class="real-strip">
+  <div class="real-strip-inner">
+    <div class="real-strip-head">
+      <div>
+        <div class="section-eyebrow">Przykładowe realizacje</div>
+        <h2 style="margin-bottom:0">Baseny zewnętrzne<br/><i>z naszego portfolio.</i></h2>
+      </div>
+      <a href="realizacje.html" class="real-strip-link">Wszystkie realizacje <span class="arr"></span></a>
+    </div>
+    <div class="real-strip-grid">
+      <a class="rs-card" href="#">
+        <div class="rs-img"><img src="assets/img/realizacje/budzow-a.jpg" alt="Realizacja basen zewnętrzny 1" loading="lazy" /></div>
+        <div class="rs-body"><div class="rs-title">Budzów</div><div class="rs-meta">Dom jednorodzinny · 2023</div></div>
+      </a>
+      <a class="rs-card" href="#">
+        <div class="rs-img"><img src="assets/img/realizacje/tarnow-e.jpg" alt="Realizacja basen zewnętrzny 2" loading="lazy" /></div>
+        <div class="rs-body"><div class="rs-title">Tarnów II</div><div class="rs-meta">Dom jednorodzinny · 2023</div></div>
+      </a>
+      <a class="rs-card" href="#">
+        <div class="rs-img"><img src="assets/img/realizacje/budzow-h.jpg" alt="Realizacja basen zewnętrzny 3" loading="lazy" /></div>
+        <div class="rs-body"><div class="rs-title">Kraków — Mogiła</div><div class="rs-meta">Dom jednorodzinny · 2022</div></div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<div class="faq-section">
+  <div class="faq-inner">
+    <div>
+      <div class="section-eyebrow">FAQ</div>
+      <h2>Najczęstsze<br/><i>pytania.</i></h2>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item">
+        <button class="faq-q">Jak długo trwa budowa basenu ogrodowego? <span class="fq-icon">+</span></button>
+        <div class="faq-a">Zależy od technologii — misa poliestrowa to 5–10 dni roboczych, folia PCV 6–10 tygodni, mozaika 10–16 tygodni. Do tego dochodzi czas projektu (zwykle 1–2 tygodnie) i oczekiwanie w harmonogramie (pytaj o aktualny termin).</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Czy potrzebuję pozwolenia na budowę basenu? <span class="fq-icon">+</span></button>
+        <div class="faq-a">Baseny ogrodowe o powierzchni do 35 m² wymagają tylko zgłoszenia w starostwie (nie pozwolenia). Powyżej 35 m² — wymagane pozwolenie na budowę. Pomożemy w przygotowaniu dokumentacji — to nasza standardowa usługa.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Ile kosztuje basen ogrodowy? <span class="fq-icon">+</span></button>
+        <div class="faq-a">Orientacyjnie: misa poliestrowa 8×4 m z pełną maszynownią to od 80–100 tys. zł, folia od 90 tys., mozaika od 150 tys. Cena zależy od technologii, lokalizacji, wyposażenia i warunków gruntowych. Bezpłatna wycena po wizycie na działce.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Jak wygląda serwis zimowy basenu? <span class="fq-icon">+</span></button>
+        <div class="faq-a">Jesienią wykonujemy zimowanie: opróżniamy instalacje hydrauliczne, zabezpieczamy chemicznie wodę, montujemy przykrycie zimowe. Wiosną — uruchamiamy, balansujemy chemię i oddajemy basen do użytku. Reakcja serwisowa przez cały rok: 1–3 dni robocze.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Czy zbudujesz basen, gdy ogród jest już gotowy? <span class="fq-icon">+</span></button>
+        <div class="faq-a">Tak, regularnie pracujemy w gotowych ogrodach. Minimalizujemy ingerencję w zieleń — uzgadniamy trasę sprzętu i zakres ewentualnych przywróceń. Po zakończeniu budowy uzupełniamy nawierzchnię i wyrównujemy teren.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- pin-cta (jedna sekcja na całą stronę, identyczna z index.html) -->
+<section class="pin-cta" id="pin-cta">
+  <div class="pin-sticky">
+    <div class="pin-img-box">
+      <video src="assets/video/cta.mp4" poster="assets/img/cta.jpg" autoplay muted loop playsinline preload="none" aria-label="Basen z palmami — realizacja Monza Baseny"></video>
+    </div>
+    <div class="pin-cta-overlay">
+      <h2>Zapraszamy<br/>do <i>kontaktu.</i></h2>
+      <p>Bezpłatna konsultacja. Umówmy się w naszym showroomie, online lub u Ciebie. Od pierwszego szkicu po rozruch — jedna firma, jedna odpowiedzialność.</p>
+      <div class="pair">
+        <a class="btn btn-solid" href="kontakt.html" data-modal="form">Umów konsultację <span class="arr"></span></a>
+        <a class="btn" href="showroom.html">Odwiedź showroom <span class="arr"></span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- footer -->
+<footer class="foot">
+  <div class="foot-grid">
+    <div class="foot-brand">
+      <div class="f-brand">
+        <svg class="f-brand-mark" viewBox="0 0 336 71" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="MONZA baseny & SPA">
+          <path d="M311.102 0.225543L310.989 0H298.343L298.23 0.228676L279.3 36.018L285.349 39.7301C282.953 38.9814 280.575 38.4363 278.22 38.0698C275.917 37.7127 273.64 37.5154 271.372 37.4621C270.924 37.4496 270.47 37.4402 270.022 37.4402C259.547 37.412 249.447 40.2062 239.527 42.9378C224.29 47.148 209.83 51.1388 193.66 45.6882H201.814V16.2047C201.814 7.33956 194.6 0.125302 185.734 0.125302H146.255V45.6819H158.641V12.5114H185.734C187.771 12.5114 189.428 14.1685 189.428 16.2047V45.6819H189.453V56.414C196.554 58.8292 203.386 59.7533 209.943 59.7533C221.812 59.7533 232.82 56.7148 243.001 53.9049C255.628 50.4121 266.921 47.3014 278.342 49.7668C280.231 50.1677 282.117 50.7253 284.009 51.4615L287.063 45.6851L288.422 43.107L304.668 12.3955L322.273 45.6819H335.144L311.102 0.228676V0.225543Z" fill="currentColor"/>
+          <path d="M272.248 12.3516V0H214.722V11.5184H251.704L214.086 33.3366V45.685H214.828L272.248 12.3516Z" fill="currentColor"/>
+          <path d="M55.0701 0.125488H0V45.6821H12.3861V12.5116H27.0213C28.5876 12.5116 29.8563 13.7803 29.8563 15.3465V45.6852H42.2424V12.5116H55.0701C57.1094 12.5116 58.7634 14.1656 58.7634 16.2048V45.6821H71.1495V16.2048C71.1495 7.32408 63.9509 0.125488 55.0701 0.125488Z" fill="currentColor"/>
+          <path d="M121.69 0H95.7119C86.8218 0 79.6138 7.20486 79.6138 16.095V29.5869C79.6138 38.4771 86.8218 45.685 95.7119 45.685H121.69C130.58 45.685 137.785 38.4771 137.785 29.5869V16.095C137.785 7.20799 130.58 0 121.69 0ZM125.321 33.2238H95.4081C93.5693 33.2238 92.0782 31.7327 92.0782 29.8939V12.4644H121.69C123.695 12.4644 125.321 14.0902 125.321 16.095V33.2238Z" fill="currentColor"/>
+        </svg>
+      </div>
+      <div class="ad">ul. Solskiego 20a<br/>32-800 Brzesko<br/>woj. małopolskie · PL</div>
+      <div class="meta">
+        <div><em>Od 2020</em><span>na rynku</span></div>
+        <div><em>180+</em><span>realizacji</span></div>
+      </div>
+    </div>
+    <div class="foot-col">
+      <h5>Nawigacja</h5>
+      <ul>
+        <li><a href="realizacje.html">Realizacje</a></li>
+        <li><a href="showroom.html">Showroom</a></li>
+        <li><a href="o-nas.html">O nas</a></li>
+        <li><a href="kontakt.html">Kontakt</a></li>
+        <li><a href="architekci.html">Dla architektów</a></li>
+      </ul>
+    </div>
+    <div class="foot-col">
+      <h5>Usługi</h5>
+      <ul>
+        <li><a href="baseny-wewnetrzne.html">Baseny wewnętrzne</a></li>
+        <li><a href="baseny-zewnetrzne.html">Baseny zewnętrzne</a></li>
+        <li><a href="wanny-spa.html">Wanny SPA</a></li>
+        <li><a href="sauny.html">Sauny &amp; Łaźnie parowe</a></li>
+        <li><a href="strefy-spa.html">Strefy SPA</a></li>
+      </ul>
+    </div>
+    <div class="foot-col">
+      <h5>Kontakt</h5>
+      <div class="ft-persons">
+        <div class="ft-person">
+          <span class="ft-name">Paulina Przybyło</span>
+          <span class="ft-role">Specjalista ds. obsługi klienta</span>
+          <a class="ft-tel" href="tel:+48691084538">+48 691 084 538</a>
+        </div>
+        <div class="ft-person">
+          <span class="ft-name">Mariusz Bąk</span>
+          <span class="ft-role">Manager ds. rozwoju firmy</span>
+          <a class="ft-tel" href="tel:+48663959514">+48 663 959 514</a>
+        </div>
+        <div class="ft-emails">
+          <a href="mailto:biuro@monzabaseny.pl">biuro@monzabaseny.pl</a>
+          <a href="mailto:marcin@monzabaseny.pl">marcin@monzabaseny.pl</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="foot-bar">
+    <span>© 2020—2026 MONZA baseny&amp;SPA</span>
+    <span class="c">Projekt<span class="ln"></span>Budowa<span class="ln"></span>Serwis</span>
+    <span class="r"><a href="#">Polityka prywatności</a></span>
+  </div>
+</footer>
+
+<!-- modal -->
+<style>
+@keyframes modal-in{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
+@keyframes backdrop-in{from{opacity:0}to{opacity:1}}
+.cmodal-backdrop{position:fixed;inset:0;background:rgba(10,29,51,.62);backdrop-filter:blur(6px);z-index:900;display:none;align-items:center;justify-content:center;padding:20px}
+.cmodal-backdrop.open{display:flex;animation:backdrop-in .25s ease}
+.cmodal{background:var(--paper);width:100%;max-width:780px;max-height:90vh;overflow-y:auto;position:relative;animation:modal-in .3s cubic-bezier(.22,.61,.36,1)}
+.cmodal-close{position:absolute;top:20px;right:20px;width:36px;height:36px;display:flex;align-items:center;justify-content:center;border:1px solid var(--line);font-size:18px;color:var(--muted);cursor:pointer;transition:all .2s;z-index:10}
+.cmodal-close:hover{background:var(--cream);color:var(--ink)}
+.cmodal-tabs{display:flex;border-bottom:1px solid var(--line)}
+.cmodal-tab{flex:1;padding:18px 24px;font-family:var(--f-mono);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);cursor:pointer;border:none;background:none;transition:color .2s;border-bottom:2px solid transparent;margin-bottom:-1px}
+.cmodal-tab:hover{color:var(--ink)}
+.cmodal-tab.active{color:var(--navy);border-bottom-color:var(--navy)}
+.cmodal-body{padding:32px 32px 36px}
+.cmodal-panel{display:none}
+.cmodal-panel.active{display:block}
+.cmodal-head{margin-bottom:28px}
+.cmodal-head h3{font-family:var(--f-serif);font-weight:300;font-size:clamp(26px,2.8vw,36px);line-height:1.1;letter-spacing:-.02em;color:var(--ink);font-variation-settings:"opsz" 144}
+.cmodal-head h3 i{font-style:italic;color:var(--muted);font-variation-settings:"opsz" 144,"SOFT" 80,"WONK" 1}
+.cmodal-form{display:flex;flex-direction:column;gap:16px}
+.cmodal-row label{display:block;font-family:var(--f-mono);font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);margin-bottom:7px}
+.cmodal-row input,.cmodal-row select,.cmodal-row textarea{width:100%;padding:13px 14px;background:var(--cream);border:1px solid var(--line);font-family:var(--f-mono);font-size:13px;color:var(--ink);outline:none;transition:border-color .25s,background .25s;border-radius:0;-webkit-appearance:none}
+.cmodal-row input:focus,.cmodal-row select:focus,.cmodal-row textarea:focus{border-color:var(--navy);background:#fff}
+.cmodal-row input::placeholder,.cmodal-row textarea::placeholder{color:var(--muted)}
+.cmodal-row textarea{resize:none;height:90px}
+.cmodal-row select{cursor:pointer;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%236B685F' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center}
+.cmodal-row2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.cmodal-consent{font-size:11px;line-height:1.6;color:var(--muted);padding-left:22px;position:relative}
+.cmodal-consent input[type=checkbox]{position:absolute;left:0;top:2px;width:14px;height:14px;accent-color:var(--navy);cursor:pointer}
+.cmodal-submit{display:inline-flex;align-items:center;gap:12px;padding:14px 28px;background:var(--navy);color:#fff;font-family:var(--f-mono);font-size:11px;letter-spacing:.2em;text-transform:uppercase;border:none;cursor:pointer;transition:background .3s;margin-top:4px}
+.cmodal-submit:hover{background:var(--navy-deep)}
+.cmodal-submit .arr{display:inline-block;width:14px;height:1px;background:#fff;position:relative}
+.cmodal-submit .arr::after{content:"";position:absolute;right:0;top:-3px;width:6px;height:6px;border-top:1px solid #fff;border-right:1px solid #fff;transform:rotate(45deg)}
+.cmodal-fulllink{display:inline-flex;align-items:center;gap:8px;font-family:var(--f-mono);font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin-top:14px;transition:color .3s}
+.cmodal-fulllink:hover{color:var(--navy)}
+.cmodal-persons{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:24px}
+.cmodal-person{padding:20px;background:var(--cream);border:1px solid var(--line)}
+.cmodal-person .cp-name{font-family:var(--f-serif);font-weight:300;font-size:20px;color:var(--ink);display:block;margin-bottom:4px;font-variation-settings:"opsz" 14}
+.cmodal-person .cp-role{font-family:var(--f-mono);font-size:9.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);display:block;margin-bottom:12px}
+.cmodal-person .cp-tel{font-family:var(--f-mono);font-size:16px;color:var(--navy);font-weight:500;transition:opacity .3s;display:block}
+.cmodal-person .cp-tel:hover{opacity:.7}
+.cmodal-emails{display:flex;flex-direction:column;gap:8px;padding:20px;background:var(--cream);border:1px solid var(--line)}
+.cmodal-emails span{font-family:var(--f-mono);font-size:9.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);margin-bottom:4px;display:block}
+.cmodal-emails a{font-family:var(--f-mono);font-size:13px;color:var(--navy);transition:opacity .3s}
+.cmodal-emails a:hover{opacity:.7}
+</style>
+<div class="cmodal-backdrop" id="cmodal-backdrop" role="dialog" aria-modal="true">
+  <div class="cmodal" id="cmodal">
+    <button class="cmodal-close" id="cmodal-close" aria-label="Zamknij">✕</button>
+    <div class="cmodal-tabs">
+      <button class="cmodal-tab active" data-panel="form">Formularz</button>
+      <button class="cmodal-tab" data-panel="call">Zadzwoń</button>
+    </div>
+    <div class="cmodal-body">
+      <div class="cmodal-panel active" id="cpanel-form">
+        <div class="cmodal-head"><h3>Napisz, <i>co planujesz.</i></h3></div>
+        <form class="cmodal-form" onsubmit="return false;">
+          <div class="cmodal-row2">
+            <div class="cmodal-row"><label>Imię i nazwisko</label><input type="text" placeholder="np. Jan Kowalski" /></div>
+            <div class="cmodal-row"><label>Telefon</label><input type="tel" placeholder="+48 600 000 000" /></div>
+          </div>
+          <div class="cmodal-row"><label>Rodzaj projektu</label><select><option value="" disabled selected>Wybierz…</option><option selected>Baseny zewnętrzne</option><option>Baseny wewnętrzne</option><option>Wanny SPA</option><option>Sauny</option><option>Łaźnie parowe</option><option>Strefy SPA</option><option>Nie wiem jeszcze</option></select></div>
+          <div class="cmodal-row"><label>Krótki opis (opcjonalnie)</label><textarea placeholder="Kilka słów o projekcie…"></textarea></div>
+          <label class="cmodal-consent"><input type="checkbox" />Wyrażam zgodę na kontakt ze strony MONZA baseny&amp;SPA w celu odpowiedzi na zapytanie.</label>
+          <div style="display:flex;align-items:center;gap:24px;flex-wrap:wrap">
+            <button type="submit" class="cmodal-submit">Wyślij <span class="arr"></span></button>
+            <a class="cmodal-fulllink" href="kontakt.html">Pełny formularz z załącznikiem →</a>
+          </div>
+        </form>
+      </div>
+      <div class="cmodal-panel" id="cpanel-call">
+        <div class="cmodal-head"><h3>Zadzwoń <i>lub napisz.</i></h3></div>
+        <div class="cmodal-persons">
+          <div class="cmodal-person"><span class="cp-name">Paulina Przybyło</span><span class="cp-role">Specjalista ds. obsługi klienta</span><a class="cp-tel" href="tel:+48691084538">+48 691 084 538</a></div>
+          <div class="cmodal-person"><span class="cp-name">Mariusz Bąk</span><span class="cp-role">Manager ds. rozwoju firmy</span><a class="cp-tel" href="tel:+48663959514">+48 663 959 514</a></div>
+        </div>
+        <div class="cmodal-emails"><span>E-mail</span><a href="mailto:biuro@monzabaseny.pl">biuro@monzabaseny.pl</a><a href="mailto:marcin@monzabaseny.pl">marcin@monzabaseny.pl</a></div>
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const section = document.querySelector('.pin-cta');
+  if (!section) return;
+  const box = section.querySelector('.pin-img-box');
+  const img = box && (box.querySelector('video') || box.querySelector('img'));
+  const overlay = section.querySelector('.pin-cta-overlay');
+  if (!img) return;
+  const REVEAL_START = 0.35, REVEAL_END = 0.75;
+  let raf = null;
+  const onScroll = () => {
+    raf = null;
+    const rect = section.getBoundingClientRect();
+    const vh = window.innerHeight;
+    const total = rect.height - vh;
+    const scrolled = Math.min(Math.max(-rect.top, 0), total);
+    const p = total > 0 ? scrolled / total : 0;
+    img.style.opacity = (1 - p * 0.9).toFixed(3);
+    if (overlay) {
+      const r = p < REVEAL_START ? 0 : p > REVEAL_END ? 1 : (p - REVEAL_START) / (REVEAL_END - REVEAL_START);
+      overlay.style.opacity = r.toFixed(3);
+    }
+  };
+  const tick = () => { if (raf == null) raf = requestAnimationFrame(onScroll); };
+  window.addEventListener('scroll', tick, {passive:true});
+  window.addEventListener('resize', tick);
+  onScroll();
+});
+(function(){
+  document.querySelectorAll('.faq-q').forEach(btn=>{
+    btn.addEventListener('click',()=>{
+      const item=btn.closest('.faq-item');
+      const wasOpen=item.classList.contains('open');
+      document.querySelectorAll('.faq-item').forEach(i=>i.classList.remove('open'));
+      if(!wasOpen)item.classList.add('open');
+    });
+  });
+  const backdrop=document.getElementById('cmodal-backdrop');
+  function openModal(p){backdrop.classList.add('open');document.body.style.overflow='hidden';if(p)switchPanel(p)}
+  function closeModal(){backdrop.classList.remove('open');document.body.style.overflow=''}
+  function switchPanel(n){document.querySelectorAll('.cmodal-tab').forEach(t=>t.classList.toggle('active',t.dataset.panel===n));document.querySelectorAll('.cmodal-panel').forEach(p=>p.classList.toggle('active',p.id==='cpanel-'+n))}
+  document.getElementById('cmodal-close').addEventListener('click',closeModal);
+  backdrop.addEventListener('click',e=>{if(e.target===backdrop)closeModal()});
+  document.addEventListener('keydown',e=>{if(e.key==='Escape')closeModal()});
+  document.querySelectorAll('.cmodal-tab').forEach(t=>t.addEventListener('click',()=>switchPanel(t.dataset.panel)));
+  document.querySelectorAll('[data-modal]').forEach(btn=>btn.addEventListener('click',e=>{e.preventDefault();openModal(btn.dataset.modal||'form')}));
+})();
+</script>
+
+<!-- mobile nav overlay -->
+<div class="mobile-nav" id="mobile-nav" aria-hidden="true">
+  <button class="mn-close" type="button" aria-label="Zamknij menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><line x1="6" y1="6" x2="18" y2="18"/><line x1="18" y1="6" x2="6" y2="18"/></svg></button>
+  <a href="index.html" class="mn-logo" aria-label="MONZA baseny & SPA"><svg viewBox="0 0 336 71" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M311.102 0.225543L310.989 0H298.343L298.23 0.228676L279.3 36.018L285.349 39.7301C282.953 38.9814 280.575 38.4363 278.22 38.0698C275.917 37.7127 273.64 37.5154 271.372 37.4621C270.924 37.4496 270.47 37.4402 270.022 37.4402C259.547 37.412 249.447 40.2062 239.527 42.9378C224.29 47.148 209.83 51.1388 193.66 45.6882H201.814V16.2047C201.814 7.33956 194.6 0.125302 185.734 0.125302H146.255V45.6819H158.641V12.5114H185.734C187.771 12.5114 189.428 14.1685 189.428 16.2047V45.6819H189.453V56.414C196.554 58.8292 203.386 59.7533 209.943 59.7533C221.812 59.7533 232.82 56.7148 243.001 53.9049C255.628 50.4121 266.921 47.3014 278.342 49.7668C280.231 50.1677 282.117 50.7253 284.009 51.4615L287.063 45.6851L288.422 43.107L304.668 12.3955L322.273 45.6819H335.144L311.102 0.228676V0.225543Z" fill="currentColor"/><path d="M272.248 12.3516V0H214.722V11.5184H251.704L214.086 33.3366V45.685H214.828L272.248 12.3516Z" fill="currentColor"/><path d="M55.0701 0.125488H0V45.6821H12.3861V12.5116H27.0213C28.5876 12.5116 29.8563 13.7803 29.8563 15.3465V45.6852H42.2424V12.5116H55.0701C57.1094 12.5116 58.7634 14.1656 58.7634 16.2048V45.6821H71.1495V16.2048C71.1495 7.32408 63.9509 0.125488 55.0701 0.125488Z" fill="currentColor"/><path d="M121.69 0H95.7119C86.8218 0 79.6138 7.20486 79.6138 16.095V29.5869C79.6138 38.4771 86.8218 45.685 95.7119 45.685H121.69C130.58 45.685 137.785 38.4771 137.785 29.5869V16.095C137.785 7.20799 130.58 0 121.69 0ZM125.321 33.2238H95.4081C93.5693 33.2238 92.0782 31.7327 92.0782 29.8939V12.4644H121.69C123.695 12.4644 125.321 14.0902 125.321 16.095V33.2238Z" fill="currentColor"/></svg></a>
+  <ul class="mn-links">
+    <li class="mn-drop"><button class="mn-drop-toggle" type="button" aria-expanded="false">Usługi</button>
+      <ul class="mn-sub">
+        <li><a href="baseny-wewnetrzne.html">Baseny wewnętrzne</a></li>
+        <li><a href="baseny-zewnetrzne.html">Baseny zewnętrzne</a></li>
+        <li><a href="wanny-spa.html">Wanny SPA</a></li>
+        <li><a href="sauny.html">Sauny</a></li>
+        <li><a href="laznie-parowe.html">Łaźnie parowe</a></li>
+        <li><a href="strefy-spa.html">Strefy SPA</a></li>
+      </ul>
+    </li>
+    <li><a href="realizacje.html">Realizacje</a></li>
+    <li><a href="showroom.html">Showroom</a></li>
+    <li><a href="o-nas.html">O nas</a></li>
+    <li><a href="kontakt.html">Kontakt</a></li>
+    <li><a href="architekci.html">Dla architektów</a></li>
+  </ul>
+  <div class="mn-foot">
+    <div>
+      <span class="mn-tel-label">Zadzwoń</span>
+      <a class="mn-tel" href="tel:+48663959514">+48 663 959 514</a>
+    </div>
+    <a class="mn-cta" href="kontakt.html" data-modal="form">Umów konsultację</a>
+  </div>
+</div>
+
+<!-- sticky mobile CTA bar -->
+<div class="mobile-cta-bar">
+  <a class="mcb-tel" href="tel:+48663959514"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.69 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.33 1.85.56 2.81.69A2 2 0 0 1 22 16.92z"/></svg>Zadzwoń</a>
+  <a class="mcb-msg" href="kontakt.html" data-modal="form"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>Zapytaj</a>
+</div>
+
+<!-- mobile nav script -->
+<script>
+(function(){
+  const nav=document.getElementById('mobile-nav');
+  if(!nav)return;
+  const header=document.querySelector('.sticky-nav .sn-header');
+  if(!header)return;
+  // wstrzyknij hamburger jeśli go nie ma
+  if(!header.querySelector('.hamburger')){
+    const btn=document.createElement('button');
+    btn.className='hamburger';btn.setAttribute('aria-label','Otwórz menu');btn.setAttribute('aria-expanded','false');btn.type='button';
+    btn.innerHTML='<span></span><span></span><span></span>';
+    header.appendChild(btn);
+    btn.addEventListener('click',()=>{
+      const open=nav.classList.toggle('open');
+      btn.classList.toggle('open',open);
+      document.body.classList.toggle('mn-locked',open);
+      btn.setAttribute('aria-expanded',open?'true':'false');
+      nav.setAttribute('aria-hidden',open?'false':'true');
+    });
+  }
+  // dropdown w mobile
+  nav.querySelectorAll('.mn-drop-toggle').forEach(t=>{
+    t.addEventListener('click',()=>{
+      const li=t.closest('.mn-drop');
+      const wasOpen=li.classList.contains('open');
+      li.classList.toggle('open',!wasOpen);
+      t.setAttribute('aria-expanded',!wasOpen?'true':'false');
+    });
+  });
+  // ESC zamyka
+  // close button
+  const closeBtn=nav.querySelector('.mn-close');
+  if(closeBtn){
+    closeBtn.addEventListener('click',()=>{
+      nav.classList.remove('open');
+      document.body.classList.remove('mn-locked');
+      const ham=header.querySelector('.hamburger');
+      if(ham){ham.classList.remove('open');ham.setAttribute('aria-expanded','false');}
+      nav.setAttribute('aria-hidden','true');
+    });
+  }
+  document.addEventListener('keydown',e=>{
+    if(e.key==='Escape'&&nav.classList.contains('open')){
+      nav.classList.remove('open');
+      document.body.classList.remove('mn-locked');
+      const ham=header.querySelector('.hamburger');
+      if(ham){ham.classList.remove('open');ham.setAttribute('aria-expanded','false');}
+      nav.setAttribute('aria-hidden','true');
+    }
+  });
+  // klik w link w mobile-nav zamyka menu
+  nav.querySelectorAll('a').forEach(a=>{
+    a.addEventListener('click',()=>{
+      nav.classList.remove('open');
+      document.body.classList.remove('mn-locked');
+      const ham=header.querySelector('.hamburger');
+      if(ham){ham.classList.remove('open');ham.setAttribute('aria-expanded','false');}
+    });
+  });
+})();
+</script>
+</body>
+</html>
